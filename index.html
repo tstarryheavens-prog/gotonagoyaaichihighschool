@@ -832,11 +832,16 @@
           </td>
           <td>
             <div class="school-name-cell">
-              <span class="school-title">${item.name}</span>
+              <a href="${item.pageUrl}" class="school-title" style="color:#1d4ed8; text-decoration:none;">${item.name} 📖</a>
               <span class="school-location">📍 ${item.location}</span>
-              <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="school-link">
-                🌐 公式サイト ↗
-              </a>
+              <div style="display:flex; gap:6px; margin-top:4px; flex-wrap:wrap;">
+                <a href="${item.pageUrl}" class="school-link" style="background:#eff6ff; color:#2563eb; border-color:#bfdbfe; font-weight:700;">
+                  ✨ 特色・高校生活を見る ↗
+                </a>
+                <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="school-link">
+                  🌐 公式サイト ↗
+                </a>
+              </div>
             </div>
           </td>
           <td>
