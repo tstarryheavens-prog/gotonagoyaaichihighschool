@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>【神ワザ】テスト前夜でも間に合う！ChatGPT・Gemini爆速チートプロンプト集（全教科コピペOK）</title>
+  <meta name="description" content="定期テストの点数を秒で底上げする神プロンプト集！数学の途中式解説、英語長文の要約、歴史のストーリー化、理科の計算裏ワザなど全教科対応。ワンタップコピーボタン＆iPhone・Android貼り付け解説付き！">
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1988464307898443"
+     crossorigin="anonymous"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --primary-light: #eff6ff;
+      --bg-main: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --border-color: #e2e8f0;
+      --accent: #f59e0b;
+      --neon-purple: #8b5cf6;
+      --success: #10b981;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.65;
+      padding-bottom: 70px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #ec4899 100%);
+      color: white;
+      padding: 35px 20px 25px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(124, 58, 237, 0.25);
+    }
+    header h1 {
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      font-size: 1.95rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      letter-spacing: 0.02em;
+    }
+    header p {
+      font-size: 0.93rem;
+      opacity: 0.95;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .top-nav {
+      background: white;
+      border-bottom: 1px solid var(--border-color);
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      flex-wrap: wrap;
+    }
+    .top-nav a {
+      text-decoration: none;
+      color: var(--text-main);
+      font-weight: 600;
+      font-size: 0.82rem;
+      padding: 6px 11px;
+      border-radius: 8px;
+      transition: all 0.2s;
+    }
+    .top-nav a:hover, .top-nav a.active {
+      background: var(--primary-light);
+      color: var(--primary);
+    }
+
+    .container {
+      max-width: 1050px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* 広告枠 */
+    .ad-banner-wrapper {
+      margin: 25px auto;
+      text-align: center;
+      max-width: 100%;
+    }
+    .ad-banner-label {
+      font-size: 0.72rem;
+      color: #94a3b8;
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
+      display: block;
+    }
+    .ad-banner-box {
+      background: #f8fafc;
+      border: 1px dashed #cbd5e1;
+      border-radius: 12px;
+      min-height: 90px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 15px;
+      color: #64748b;
+      font-size: 0.85rem;
+    }
+
+    /* スマホ解説カード */
+    .how-to-card {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 16px;
+      padding: 22px 24px;
+      margin: 24px 0 20px;
+    }
+    .how-to-card h2 {
+      font-size: 1.15rem;
+      color: #166534;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .how-to-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+    }
+    .how-to-col {
+      background: white;
+      padding: 14px 16px;
+      border-radius: 10px;
+      border: 1px solid #dcfce7;
+      font-size: 0.88rem;
+      color: #15803d;
+      line-height: 1.55;
+    }
+    .how-to-col strong {
+      color: #14532d;
+      display: block;
+      margin-bottom: 4px;
+      font-size: 0.95rem;
+    }
+
+    /* 教科切り替えタブ */
+    .subject-nav {
+      display: flex;
+      gap: 8px;
+      margin: 25px 0 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .sub-btn {
+      padding: 9px 16px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      border-radius: 10px;
+      border: 2px solid #e2e8f0;
+      background: white;
+      color: #475569;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .sub-btn:hover {
+      border-color: var(--neon-purple);
+      color: var(--neon-purple);
+    }
+    .sub-btn.active {
+      background: var(--neon-purple);
+      border-color: var(--neon-purple);
+      color: white;
+      box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+    }
+
+    /* プロンプトカード */
+    .prompt-card {
+      background: white;
+      border-radius: 14px;
+      padding: 22px 24px;
+      margin-bottom: 18px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.03);
+    }
+    .prompt-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .prompt-title-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .badge-target {
+      background: #f1f5f9;
+      color: #475569;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+    .prompt-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .prompt-desc {
+      font-size: 0.88rem;
+      color: #64748b;
+      margin-bottom: 12px;
+    }
+
+    /* プロンプトボックス本体 */
+    .prompt-content-box {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      padding: 16px;
+      position: relative;
+      font-family: inherit;
+      font-size: 0.9rem;
+      color: #1e293b;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    /* コピーボタン */
+    .btn-copy {
+      background: #3b82f6;
+      color: white;
+      border: none;
+      padding: 7px 16px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-copy:hover {
+      background: #2563eb;
+      transform: translateY(-1px);
+    }
+    .btn-copy.copied {
+      background: #10b981;
+    }
+
+    /* トースト通知 */
+    #copyToast {
+      position: fixed;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #0f172a;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      z-index: 1000;
+      transition: transform 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    #copyToast.show {
+      transform: translateX(-50%) translateY(0);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+
+    @media (max-width: 640px) {
+      header h1 { font-size: 1.45rem; }
+      .container { padding: 0 12px; }
+      .prompt-card { padding: 16px 14px; }
+      .prompt-title { font-size: 0.98rem; }
+      .prompt-content-box { font-size: 0.84rem; padding: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div style="font-size:0.85rem; font-weight:700; opacity:0.9; margin-bottom:6px;">⚡️ テスト勉強のチート級お助けツール</div>
+    <h1>【神ワザ】テスト勉強で無双できるAIプロンプト集</h1>
+    <p>チャッピー（ChatGPT）・ジェミニ（Gemini）にそのままコピペするだけ！教科別に即効性のあるプロンプトを厳選まとめ。</p>
+  </header>
+
+  <nav class="top-nav">
+    <a href="index.html">📊 内申点ランキングTOP</a>
+    <a href="schedule.html">📅 学年別進学スケジュール</a>
+    <a href="test-study-guide.html">📝 普段のテスト対策</a>
+    <a href="ai-study-guide.html">🤖 最新AI勉強法</a>
+    <a href="ai-prompts.html" class="active">⚡️ 神プロンプト集</a>
+    <a href="techniques.html">💡 受験テクニック20選＆過去問</a>
+  </nav>
+
+  <div class="container">
+
+    <!-- 広告枠① -->
+    <div class="ad-banner-wrapper">
+      <span class="ad-banner-label">スポンサーリンク</span>
+      <div class="ad-banner-box">
+        <p style="margin: 0; font-weight: 500;">📖 定期テストの点数を秒で底上げする！中学生向けオンライン学習サポート</p>
+        <span style="font-size: 0.75rem; color: #94a3b8;">（広告コード貼り付けスペース①）</span>
+      </div>
+    </div>
+
+    <!-- スマホからの簡単な貼り付け方解説 -->
+    <div class="how-to-card">
+      <h2>📱 iPhone・Androidからの超カンタンな使い方</h2>
+      <div class="how-to-grid">
+        <div class="how-to-col">
+          <strong>🍎 iPhone（iOS）の場合</strong>
+          1. 欲しいプロンプトの青い「📋 コピーする」ボタンをタップ<br>
+          2. ChatGPTやGeminiのアプリを開く<br>
+          3. メッセージ入力欄を<strong>1回ポンとタップ</strong>し、「ペースト（貼り付け）」を押すだけ！
+        </div>
+        <div class="how-to-col">
+          <strong>🤖 Androidの場合</strong>
+          1. 「📋 コピーする」ボタンをタップ（クリップボードに保存）<br>
+          2. ChatGPTやGeminiのアプリを開く<br>
+          3. 入力欄を<strong>長押し</strong>して「貼り付け」を選択、またはキーボード上に出てくる候補をタップ！
+        </div>
+      </div>
+    </div>
+
+    <!-- 教科フィルタータブ -->
+    <div class="subject-nav">
+      <button class="sub-btn active" onclick="filterCategory('all')">🌟 全て表示</button>
+      <button class="sub-btn" onclick="filterCategory('math')">📐 数学</button>
+      <button class="sub-btn" onclick="filterCategory('english')">🔤 英語</button>
+      <button class="sub-btn" onclick="filterCategory('science')">🧪 理科</button>
+      <button class="sub-btn" onclick="filterCategory('social')">🌍 社会</button>
+      <button class="sub-btn" onclick="filterCategory('japanese')">📖 国語</button>
+      <button class="sub-btn" onclick="filterCategory('practical')">🎨 実技4教科</button>
+    </div>
+
+    <!-- ==================== 数学プロンプト ==================== -->
+    <div class="prompt-card" data-cat="math">
+      <div class="prompt-header">
+        <div class="prompt-title-group">
+          <span class="badge-target">📐 数学</span>
+          <span class="prompt-title">途中式を1行ずつ！「なぜそうなるか」徹底解説プロンプト</span>
+        </div>
+        <button class="btn-copy" onclick="copyText(this, 'p-math-1')">📋 コピーする</button>
+      </div>
+      <div class="prompt-desc">ワークの解答を見ても途中式が省略されていて意味不明なときに。</div>
+      <div class="prompt-content-box" id="p-math-1">中学数学の家庭教師として教えてください。
+次の問題の解説をお願いします。答えだけでなく「途中式を1行も省略せず」、各行で「何をしたのか（例：両辺に10をかけた、移項したなど）」の理由を小学生でもわかるように超やさしく解説してください！
+
+【問題】:
+[ここに問題文を入力 または 写真を添付]</div>
+    </div>
+
+    <div class="prompt-card" data-cat="math">
+      <div class="prompt-header">
+        <div class="prompt-title-group">
+          <span class="badge-target">📐 数学</span>
+          <span class="prompt-title">数字を変えた「テスト予想類題」を3問作らせるプロンプト</span>
+        </div>
+        <button class="btn-copy" onclick="copyText(this, 'p-math-2')">📋 コピーする</button>
+      </div>
+      <div class="prompt-desc">間違えた問題の解法パターンを定着させたいときに。</div>
+      <div class="prompt-content-box" id="p-math-2">中学生の定期テスト対策です。
+次の問題とまったく同じ解き方・公式を使う「数字を変えた類題」を難易度順に3問作成してください。
+※まだ答えと解説は出さないでください。私が解いて返信するので、そのあとに丸付けとアドバイスをしてください。
+
+【元になった問題】:
+[ここにワークの問題を入力]</div>
+    </div>
+
+    <!-- ==================== 英語プロンプト ==================== -->
+    <div class="prompt-card" data-cat="english">
+      <div class="prompt-header">
+        <div class="prompt-title-group">
+          <span class="badge-target">🔤 英語</span>
+          <span class="prompt-title">自由英作文の「満点取れる添削＆別パターン提案」プロンプト</span>
+        </div>
+        <button class="btn-copy" onclick="copyText(this, 'p-eng-1')">📋 コピーする</button>
+      </div>
+      <div class="prompt-desc">定期テストや高校入試で配点が高い自由英作文をノーミスにする。</div>
+      <div class="prompt-content-box" id="p-eng-1">愛知県の公立高校入試の採点基準で、私の書いた英作文を添削してください。
+1. 文法ミス・スペルミスの指摘と修正
+2. 中学生レベルの単語を使った「より自然で満点が取れる模範解答」を2パターン作成
+3. 減点されないためのコツ
+を教えてください！
+
+【テストのお題】: [例：あなたの好きな季節とその理由を30語程度で]
+【私の書いた英文】:
+[ここに英文を入力]</div>
+    </div>
+
+    <div class="prompt-card" data-cat="english">
+      <div class="prompt-header">
+        <div class="prompt-title-group">
+          <span class="badge-target">🔤 英語</span>
+          <span class="prompt-title">教科書本文から「穴埋め＆重要構文テスト」を自動生成</span>
+        </div>
+        <button class="btn-copy" onclick="copyText(this, 'p-eng-2')">📋 コピーする</button>
+      </div>
+      <div class="prompt-desc">教科書本文を貼り付けるだけで、テストに出る空所補充問題を即席作成。</div>
+      <div class="prompt-content-box" id="p-eng-2">次の中学校の英語教科書の本文から、定期テストに出そうな「空所補充問題（穴埋めテスト）」を5問作成してください。
+重要文法（不定詞、比較、受け身、関係代名詞など）や連語（熟語）の部分をかっこ [ (1) ] にしてください。
+問題の下に、ヒントと正解をまとめて記載してください。
+
+【教科書本文】:
+[ここに教科書の英文をコピペ]</div>
+    </div>
+
+    <!-- 広告枠② -->
+    <div class="ad-banner-wrapper">
+      <span class="ad-banner-label">スポンサーリンク</span>
+      <div class="ad-banner-box">
+        <p style="margin: 0; font-weight: 500;">🎯 AI学習と専任コーチのハイブリッド指導で偏差値UP！</p>
+        <span style="font-size: 0.75rem; color: #94a3b8;">（広告コード貼り付けスペース②）</span>
+      </div>
+    </div>
+
+    <!-- ==================== 理科プロンプト ==================== -->
+    <div class="prompt-card" data-cat="science">
+      <div class="prompt-header">
+        <div class="prompt-title-group">
+          <span class="badge-target">🧪 理科</span>
+          <span class="prompt-title">「実験の注意点・なぜそうするのか記述」完全攻略プロンプト</span>
+        </div>
+        <button class="btn-copy" onclick="copyText(this, 'p-sci-1')">📋 コピーする</button>
+      </div>
+      <div class="prompt-desc">定期テストで最も点差がつく実験器具の操作理由を一瞬で整理。</div>
+      <div class="prompt-content-box" id="p-sci-1">中学生の理科の定期テスト対策です。
+次の実験について、テストの記述問題で超頻出の「実験器具の正しい操作方法」と「なぜそうしなければならないのか（理由）」の組み合わせを3〜5個箇条書きで教えてください！
+テストで丸がもらえる模範的な記述フレーズでお願いします。
+
+【実験名】:
+[例：炭酸水素ナトリウムの熱分解、水溶液とイオン、植物の光合成実験 など]</div>
+    </div>
+
+    <!-- ==================== 社会プロンプト ==================== -->
+    <div class="prompt-card" data-cat="social">
+      <div class="prompt-header">
+        <div class="prompt-title-group">
+          <span class="badge-target">🌍 社会</span>
+          <span class="prompt-title">暗記地獄から脱出！「歴史の流れをマンガ風あらすじ化」プロンプト</span>
+        </div>
+        <button class="btn-copy" onclick="copyText(this, 'p-soc-1')">📋 コピーする</button>
+      </div>
+      <div class="prompt-desc">年号や人物名がごちゃごちゃになって覚えられない時に。</div>
+      <div class="prompt-content-box" id="p-soc-1">中学生の歴史の勉強です。
+次の時代の出来事を、少年マンガのあらすじのようにドラマチックでテンポの良いストーリー形式で300文字程度で要約してください！
+「なぜその事件が起きたのか（原因）」「誰が何をしたのか」「その結果どうなったのか」の因果関係が直感的にわかるようにしてください。
+
+【まとめたい時代・出来事】:
+[例：平氏の台頭から鎌倉幕府の成立、明治維新から大日本帝国憲法発布 など]</div>
+    </div>
+
+    <!-- ==================== 国語プロンプト ==================== -->
+    <div class="prompt-card" data-cat="japanese">
+      <div class="prompt-header">
+        <div class="prompt-title-group">
+          <span class="badge-target">📖 国語</span>
+          <span class="prompt-title">説明文・小説文の「心情変化＆段落要約」一撃分析プロンプト</span>
+        </div>
+        <button class="btn-copy" onclick="copyText(this, 'p-jp-1')">📋 コピーする</button>
+      </div>
+      <div class="prompt-desc">学校の先生がテスト問題を作るポイントを先回りして分析。</div>
+      <div class="prompt-content-box" id="p-jp-1">中学校の国語の定期テスト対策です。
+教科書の題材「[作品名を入力 例：走れメロス / 少年の日の思い出 / 握手]」について教えてください。
+
+1. 主人公（登場人物）の心情が劇的に変化する【重要シーン3箇所】とその理由
+2. 定期テストの記述問題で絶対に出題される「〜とはどういうことか」「なぜか」の予想問題3問と模範解答
+を中学生にわかりやすく教えてください！</div>
+    </div>
+
+    <!-- ==================== 実技4教科プロンプト ==================== -->
+    <div class="prompt-card" data-cat="practical">
+      <div class="prompt-header">
+        <div class="prompt-title-group">
+          <span class="badge-target">🎨 実技4教科</span>
+          <span class="prompt-title">内申点を爆上げする「実技ペーパーテスト一問一答」作成プロンプト</span>
+        </div>
+        <button class="btn-copy" onclick="copyText(this, 'p-pra-1')">📋 コピーする</button>
+      </div>
+      <div class="prompt-desc">主要5科と同じ配点！プリントのキーワードを即座に問題化。</div>
+      <div class="prompt-content-box" id="p-pra-1">中学校の実技教科（保体・音楽・美術・技術家庭）の定期テスト対策です。
+次のテスト範囲のキーワードから、テストに出る「一問一答テスト」を10問作成してください。
+問題のあとに、答えを隠して練習できるように解答一覧を下にまとめて記載してください。
+
+【教科】: [例：保健体育（水泳・陸上 / 現代社会と健康）]
+【範囲・キーワード】:
+[ここに授業プリントの単語や範囲を入力]</div>
+    </div>
+
+    <!-- 広告枠③ -->
+    <div class="ad-banner-wrapper">
+      <span class="ad-banner-label">スポンサーリンク</span>
+      <div class="ad-banner-box">
+        <p style="margin: 0; font-weight: 500;">✏️ 定期テストの復習・高校入試に向けた基礎力診断テスト</p>
+        <span style="font-size: 0.75rem; color: #94a3b8;">（広告コード貼り付けスペース③）</span>
+      </div>
+    </div>
+
+    <footer>
+      <p>© 尾張・名古屋地区 高校進学情報ガイド / 本サイトは中学生・保護者の進路選択を支援するポータルサイトです。</p>
+    </footer>
+  </div>
+
+  <!-- トースト通知 -->
+  <div id="copyToast">✨ クリップボードにコピーしました！AIに貼り付けてね！</div>
+
+  <script>
+    // コピー機能
+    function copyText(btn, elementId) {
+      const text = document.getElementById(elementId).innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        // ボタンの見た目変更
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '✅ コピー完了！';
+        btn.classList.add('copied');
+
+        // トースト通知表示
+        const toast = document.getElementById('copyToast');
+        toast.classList.add('show');
+
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+          btn.classList.remove('copied');
+          toast.classList.remove('show');
+        }, 2200);
+      });
+    }
+
+    // 教科別フィルタリング
+    function filterCategory(category) {
+      document.querySelectorAll('.sub-btn').forEach(b => b.classList.remove('active'));
+      event.currentTarget.classList.add('active');
+
+      const cards = document.querySelectorAll('.prompt-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-cat') === category) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
