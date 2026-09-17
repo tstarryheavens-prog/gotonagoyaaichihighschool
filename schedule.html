@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>【学年別】愛知・尾張地区 高校進学パーフェクト合格スケジュール＆ロードマップ</title>
+  
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1988464307898443"
+     crossorigin="anonymous"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --primary-light: #eff6ff;
+      --bg-main: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --border-color: #e2e8f0;
+      --success: #16a34a;
+      --danger: #dc2626;
+      --warning: #d97706;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.65;
+      padding-bottom: 70px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #3b82f6 100%);
+      color: white;
+      padding: 35px 20px 25px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+    }
+    header h1 {
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    header p {
+      font-size: 0.95rem;
+      opacity: 0.95;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .top-nav {
+      background: white;
+      border-bottom: 1px solid var(--border-color);
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+    .top-nav a {
+      text-decoration: none;
+      color: var(--text-main);
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 6px 14px;
+      border-radius: 8px;
+      transition: all 0.2s;
+    }
+    .top-nav a:hover, .top-nav a.active {
+      background: var(--primary-light);
+      color: var(--primary);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* 広告バナー枠 */
+    .ad-banner-wrapper {
+      margin: 25px auto;
+      text-align: center;
+      max-width: 100%;
+    }
+    .ad-banner-label {
+      font-size: 0.72rem;
+      color: #94a3b8;
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
+      display: block;
+    }
+    .ad-banner-box {
+      background: #f8fafc;
+      border: 1px dashed #cbd5e1;
+      border-radius: 12px;
+      min-height: 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      color: #64748b;
+      font-size: 0.85rem;
+    }
+
+    /* 学年タブ */
+    .tabs-container {
+      display: flex;
+      gap: 10px;
+      margin: 30px 0 25px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .tab-button {
+      padding: 12px 24px;
+      font-size: 1rem;
+      font-weight: 700;
+      border-radius: 12px;
+      border: 2px solid #cbd5e1;
+      background: white;
+      color: #475569;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .tab-button:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+    .tab-button.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: white;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+    }
+
+    /* コンテンツパネル */
+    .tab-pane {
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+    .tab-pane.active {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-card {
+      background: white;
+      border-radius: 16px;
+      padding: 28px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      margin-bottom: 30px;
+    }
+    .hero-card h2 {
+      font-size: 1.45rem;
+      color: #0f172a;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .hero-card p {
+      color: #475569;
+      font-size: 0.95rem;
+    }
+
+    /* タイムライン */
+    .timeline {
+      position: relative;
+      margin: 30px 0;
+      padding-left: 30px;
+      border-left: 3px solid #cbd5e1;
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 35px;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -38px;
+      top: 4px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--primary);
+      border: 3px solid white;
+      box-shadow: 0 0 0 2px var(--primary);
+    }
+    .timeline-month {
+      display: inline-block;
+      font-weight: 800;
+      font-size: 0.95rem;
+      color: var(--primary);
+      background: var(--primary-light);
+      padding: 3px 10px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+    }
+    .timeline-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 6px;
+    }
+    .timeline-desc {
+      font-size: 0.9rem;
+      color: #334155;
+    }
+
+    /* Do / Don't グリッド */
+    .action-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+    }
+    .action-card {
+      border-radius: 14px;
+      padding: 24px;
+      border: 1px solid var(--border-color);
+    }
+    .action-card.do {
+      background: #f0fdf4;
+      border-color: #bbf7d0;
+    }
+    .action-card.do h3 {
+      color: var(--success);
+      font-size: 1.15rem;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .action-card.dont {
+      background: #fef2f2;
+      border-color: #fecaca;
+    }
+    .action-card.dont h3 {
+      color: var(--danger);
+      font-size: 1.15rem;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .action-list {
+      list-style: none;
+      font-size: 0.9rem;
+    }
+    .action-list li {
+      position: relative;
+      padding-left: 24px;
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+    .action-card.do .action-list li::before {
+      content: '✅';
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    .action-card.dont .action-list li::before {
+      content: '❌';
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    .action-list strong {
+      display: block;
+      color: #0f172a;
+      margin-bottom: 2px;
+    }
+
+    /* 参考リンク集 */
+    .links-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin-top: 15px;
+    }
+    .link-box {
+      background: white;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 16px 18px;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.2s;
+      display: block;
+    }
+    .link-box:hover {
+      border-color: var(--primary);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+      transform: translateY(-2px);
+    }
+    .link-title {
+      font-weight: 700;
+      color: var(--primary);
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .link-desc {
+      font-size: 0.82rem;
+      color: #64748b;
+      line-height: 1.45;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+    footer a { color: var(--primary); text-decoration: none; }
+
+    @media (max-width: 640px) {
+      header h1 { font-size: 1.5rem; }
+      .tab-button { padding: 8px 16px; font-size: 0.9rem; }
+      .hero-card { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div style="font-size:0.85rem; font-weight:700; opacity:0.9; margin-bottom:6px;">愛知県（名古屋・尾張地区）高校入試ロードマップ</div>
+    <h1>学年別 高校進学パーフェクトスケジュール</h1>
+    <p>中3・中2・中1・合格後に何をすべきか？やるべきこと・やってはいけないこと・必須参考リンクを網羅！</p>
+  </header>
+
+  <nav class="top-nav">
+    <a href="index.html">📊 内申点ランキングTOP</a>
+    <a href="schedule.html" class="active">📅 進学スケジュール・やるべきこと</a>
+  </nav>
+
+  <div class="container">
+
+    <!-- 広告枠① -->
+    <div class="ad-banner-wrapper">
+      <span class="ad-banner-label">スポンサーリンク</span>
+      <div class="ad-banner-box">
+        <p style="margin: 0; font-weight: 500;">📖 愛知県の高校入試対策・過去問演習・オンライン学習サポート</p>
+        <span style="font-size: 0.75rem; color: #94a3b8;">（広告コード貼り付けスペース①）</span>
+      </div>
+    </div>
+
+    <!-- 学年切り替えタブ -->
+    <div class="tabs-container">
+      <button class="tab-button active" onclick="switchTab('tab-ch3')">🔥 中学3年生向け</button>
+      <button class="tab-button" onclick="switchTab('tab-ch2')">🎯 中学2年生向け</button>
+      <button class="tab-button" onclick="switchTab('tab-ch1')">🌱 中学1年生向け</button>
+      <button class="tab-button" onclick="switchTab('tab-passed')">🌸 合格したら・入学準備</button>
+    </div>
+
+    <!-- ==================== 【中3向けタブ】 ==================== -->
+    <div class="tab-pane active" id="tab-ch3">
+      <div class="hero-card">
+        <h2>🔥 中学3年生：合否を分ける勝負の1年間ロードマップ</h2>
+        <p>愛知県公立高校入試は**「中3の2学期（または後期）の内申点」**が高校へ送られます。1学期で内申の底上げ、夏休みで1・2年の総復習、秋に私立・公立ダブル出願の決定、冬に本番対策と、時期ごとの役割が明確です。</p>
+      </div>
+
+      <div class="hero-card">
+        <h3 style="font-size:1.15rem; margin-bottom:15px; color:#1e3a8a;">📅 中3 年間スケジュール（愛知県公立・私立）</h3>
+        <div class="timeline">
+          <div class="timeline-item">
+            <span class="timeline-month">4月〜6月</span>
+            <div class="timeline-title">1学期中間・期末テスト＆志望校のイメージ固め</div>
+            <div class="timeline-desc">中3のスタートダッシュ。内申点「4」「5」を勝ち取るため、定期テストと提出物に全力。第1回・第2回の愛知全県模試などを受け、現状の偏差値と志望校との距離を測る。</div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-month">7月〜8月</span>
+            <div class="timeline-title">夏期講習・中1〜中2の弱点総克服＆体験入学</div>
+            <div class="timeline-desc">受験の天王山。中1・中2の抜け漏れ（特に数学の図形/関数、英語の文法長文）を完全制覇。高校の体験入学（オープンスクール）に参加して志望校を絞り込む。</div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-month">9月〜11月</span>
+            <div class="timeline-title">2学期中間・期末テスト（★最重要：内申点確定）＆文化祭見学</div>
+            <div class="timeline-desc"><strong>ここでの定期テスト結果が調査書（45点満点）になります。</strong>実技4教科も含めて1点も落とさない覚悟で臨む。高校の文化祭へ行ってモチベーションを最高潮に。</div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-month">12月〜1月</span>
+            <div class="timeline-title">三者面談・公立ダブル出願（第1・第2）と私立併願校の決定</div>
+            <div class="timeline-desc">確定した内申点をもとに、私立推薦・一般入試の出願校、公立の第1希望＋第2希望（1群A+1群B、または2群A+2群B）の組み合わせを決定。過去問演習を本格化。</div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-month">1月下旬〜2月上旬</span>
+            <div class="timeline-title">私立推薦入試＆私立一般入試</div>
+            <div class="timeline-desc">私立一般入試は3日間連続で受験可能（滑り止め〜実力相応校まで確保）。ここで合格を取ることで公立入試に強気で挑める。</div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-month">2月下旬</span>
+            <div class="timeline-title">愛知県公立高校 学力検査（本番）＆面接</div>
+            <div class="timeline-desc">各教科22点満点×5教科＝110点満点。上位校はⅤ型（当日点2倍＝計265点満点）。学力検査翌日などに面接・特別検査を実施。3月上旬に合格発表！</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="action-grid">
+        <div class="action-card do">
+          <h3>やるべきこと（合否を分ける好習慣）</h3>
+          <ul class="action-list">
+            <li><strong>愛知県の過去問（直近5年分以上）を時間を測って解く</strong>公立入試特有のマークシート形式や時間配分に慣れる。</li>
+            <li><strong>実技4教科（保体・音・美・技家）に本気を出す</strong>内申点は主要5教科も実技4教科も同じ1倍（各5点）。実技で5を取るのが最も効率的！</li>
+            <li><strong>模試（愛知全県模試等）で当日点の実力を毎月把握</strong>内申だけでなく本番当日の110点満点で何点取れるかを常に意識。</li>
+            <li><strong>入試当日の生活リズム（早起き・朝型）を整える</strong>本番は午前中から頭をフル回転させる必要があります。</li>
+          </ul>
+        </div>
+        <div class="action-card dont">
+          <h3>やってはいけないこと（落ちる人の共通点）</h3>
+          <ul class="action-list">
+            <li><strong>「中3の冬から本気出す」と先延ばしにする</strong>冬からでは中1〜3の全範囲土台を固める時間は絶対に足りません。</li>
+            <li><strong>解きっぱなし・模試の復習をしない</strong>間違えた問題の「なぜ間違えたか」の解き直しこそが最大の得点源です。</li>
+            <li><strong>深夜までの徹夜勉強で授業中に居眠りする</strong>学校の平常点・小テストを落として内申が下がる本末転倒パターン。</li>
+            <li><strong>併願パターンを安易に決める</strong>第1希望・第2希望ともに不合格になってしまうような無謀な組み合わせは避ける。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== 【中2向けタブ】 ==================== -->
+    <div class="tab-pane" id="tab-ch2">
+      <div class="hero-card">
+        <h2>🎯 中学2年生：最も差がつく「中だるみ防止＆土台完成」期</h2>
+        <p>部活動では中心になり、高校受験はまだ先に見える中2こそが、**実は合否の7割を決める最重要学年**です。公立入試の当日点のうち半分近くは中1〜中2の内容から出題されます。</p>
+      </div>
+
+      <div class="hero-card">
+        <h3 style="font-size:1.15rem; margin-bottom:15px; color:#1e3a8a;">📅 中2 スケジュール＆重要マイルストーン</h3>
+        <div class="timeline">
+          <div class="timeline-item">
+            <span class="timeline-month">4月〜7月</span>
+            <div class="timeline-title">中2内容の先手必勝＆提出物クオリティの向上</div>
+            <div class="timeline-desc">連立方程式、一次関数、英語の過去形・未来形など抽象的な内容が増加。定期テストで「80点以上」をキープできる勉強サイクルを確立する。</div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-month">8月（夏休み）</span>
+            <div class="timeline-title">中1〜中2前半の総復習＆高校のオープンスクール見学</div>
+            <div class="timeline-desc">中2から参加できる高校見学会が多数あります。実際に高校の敷地に行き、先輩たちの姿を見ることで勉強のやる気が一気に目覚めます。</div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-month">9月〜11月</span>
+            <div class="timeline-title">高校の文化祭へ行ってみる＆苦手単元の特定</div>
+            <div class="timeline-desc">旭丘の鯱光祭、東海の記念祭、向陽・菊里などの文化祭へ遊びに行ってみましょう。「ここに入りたい！」という情熱が一番の燃料になります。</div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-month">12月〜3月</span>
+            <div class="timeline-title">「中2の3学期＝中3の0学期」入試レベルの英語・数学完成</div>
+            <div class="timeline-desc">合同の証明、一次関数の応用、助動詞・不定詞・動名詞・比較・受動態。この冬〜春で中2内容を完璧にしておくと、中3で圧倒的なアドバンテージを得られます。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="action-grid">
+        <div class="action-card do">
+          <h3>やるべきこと（中2でやっておくと大勝利）</h3>
+          <ul class="action-list">
+            <li><strong>提出物（ワーク・レポート）を期限より2日前に丁寧に出す</strong>愛知の内申点判定において、提出物のA評価は必須。字の丁寧さや途中式も意識。</li>
+            <li><strong>英語と数学だけは絶対に苦手を作らない</strong>理科・社会は中3でも間に合いますが、英数の遅れは中3で取り戻すのが極めて困難です。</li>
+            <li><strong>中2のうちに最低2校以上の高校見学に行く</strong>目標校がある生徒とない生徒では、毎日の自学自習の集中力が全く違います。</li>
+            <li><strong>定期テスト2週間前から計画的にワークを1周終わらせる</strong>テスト直前にワークに追われる状態を卒業する。</li>
+          </ul>
+        </div>
+        <div class="action-card dont">
+          <h3>やってはいけないこと（中だるみNG集）</h3>
+          <ul class="action-list">
+            <li><strong>「まだ中2だから受験勉強は早い」と油断する</strong>中3の成績は中2の土台の上にしか乗りません。</li>
+            <li><strong>スマホやゲームで夜更かし・勉強の中断</strong>スマホを手元に置いた勉強は集中力を半減させます。別室に置くルールを。</li>
+            <li><strong>わからないところを放置する</strong>数学の証明や英語の文法など、疑問点はその日のうちに先生や質問で解決する。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== 【中1向けタブ】 ==================== -->
+    <div class="tab-pane" id="tab-ch1">
+      <div class="hero-card">
+        <h2>🌱 中学1年生：高校受験の勝敗は「最初の習慣」で決まる</h2>
+        <p>「小学校のときはテストで80〜90点取れていたのに、中学に入ったら点数が落ちた…」という人が急増するのが中1。定期テストの勉強法と「内申点がどう決まるか」のルールを知ることが最優先です。</p>
+      </div>
+
+      <div class="hero-card">
+        <h3 style="font-size:1.15rem; margin-bottom:15px; color:#1e3a8a;">📅 中1 スケジュール＆基本ステップ</h3>
+        <div class="timeline">
+          <div class="timeline-item">
+            <span class="timeline-month">4月〜6月</span>
+            <div class="timeline-title">中学校生活への適応＆最初の定期テスト（1学期中間）</div>
+            <div class="timeline-desc">最初の定期テストで学年順位の上位30%以内に食い込むことが最大の目標。「自分は勉強ができる」というセルフイメージを作ることが一生の武器になります。</div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-month">7月〜8月</span>
+            <div class="timeline-title">夏休みの課題を7月中に終わらせる習慣づくり</div>
+            <div class="timeline-desc">夏休みの宿題を8月31日に慌ててやる習慣がつくと高校入試で負けます。7月中に終わらせ、毎日30分〜1時間でも机に向かうルーティンを崩さない。</div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-month">9月〜11月</span>
+            <div class="timeline-title">正負の数・方程式・英語の三単現のsの壁を突破</div>
+            <div class="timeline-desc">算数から数学へ、英語の本格化。ここでつまずく人が急増します。計算ミスを減らし、英単語を毎日コツコツ覚える習慣を作る。</div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-month">12月〜3月</span>
+            <div class="timeline-title">学年末テスト＆中1全体の総復習</div>
+            <div class="timeline-desc">1年間の成績（通知表）が出ます。自分の得意・不得意を客観的に見つめ直し、春休みに総復習ドリルを一冊仕上げる。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="action-grid">
+        <div class="action-card do">
+          <h3>やるべきこと（中学生活でスタートダッシュ）</h3>
+          <ul class="action-list">
+            <li><strong>通知表で「オール3（内申27）」以上、できれば内申32以上を目指す</strong>中1から「4」をいくつか取っておくと、上位進学校を視野に入れやすくなります。</li>
+            <li><strong>授業中に積極的に挙手・発言し、先生の目を見て聞く</strong>「関心・意欲・態度」の観点評価は内申点に直結します。</li>
+            <li><strong>英単語を「声に出しながら書いて覚える」習慣をつける</strong>高校入試の英単語数は年々増加しています。日頃の小テストを大切に。</li>
+            <li><strong>部活動と勉強の両立リズム（帰宅後の1時間学習）を作る</strong>部活で疲れても「風呂→机に座る」を自動化する。</li>
+          </ul>
+        </div>
+        <div class="action-card dont">
+          <h3>やってはいけないこと</h3>
+          <ul class="action-list">
+            <li><strong>学校の提出物を期限遅れで出す・出さない</strong>これだけで評価は「C」になり、内申点「3」や「2」が確定してしまいます。</li>
+            <li><strong>小学校感覚で「テスト前日だけ勉強すればいい」と思う</strong>中学の定期テストは出題範囲が広く、前日詰め込みは通用しません。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== 【合格したらタブ】 ==================== -->
+    <div class="tab-pane" id="tab-passed">
+      <div class="hero-card">
+        <h2>🌸 合格おめでとう！高校入学前後にやっておくべきこと</h2>
+        <p>高校受験の合格はゴールではなく、**次の夢（大学進学・将来）への最高のスタート地点**です。愛知県の上位進学校・中堅進学校では、入学直後から猛スピードで授業が進みます。「合格後の春休み」の過ごし方で高校生活の順位が決まります！</p>
+      </div>
+
+      <div class="action-grid">
+        <div class="action-card do">
+          <h3>入学前・春休みに必ずやるべきこと</h3>
+          <ul class="action-list">
+            <li><strong>高校から出された「春休み課題」を速攻で終わらせる</strong>入学直後の「スタディサポート」や「実力テスト」は春休みの課題から出題されます。</li>
+            <li><strong>高校英語・高校数学（数Iの展開・因数分解）を先取り予習</strong>高校数学は中学の3倍のスピードで進みます。最初の単元をYouTubeや参考書で予習しておくと安心感が段違いです。</li>
+            <li><strong>英単語帳（ターゲット1900、システム英単語等）の最初の300語を覚える</strong>大学受験英語は単語量が命。中学英語から一気にレベルアップします。</li>
+            <li><strong>通学ルート・定期券の確認と朝のシミュレーション</strong>満員電車や自転車通学のルートを実際に朝の時間帯に通ってみる。</li>
+          </ul>
+        </div>
+        <div class="action-card dont">
+          <h3>高校入学後に後悔するNG行動</h3>
+          <ul class="action-list">
+            <li><strong>「受験終わった！」と春休み中ずっとゲーム・遊び倒す</strong>4月の最初のテストで最下位付近をとってしまい、自信を喪失する「深海魚」現象に注意！</li>
+            <li><strong>高校の授業スピードを甘く見る</strong>予習・復習なしで授業だけ聞いて理解できるのは一部の天才だけです。自学の習慣をキープ。</li>
+            <li><strong>部活動選びで雰囲気に流される</strong>自分の通学時間や勉強量、活動日数をよく考えて、無理なく続けられる部活を選びましょう。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 広告枠② -->
+    <div class="ad-banner-wrapper">
+      <span class="ad-banner-label">スポンサーリンク</span>
+      <div class="ad-banner-box">
+        <p style="margin: 0; font-weight: 500;">🎯 高校入学準備・大学受験に向けた通信教材＆オンライン予備校</p>
+        <span style="font-size: 0.75rem; color: #94a3b8;">（広告コード貼り付けスペース②）</span>
+      </div>
+    </div>
+
+    <!-- お役立ち参考サイトリンク集 -->
+    <div class="hero-card" style="margin-top: 30px;">
+      <h2 style="font-size: 1.3rem;">🔗 高校進学に超役立つ！公式・参考リンク集</h2>
+      <p>愛知県の受験生なら必ずブックマークしておきたい情報源です。</p>
+
+      <div class="links-grid">
+        <a href="https://www.pref.aichi.jp/site/kyoiku/" target="_blank" rel="noopener noreferrer" class="link-box">
+          <div class="link-title">愛知県教育委員会 ↗</div>
+          <div class="link-desc">愛知県公立高校入試の公式実施要項、日程、出願倍率、過去問の解答などが発表される公式ページ。</div>
+        </a>
+        <a href="https://www.pref.aichi.jp/soshiki/gakuji/" target="_blank" rel="noopener noreferrer" class="link-box">
+          <div class="link-title">愛知県 私学振興室 ↗</div>
+          <div class="link-desc">愛知県内の全私立高校の募集要項、推薦基準、学費軽減助成金（授業料無償化）の情報など。</div>
+        </a>
+        <a href="https://www.kenmoushi.net/" target="_blank" rel="noopener noreferrer" class="link-box">
+          <div class="link-title">愛知全県模試（公式） ↗</div>
+          <div class="link-desc">愛知県内最大の受験者数を誇る標準模試。内申点と当日点をもとに正確な公立・私立の合格判定が出ます。</div>
+        </a>
+        <a href="https://www.chunichi.co.jp/article/chuju" target="_blank" rel="noopener noreferrer" class="link-box">
+          <div class="link-title">中日新聞 高校入試速報 ↗</div>
+          <div class="link-desc">愛知県公立入試の当日倍率速報や、本番試験当日の問題・解答解説が最も早く掲載されます。</div>
+        </a>
+      </div>
+    </div>
+
+    <footer>
+      <p>© 尾張・名古屋地区 高校進学情報ガイド / 本サイトは中学生・保護者の進路選択を支援するポータルサイトです。</p>
+    </footer>
+  </div>
+
+  <script>
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
+
+      event.currentTarget.classList.add('active');
+      document.getElementById(tabId).classList.add('active');
+    }
+  </script>
+</body>
+</html>
