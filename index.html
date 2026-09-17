@@ -555,16 +555,72 @@
       float: right;
     }
 
+    .scroll-hint {
+      display: none;
+      font-size: 0.78rem;
+      color: var(--primary);
+      text-align: right;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
     @media (max-width: 850px) {
+      header {
+        padding: 25px 15px 20px;
+      }
       header h1 {
-        font-size: 1.5rem;
+        font-size: 1.45rem;
+      }
+      header p {
+        font-size: 0.85rem;
+      }
+      .badge-sub {
+        font-size: 0.75rem;
+        padding: 3px 12px;
+      }
+      .container {
+        padding: 0 12px;
       }
       .controls-panel {
+        padding: 16px;
+        margin-top: -15px;
         flex-direction: column;
         align-items: stretch;
+        gap: 12px;
+      }
+      .filter-group {
+        gap: 6px;
+      }
+      .filter-btn {
+        padding: 5px 10px;
+        font-size: 0.78rem;
       }
       .search-input {
         width: 100%;
+        min-width: unset;
+        font-size: 0.85rem;
+        padding: 8px 12px;
+      }
+      .scroll-hint {
+        display: block;
+      }
+      .table-container {
+        border-radius: 12px;
+        -webkit-overflow-scrolling: touch;
+      }
+      table {
+        min-width: 950px;
+      }
+      tbody td {
+        padding: 12px 10px;
+        font-size: 0.85rem;
+      }
+      .info-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+      .info-card {
+        padding: 18px;
       }
     }
   </style>
@@ -633,6 +689,7 @@
     </div>
 
     <!-- School Table -->
+    <div class="scroll-hint">👈 横にスクロールして詳細（部活・制服・イベント）を確認できます 👉</div>
     <div class="table-container">
       <table id="schoolTable">
         <thead>

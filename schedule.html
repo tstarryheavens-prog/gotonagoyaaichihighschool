@@ -337,9 +337,55 @@
     footer a { color: var(--primary); text-decoration: none; }
 
     @media (max-width: 640px) {
-      header h1 { font-size: 1.5rem; }
-      .tab-button { padding: 8px 16px; font-size: 0.9rem; }
-      .hero-card { padding: 20px; }
+      header {
+        padding: 24px 15px 18px;
+      }
+      header h1 { font-size: 1.4rem; }
+      header p { font-size: 0.82rem; }
+      .container { padding: 0 12px; }
+      .top-nav {
+        gap: 6px;
+        padding: 8px 10px;
+      }
+      .top-nav a {
+        font-size: 0.78rem;
+        padding: 5px 8px;
+      }
+      .tabs-container {
+        gap: 6px;
+        margin: 20px 0 15px;
+      }
+      .tab-button {
+        padding: 8px 12px;
+        font-size: 0.82rem;
+        border-radius: 8px;
+        flex: 1 1 45%;
+        justify-content: center;
+      }
+      .hero-card {
+        padding: 18px 15px;
+        border-radius: 12px;
+        margin-bottom: 20px;
+      }
+      .hero-card h2 { font-size: 1.15rem; }
+      .timeline {
+        padding-left: 20px;
+        margin: 20px 0;
+      }
+      .timeline-item::before {
+        left: -27px;
+        width: 12px;
+        height: 12px;
+      }
+      .timeline-title { font-size: 0.98rem; }
+      .timeline-desc { font-size: 0.85rem; }
+      .action-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+      .action-card { padding: 18px 15px; }
+      .action-card h3 { font-size: 1.05rem; }
+      .action-list { font-size: 0.85rem; }
     }
   </style>
 </head>
