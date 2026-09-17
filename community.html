@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>【愛知高校進学相談チャネル】知りたいこと・質問・情報交換広場（Teams風コミュニティ）</title>
+  <meta name="description" content="愛知県・名古屋地区の中学生と保護者のためのTeams風リアルタイム情報交換チャネル！『知りたいこと・質問』を気軽に投稿・返信できます。安心安全なコミュニティルール完備。">
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1988464307898443"
+     crossorigin="anonymous"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --primary-light: #eff6ff;
+      --teams-purple: #464eb8;
+      --teams-dark: #292b36;
+      --teams-gray: #f0f2f5;
+      --teams-card: #ffffff;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --border-color: #e2e8f0;
+      --accent: #f59e0b;
+      --success: #10b981;
+      --danger: #ef4444;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background-color: #f3f4f8;
+      color: var(--text-main);
+      line-height: 1.6;
+      padding-bottom: 70px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #464eb8 0%, #3b82f6 50%, #2563eb 100%);
+      color: white;
+      padding: 30px 20px 22px;
+      text-align: center;
+      box-shadow: 0 4px 18px rgba(70, 78, 184, 0.2);
+    }
+    header h1 {
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      font-size: 1.85rem;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+    header p {
+      font-size: 0.9rem;
+      opacity: 0.95;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .top-nav {
+      background: white;
+      border-bottom: 1px solid var(--border-color);
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      flex-wrap: wrap;
+    }
+    .top-nav a {
+      text-decoration: none;
+      color: var(--text-main);
+      font-weight: 600;
+      font-size: 0.82rem;
+      padding: 6px 10px;
+      border-radius: 8px;
+      transition: all 0.2s;
+    }
+    .top-nav a:hover, .top-nav a.active {
+      background: var(--primary-light);
+      color: var(--primary);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    /* 広告枠 */
+    .ad-banner-wrapper {
+      margin: 20px auto;
+      text-align: center;
+      max-width: 100%;
+    }
+    .ad-banner-label {
+      font-size: 0.72rem;
+      color: #94a3b8;
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
+      display: block;
+    }
+    .ad-banner-box {
+      background: #ffffff;
+      border: 1px dashed #cbd5e1;
+      border-radius: 12px;
+      min-height: 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      color: #64748b;
+      font-size: 0.85rem;
+    }
+
+    /* Teamsレイアウトのコンテナ */
+    .teams-layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 20px;
+      margin-top: 15px;
+      align-items: start;
+    }
+
+    /* 左サイドバー：チャネル一覧 */
+    .teams-sidebar {
+      background: white;
+      border-radius: 14px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+      padding: 16px 12px;
+      position: sticky;
+      top: 60px;
+    }
+    .sidebar-title {
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 6px 10px;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .channel-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 8px;
+      color: #334155;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      user-select: none;
+      margin-bottom: 4px;
+    }
+    .channel-item:hover {
+      background: #f1f5f9;
+      color: var(--teams-purple);
+    }
+    .channel-item.active {
+      background: #ebeeff;
+      color: var(--teams-purple);
+      font-weight: 700;
+    }
+    .channel-icon {
+      font-size: 1.1rem;
+    }
+
+    /* 右メインエリア：メッセージスレッド */
+    .teams-main {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    /* コミュニティルール通知バー */
+    .rules-card {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-radius: 12px;
+      padding: 14px 18px;
+      font-size: 0.85rem;
+      color: #92400e;
+      line-height: 1.5;
+    }
+    .rules-card strong {
+      color: #b45309;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 4px;
+    }
+
+    /* 投稿フォームカード（Teams風リッチエディタ） */
+    .post-box-card {
+      background: white;
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+      padding: 18px 20px;
+    }
+    .post-box-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--teams-purple);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .post-input-group {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+    .post-name-input, .post-role-select {
+      padding: 8px 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      outline: none;
+    }
+    .post-name-input { flex-grow: 1; min-width: 140px; }
+    .post-textarea {
+      width: 100%;
+      min-height: 85px;
+      padding: 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      color: #1e293b;
+      line-height: 1.55;
+      outline: none;
+      resize: vertical;
+      margin-bottom: 10px;
+      transition: border-color 0.2s;
+    }
+    .post-textarea:focus {
+      border-color: var(--teams-purple);
+    }
+    .post-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .btn-send {
+      background: var(--teams-purple);
+      color: white;
+      border: none;
+      padding: 9px 22px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-send:hover {
+      background: #3b42a0;
+      transform: translateY(-1px);
+    }
+
+    /* メッセージスレッドカード */
+    .thread-card {
+      background: white;
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+      padding: 18px 20px;
+    }
+    .thread-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    .avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--primary-light);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .avatar.parent { background: #fef3c7; color: #d97706; }
+    .avatar.student { background: #dbeafe; color: #2563eb; }
+    .avatar.admin { background: #f3e8ff; color: #7c3aed; }
+
+    .user-info {
+      display: flex;
+      flex-direction: column;
+    }
+    .user-name-line {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .user-name {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #0f172a;
+    }
+    .user-role-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 4px;
+    }
+    .badge-parent { background: #fef3c7; color: #92400e; }
+    .badge-student { background: #e0f2fe; color: #0369a1; }
+    .badge-admin { background: #f3e8ff; color: #6b21a8; }
+    .post-time {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .thread-body {
+      font-size: 0.92rem;
+      color: #334155;
+      line-height: 1.65;
+      margin-bottom: 12px;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .thread-actions {
+      display: flex;
+      gap: 12px;
+      border-top: 1px solid #f1f5f9;
+      padding-top: 10px;
+      font-size: 0.82rem;
+      color: #64748b;
+    }
+    .btn-action {
+      background: transparent;
+      border: none;
+      color: #64748b;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-weight: 600;
+      padding: 4px 8px;
+      border-radius: 6px;
+      transition: all 0.15s;
+    }
+    .btn-action:hover {
+      background: #f1f5f9;
+      color: var(--primary);
+    }
+    .btn-action.liked {
+      color: #e11d48;
+    }
+
+    /* 返信エリア */
+    .replies-container {
+      margin-top: 12px;
+      padding-left: 20px;
+      border-left: 2px solid #e2e8f0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .reply-item {
+      background: #f8fafc;
+      border-radius: 10px;
+      padding: 12px 14px;
+      font-size: 0.88rem;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+
+    @media (max-width: 768px) {
+      .teams-layout {
+        grid-template-columns: 1fr;
+      }
+      .teams-sidebar {
+        position: static;
+        overflow-x: auto;
+        display: flex;
+        gap: 6px;
+        padding: 10px;
+        white-space: nowrap;
+      }
+      .sidebar-title { display: none; }
+      .channel-item {
+        margin-bottom: 0;
+        padding: 8px 12px;
+        font-size: 0.82rem;
+      }
+      header h1 { font-size: 1.45rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div style="font-size:0.85rem; font-weight:700; opacity:0.9; margin-bottom:6px;">💬 リアルな疑問をみんなで解決！</div>
+    <h1>愛知高校進学相談・情報交換チャネル</h1>
+    <p>『この高校の内申のリアルは？』『みんな塾どうしてる？』生徒・保護者同士で気軽に質問・意見交換ができるTeams風コミュニティです。</p>
+  </header>
+
+  <nav class="top-nav">
+    <a href="index.html">📊 内申点ランキングTOP</a>
+    <a href="schedule.html">📅 学年別進学スケジュール</a>
+    <a href="test-study-guide.html">📝 普段のテスト対策</a>
+    <a href="ai-study-guide.html">🤖 最新AI勉強法</a>
+    <a href="ai-prompts.html">⚡️ 神プロンプト集</a>
+    <a href="community.html" class="active">💬 質問・相談チャネル</a>
+    <a href="techniques.html">💡 受験テクニック20選＆過去問</a>
+  </nav>
+
+  <div class="container">
+
+    <!-- 広告枠① -->
+    <div class="ad-banner-wrapper">
+      <span class="ad-banner-label">スポンサーリンク</span>
+      <div class="ad-banner-box">
+        <p style="margin: 0; font-weight: 500;">📖 愛知県の高校入試情報・志望校合格に向けたオンライン相談窓口</p>
+        <span style="font-size: 0.75rem; color: #94a3b8;">（広告コード貼り付けスペース①）</span>
+      </div>
+    </div>
+
+    <!-- Teams風レイアウト -->
+    <div class="teams-layout">
+
+      <!-- 左サイドバー（チャネル一覧） -->
+      <div class="teams-sidebar">
+        <div class="sidebar-title">📌 チャネル一覧</div>
+        <div class="channel-item active" onclick="switchChannel('general', this)">
+          <span class="channel-icon">📢</span> # 一般・知りたいこと
+        </div>
+        <div class="channel-item" onclick="switchChannel('public', this)">
+          <span class="channel-icon">🏛️</span> # 公立高校の疑問
+        </div>
+        <div class="channel-item" onclick="switchChannel('private', this)">
+          <span class="channel-icon">🏫</span> # 私立・併願校のリアル
+        </div>
+        <div class="channel-item" onclick="switchChannel('naishin', this)">
+          <span class="channel-icon">📝</span> # 内申点・定期テスト
+        </div>
+        <div class="channel-item" onclick="switchChannel('juku', this)">
+          <span class="channel-icon">🎒</span> # 塾・通信教育・AI学習
+        </div>
+      </div>
+
+      <!-- 右メインエリア（スレッド＆投稿） -->
+      <div class="teams-main">
+
+        <!-- コミュニティ利用ルール（安心・安全ガイドライン） -->
+        <div class="rules-card">
+          <strong>🛡️ 安心・安全なコミュニティのための利用ルール</strong>
+          ・特定の学校や個人に対する<strong>誹謗中傷、暴言、不快な投稿は厳禁</strong>です。<br>
+          ・荒らし行為や不適切な投稿が確認された場合、<strong>予告なく即座に削除・アクセス制限</strong>を行います。<br>
+          ・個人情報（本名・電話番号・LINE等の連絡先）は書き込まないようご注意ください。<br>
+          ・お互いを思いやり、受験生と親御さんが前向きになれる情報交換を心がけましょう！
+        </div>
+
+        <!-- 新規投稿フォーム -->
+        <div class="post-box-card">
+          <div class="post-box-title">
+            <span>✏️ 新しい投稿・質問をする（<span id="currentChannelName"># 一般・知りたいこと</span>）</span>
+          </div>
+          <div class="post-input-group">
+            <input type="text" id="authorName" class="post-name-input" placeholder="お名前・ニックネーム（例：中2パパ、受験生A）" maxlength="20">
+            <select id="authorRole" class="post-role-select">
+              <option value="parent">保護者（親）</option>
+              <option value="student">中学生（生徒）</option>
+              <option value="other">その他・卒業生</option>
+            </select>
+          </div>
+          <textarea id="postContent" class="post-textarea" placeholder="高校の校風、内申点の悩み、部活との両立など、知りたいことや皆に聞いてみたいことを書き込んでください..."></textarea>
+          <div class="post-footer">
+            <span style="font-size:0.75rem; color:#94a3b8;">※投稿はブラウザに保存され、即時反映されます。</span>
+            <button class="btn-send" onclick="submitPost()">🚀 メッセージを送信</button>
+          </div>
+        </div>
+
+        <!-- 広告枠②（スレッド一覧の直前） -->
+        <div class="ad-banner-wrapper" style="margin: 10px auto;">
+          <span class="ad-banner-label">スポンサーリンク</span>
+          <div class="ad-banner-box">
+            <p style="margin: 0; font-weight: 500;">🎯 高校受験・内申点UPのための個別進路カウンセリング</p>
+            <span style="font-size: 0.75rem; color: #94a3b8;">（広告コード貼り付けスペース②）</span>
+          </div>
+        </div>
+
+        <!-- メッセージスレッド一覧 -->
+        <div id="threadList" style="display: flex; flex-direction: column; gap: 14px;">
+          <!-- JSで動的レンダリング -->
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 広告枠③ -->
+    <div class="ad-banner-wrapper" style="margin-top: 30px;">
+      <span class="ad-banner-label">スポンサーリンク</span>
+      <div class="ad-banner-box">
+        <p style="margin: 0; font-weight: 500;">✏️ 中学生の学習習慣づくり・おすすめオンライン家庭教師</p>
+        <span style="font-size: 0.75rem; color: #94a3b8;">（広告コード貼り付けスペース③）</span>
+      </div>
+    </div>
+
+    <footer>
+      <p>© 尾張・名古屋地区 高校進学情報ガイド / 本サイトは中学生・保護者の進路選択を支援するポータルサイトです。</p>
+    </footer>
+  </div>
+
+  <script>
+    // 初期サンプル投稿データ
+    const defaultPosts = [
+      {
+        id: 1,
+        channel: "general",
+        author: "緑区・中2保護者",
+        role: "parent",
+        roleLabel: "保護者",
+        time: "今日 09:15",
+        content: "中2の娘がいますが、公立高校のオープンスクールって中2の秋から行っても浮かないでしょうか？\n先輩ママから『中3になると忙しくて見学どころじゃないから中2で行っとけ』と言われたのですが、実際に行かれた方いますか？",
+        likes: 12,
+        replies: [
+          {
+            author: "高1ママ（名東区）",
+            role: "parent",
+            roleLabel: "保護者",
+            time: "今日 10:04",
+            content: "こんにちは！我が家は中2の夏と秋に3校行きました！中2生もたくさん来ていて全く浮きませんよ。むしろ『この高校に行きたい！』と本人のやる気スイッチが入って定期テストの点数が上がったので、絶対おすすめです！"
+          }
+        ]
+      },
+      {
+        id: 2,
+        channel: "public",
+        author: "名東区・中3受験生",
+        role: "student",
+        roleLabel: "中学生",
+        time: "昨日 19:40",
+        content: "旭丘高校か向陽高校で迷っています。自由な校風が好きなんですが、向陽の国際科学科と旭丘の普通科だと、普段の勉強の忙しさや課題の量はどれくらい違いますか？在校生や詳しい方教えてほしいです！",
+        likes: 8,
+        replies: [
+          {
+            author: "昭和区パパ",
+            role: "parent",
+            roleLabel: "保護者",
+            time: "昨日 21:10",
+            content: "向陽の国際科学は実験や英語発表の課題がかなり本格的で充実しています。旭丘は基本的に自主性に任されているので自分で計画できる人向けです。どちらも素晴らしい高校なので、秋の文化祭（向陽祭・鯱光祭）の雰囲気を直接見て決めるのが一番ですよ！"
+          }
+        ]
+      },
+      {
+        id: 3,
+        channel: "naishin",
+        author: "天白区・中2母",
+        role: "parent",
+        roleLabel: "保護者",
+        time: "2日前",
+        content: "内申点についての質問です。愛知県の公立高校入試で使われる内申点は本当に『中3の2学期（または後期）』だけなんでしょうか？中2の今の内申は入試当日の点数計算には一切含まれないのですか？",
+        likes: 19,
+        replies: [
+          {
+            author: "進路アドバイザー",
+            role: "admin",
+            roleLabel: "管理者",
+            time: "2日前",
+            content: "ご質問ありがとうございます！はい、愛知県の調査書（内申書）に記載され合否判定に使われるのは【中3の2学期（または後期）の内申点（45点満点）】のみです。中1・中2の内申点そのものは計算されません。ただし、中2の内容が中3の通知表の土台になるため、今から定期テストの学習習慣をつけておくことが何より重要です。"
+          }
+        ]
+      },
+      {
+        id: 4,
+        channel: "private",
+        author: "千種区・受験生ママ",
+        role: "parent",
+        roleLabel: "保護者",
+        time: "3日前",
+        content: "公立上位（菊里・千種あたり）の滑り止め私立として、愛知高校と名城大附属で迷っています。通学のしやすさや大学進学サポートの面で、それぞれの特色を教えていただきたいです。",
+        likes: 15,
+        replies: []
+      },
+      {
+        id: 5,
+        channel: "juku",
+        author: "中1サッカー少年",
+        role: "student",
+        roleLabel: "中学生",
+        time: "3日前",
+        content: "部活が週5日あって塾に行く時間がありません。スマホのAI（ChatGPTとか）を使って勉強してる人っていますか？どんな使い方してますか？",
+        likes: 11,
+        replies: [
+          {
+            author: "高2先輩",
+            role: "student",
+            roleLabel: "先輩",
+            time: "3日前",
+            content: "めっちゃ使ってるよ！ワークの解説読んでも分からない時に『サルでもわかるように教えて』って打つと超わかりやすく教えてくれる。このサイトの『神プロンプト集』の数学の途中式解説プロンプト、そのまま使えるから見てみて！"
+          }
+        ]
+      }
+    ];
+
+    let currentChannel = 'general';
+    let posts = JSON.parse(localStorage.getItem('aichi_community_posts')) || defaultPosts;
+
+    const channelNames = {
+      general: '# 一般・知りたいこと',
+      public: '# 公立高校の疑問',
+      private: '# 私立・併願校のリアル',
+      naishin: '# 内申点・定期テスト',
+      juku: '# 塾・通信教育・AI学習'
+    };
+
+    function switchChannel(channelKey, el) {
+      currentChannel = channelKey;
+      document.querySelectorAll('.channel-item').forEach(c => c.classList.remove('active'));
+      el.classList.add('active');
+      document.getElementById('currentChannelName').innerText = channelNames[channelKey];
+      renderThreads();
+    }
+
+    function renderThreads() {
+      const listEl = document.getElementById('threadList');
+      listEl.innerHTML = '';
+
+      const filtered = posts.filter(p => p.channel === currentChannel);
+
+      if (filtered.length === 0) {
+        listEl.innerHTML = `
+          <div style="background:white; border-radius:14px; padding:35px; text-align:center; color:#64748b; border:1px solid var(--border-color);">
+            💬 まだこのチャネルには投稿がありません。<br>あなたが最初の質問・知りたいことを投稿してみましょう！
+          </div>`;
+        return;
+      }
+
+      filtered.forEach(post => {
+        const thread = document.createElement('div');
+        thread.className = 'thread-card';
+
+        let avatarRoleClass = post.role === 'parent' ? 'parent' : (post.role === 'admin' ? 'admin' : 'student');
+        let avatarIcon = post.role === 'parent' ? '親' : (post.role === 'admin' ? '管' : '学');
+        let badgeClass = post.role === 'parent' ? 'badge-parent' : (post.role === 'admin' ? 'badge-admin' : 'badge-student');
+
+        let repliesHtml = '';
+        if (post.replies && post.replies.length > 0) {
+          repliesHtml = `
+            <div class="replies-container">
+              ${post.replies.map(r => `
+                <div class="reply-item">
+                  <div style="display:flex; align-items:center; gap:6px; margin-bottom:4px;">
+                    <strong style="color:#0f172a; font-size:0.85rem;">${r.author}</strong>
+                    <span class="user-role-badge ${r.role === 'parent' ? 'badge-parent' : (r.role === 'admin' ? 'badge-admin' : 'badge-student')}">${r.roleLabel}</span>
+                    <span style="font-size:0.72rem; color:#94a3b8;">${r.time}</span>
+                  </div>
+                  <div style="color:#334155; line-height:1.5;">${r.content}</div>
+                </div>
+              `).join('')}
+            </div>
+          `;
+        }
+
+        thread.innerHTML = `
+          <div class="thread-header">
+            <div class="avatar ${avatarRoleClass}">${avatarIcon}</div>
+            <div class="user-info">
+              <div class="user-name-line">
+                <span class="user-name">${post.author}</span>
+                <span class="user-role-badge ${badgeClass}">${post.roleLabel}</span>
+              </div>
+              <span class="post-time">${post.time}</span>
+            </div>
+          </div>
+          <div class="thread-body">${post.content}</div>
+          <div class="thread-actions">
+            <button class="btn-action" onclick="likePost(${post.id}, this)">
+              ❤️ 役立った (${post.likes || 0})
+            </button>
+            <button class="btn-action" onclick="toggleReplyInput(${post.id})">
+              💬 返信する (${post.replies ? post.replies.length : 0})
+            </button>
+          </div>
+          ${repliesHtml}
+          <div id="replyBox-${post.id}" style="display:none; margin-top:12px; padding-top:10px; border-top:1px dashed #e2e8f0;">
+            <div style="display:flex; gap:8px; margin-bottom:6px;">
+              <input type="text" id="replyAuthor-${post.id}" placeholder="お名前" style="padding:6px 10px; font-size:0.82rem; border:1px solid #cbd5e1; border-radius:6px; width:130px;">
+              <select id="replyRole-${post.id}" style="padding:6px 10px; font-size:0.82rem; border:1px solid #cbd5e1; border-radius:6px;">
+                <option value="parent">保護者</option>
+                <option value="student">中学生</option>
+              </select>
+            </div>
+            <textarea id="replyContent-${post.id}" placeholder="返信・アドバイスを入力..." style="width:100%; height:60px; padding:8px; font-size:0.85rem; border:1px solid #cbd5e1; border-radius:6px; outline:none; resize:vertical;"></textarea>
+            <button onclick="submitReply(${post.id})" style="background:var(--teams-purple); color:white; border:none; padding:6px 14px; border-radius:6px; font-size:0.82rem; font-weight:700; cursor:pointer; margin-top:4px;">返信を送信</button>
+          </div>
+        `;
+
+        listEl.appendChild(thread);
+      });
+    }
+
+    function submitPost() {
+      const authorInput = document.getElementById('authorName').value.trim();
+      const roleSelect = document.getElementById('authorRole');
+      const contentInput = document.getElementById('postContent').value.trim();
+
+      if (!contentInput) {
+        alert('メッセージを入力してください。');
+        return;
+      }
+
+      // NGワード簡易チェック
+      const ngWords = ['死ね', 'バカ', 'アホ', 'ゴミ', '消えろ', '殺す'];
+      for (let word of ngWords) {
+        if (contentInput.includes(word)) {
+          alert('誹謗中傷や不適切な表現が含まれているため投稿できません。ルールを守ってご利用ください。');
+          return;
+        }
+      }
+
+      const authorName = authorInput || (roleSelect.value === 'parent' ? '匿名の保護者' : '匿名の中学生');
+      const roleLabel = roleSelect.options[roleSelect.selectedIndex].text;
+
+      const newPost = {
+        id: Date.now(),
+        channel: currentChannel,
+        author: authorName,
+        role: roleSelect.value,
+        roleLabel: roleLabel,
+        time: 'たった今',
+        content: contentInput,
+        likes: 0,
+        replies: []
+      };
+
+      posts.unshift(newPost);
+      localStorage.setItem('aichi_community_posts', JSON.stringify(posts));
+
+      document.getElementById('postContent').value = '';
+      renderThreads();
+    }
+
+    function toggleReplyInput(postId) {
+      const box = document.getElementById(`replyBox-${postId}`);
+      box.style.display = box.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function submitReply(postId) {
+      const author = document.getElementById(`replyAuthor-${postId}`).value.trim() || '匿名の回答者';
+      const roleSelect = document.getElementById(`replyRole-${postId}`);
+      const content = document.getElementById(`replyContent-${postId}`).value.trim();
+
+      if (!content) {
+        alert('返信内容を入力してください。');
+        return;
+      }
+
+      const targetPost = posts.find(p => p.id === postId);
+      if (targetPost) {
+        if (!targetPost.replies) targetPost.replies = [];
+        targetPost.replies.push({
+          author: author,
+          role: roleSelect.value,
+          roleLabel: roleSelect.options[roleSelect.selectedIndex].text,
+          time: 'たった今',
+          content: content
+        });
+
+        localStorage.setItem('aichi_community_posts', JSON.stringify(posts));
+        renderThreads();
+      }
+    }
+
+    function likePost(postId, btn) {
+      const targetPost = posts.find(p => p.id === postId);
+      if (targetPost) {
+        targetPost.likes = (targetPost.likes || 0) + 1;
+        btn.classList.add('liked');
+        btn.innerText = `❤️ 役立った (${targetPost.likes})`;
+        localStorage.setItem('aichi_community_posts', JSON.stringify(posts));
+      }
+    }
+
+    // 初期レンダリング
+    renderThreads();
+  </script>
+</body>
+</html>
