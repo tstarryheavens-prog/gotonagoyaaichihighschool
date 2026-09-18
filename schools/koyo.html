@@ -271,6 +271,103 @@
       transform: translateY(-2px);
     }
 
+    /* SNS・動画紹介セクション */
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 16px;
+      margin-top: 15px;
+    }
+    .media-card {
+      background: white;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      position: relative;
+    }
+    .media-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+    }
+    .media-card.video-card {
+      border-left: 4px solid #ef4444;
+      background: linear-gradient(135deg, #ffffff 0%, #fffbfb 100%);
+    }
+    .media-card.official-card {
+      border-left: 4px solid #2563eb;
+      background: linear-gradient(135deg, #ffffff 0%, #f8faff 100%);
+    }
+    .media-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    .media-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+    .media-badge.video {
+      background: #fee2e2;
+      color: #b91c1c;
+    }
+    .media-badge.official {
+      background: #dbeafe;
+      color: #1d4ed8;
+    }
+    .media-platform {
+      font-size: 0.75rem;
+      color: #64748b;
+      font-weight: 600;
+    }
+    .media-title {
+      font-size: 0.96rem;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.45;
+      margin-bottom: 8px;
+    }
+    .media-desc {
+      font-size: 0.83rem;
+      color: #475569;
+      line-height: 1.5;
+      margin-bottom: 12px;
+      flex-grow: 1;
+    }
+    .media-link-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .media-link-btn.youtube {
+      background: #ef4444;
+      color: white;
+    }
+    .media-link-btn.youtube:hover {
+      background: #dc2626;
+    }
+    .media-link-btn.official-btn {
+      background: #2563eb;
+      color: white;
+    }
+    .media-link-btn.official-btn:hover {
+      background: #1d4ed8;
+    }
+
     footer {
       text-align: center;
       margin-top: 50px;
@@ -450,6 +547,88 @@
         <div class="annual-card">
           <div class="annual-season">冬（12月〜3月）</div>
           <div class="annual-events">2学期期末考査、冬期講習、共通テスト激励会（3年生）、予餞会（3年生を送る会）、卒業式</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SNS・厳選動画紹介セクション -->
+    <div class="section-card">
+      <h2>🎬 向陽高等学校のリアルがわかる！公式SNS＆厳選動画リンク</h2>
+      <p style="font-size:0.9rem; color:#64748b; margin-bottom:12px;">学校公式の発信から、地元塾講師による合格ボーダー・本音解説、生徒のスクールライフ密着動画まで、志望校選びに本当に役立つコンテンツを厳選掲載しています。</p>
+      
+      <!-- 本音・塾・学校生活解説動画 -->
+      <h3 style="font-size:1.05rem; color:#0f172a; margin: 18px 0 8px; display:flex; align-items:center; gap:6px;">
+        <span style="color:#ef4444;">▶</span> 受験生必見！本音の学校紹介＆合格分析動画
+      </h3>
+      <div class="media-grid">
+        
+        <div class="media-card video-card">
+          <div>
+            <div class="media-header">
+              <span class="media-badge video">本音分析</span>
+              <span class="media-platform">井ノ塾 名古屋の塾講師チャンネル</span>
+            </div>
+            <div class="media-title">【向陽高校】人気沸騰！国際科学科と普通科の違い・合格ボーダーと校風の良さ</div>
+            <div class="media-desc">💡 明和や菊里との併願選択、理数系探究の圧倒的な面白さ、穏やかで知的な生徒たち</div>
+          </div>
+          <div>
+            <a href="https://www.youtube.com/results?search_query=%E4%BA%95%E3%83%8E%E5%A1%BE+%E5%90%91%E9%99%BD%E9%AB%98%E6%A0%A1" target="_blank" rel="noopener noreferrer" class="media-link-btn youtube">
+              <span>▶</span> YouTubeで動画を見る ↗
+            </a>
+          </div>
+        </div>
+        
+        <div class="media-card video-card">
+          <div>
+            <div class="media-header">
+              <span class="media-badge video">生徒の本音</span>
+              <span class="media-platform">愛知高校生インタビュー</span>
+            </div>
+            <div class="media-title">向陽高校のリアルなスクールライフ！文武両道＆生徒主体の自由な文化祭</div>
+            <div class="media-desc">💡 部活動も勉強も本気。名大や難関大へ多数進学する生徒たちの充実した1日</div>
+          </div>
+          <div>
+            <a href="https://www.youtube.com/results?search_query=%E5%90%91%E9%99%BD%E9%AB%98%E6%A0%A1+%E5%AD%A6%E6%A0%A1%E7%94%9F%E6%B4%BB+%E5%90%91%E9%99%BD%E7%A5%AD" target="_blank" rel="noopener noreferrer" class="media-link-btn youtube">
+              <span>▶</span> YouTubeで動画を見る ↗
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 公式SNS・公式動画 -->
+      <h3 style="font-size:1.05rem; color:#0f172a; margin: 24px 0 8px; display:flex; align-items:center; gap:6px;">
+        <span style="color:#2563eb;">🌐</span> 公式情報・学校プロモーション
+      </h3>
+      <div class="media-grid">
+        
+        <div class="media-card official-card">
+          <div>
+            <div class="media-header">
+              <span class="media-badge official">Web</span>
+            </div>
+            <div class="media-title">愛知県立向陽高等学校 公式サイト</div>
+            <div class="media-desc">普通科・国際科学科、SSH（スーパーサイエンスハイスクール）研究活動</div>
+          </div>
+          <div>
+            <a href="https://koyo-h.aichi-c.ed.jp/" target="_blank" rel="noopener noreferrer" class="media-link-btn official-btn">
+              <span>🔗</span> リンクを開く ↗
+            </a>
+          </div>
+        </div>
+        
+        <div class="media-card official-card">
+          <div>
+            <div class="media-header">
+              <span class="media-badge official">YouTube公式</span>
+            </div>
+            <div class="media-title">KOYO HIGH SCHOOL 向陽高等学校 公式YouTube</div>
+            <div class="media-desc">国際科学科の探究発表、学校行事ダイジェスト、校舎紹介</div>
+          </div>
+          <div>
+            <a href="https://www.youtube.com/results?search_query=%E5%90%91%E9%99%BD%E9%AB%98%E7%AD%89%E5%AD%A6%E6%A0%A1+%E5%85%AC%E5%BC%8F+YouTube" target="_blank" rel="noopener noreferrer" class="media-link-btn official-btn">
+              <span>🔗</span> リンクを開く ↗
+            </a>
+          </div>
         </div>
       </div>
     </div>

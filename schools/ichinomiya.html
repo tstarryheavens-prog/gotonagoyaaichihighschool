@@ -271,6 +271,103 @@
       transform: translateY(-2px);
     }
 
+    /* SNS・動画紹介セクション */
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 16px;
+      margin-top: 15px;
+    }
+    .media-card {
+      background: white;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      position: relative;
+    }
+    .media-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+    }
+    .media-card.video-card {
+      border-left: 4px solid #ef4444;
+      background: linear-gradient(135deg, #ffffff 0%, #fffbfb 100%);
+    }
+    .media-card.official-card {
+      border-left: 4px solid #2563eb;
+      background: linear-gradient(135deg, #ffffff 0%, #f8faff 100%);
+    }
+    .media-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    .media-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+    .media-badge.video {
+      background: #fee2e2;
+      color: #b91c1c;
+    }
+    .media-badge.official {
+      background: #dbeafe;
+      color: #1d4ed8;
+    }
+    .media-platform {
+      font-size: 0.75rem;
+      color: #64748b;
+      font-weight: 600;
+    }
+    .media-title {
+      font-size: 0.96rem;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.45;
+      margin-bottom: 8px;
+    }
+    .media-desc {
+      font-size: 0.83rem;
+      color: #475569;
+      line-height: 1.5;
+      margin-bottom: 12px;
+      flex-grow: 1;
+    }
+    .media-link-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .media-link-btn.youtube {
+      background: #ef4444;
+      color: white;
+    }
+    .media-link-btn.youtube:hover {
+      background: #dc2626;
+    }
+    .media-link-btn.official-btn {
+      background: #2563eb;
+      color: white;
+    }
+    .media-link-btn.official-btn:hover {
+      background: #1d4ed8;
+    }
+
     footer {
       text-align: center;
       margin-top: 50px;
@@ -450,6 +547,73 @@
         <div class="annual-card">
           <div class="annual-season">冬（12月〜3月）</div>
           <div class="annual-events">2学期期末考査、冬期講習、共通テスト激励会（3年生）、予餞会（3年生を送る会）、卒業式</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SNS・厳選動画紹介セクション -->
+    <div class="section-card">
+      <h2>🎬 一宮高等学校のリアルがわかる！公式SNS＆厳選動画リンク</h2>
+      <p style="font-size:0.9rem; color:#64748b; margin-bottom:12px;">学校公式の発信から、地元塾講師による合格ボーダー・本音解説、生徒のスクールライフ密着動画まで、志望校選びに本当に役立つコンテンツを厳選掲載しています。</p>
+      
+      <!-- 本音・塾・学校生活解説動画 -->
+      <h3 style="font-size:1.05rem; color:#0f172a; margin: 18px 0 8px; display:flex; align-items:center; gap:6px;">
+        <span style="color:#ef4444;">▶</span> 受験生必見！本音の学校紹介＆合格分析動画
+      </h3>
+      <div class="media-grid">
+        
+        <div class="media-card video-card">
+          <div>
+            <div class="media-header">
+              <span class="media-badge video">本音分析</span>
+              <span class="media-platform">井ノ塾 名古屋の塾講師チャンネル</span>
+            </div>
+            <div class="media-title">【一宮高校】尾張地区No.1の進学校！名大合格者数全国トップの強さの秘密</div>
+            <div class="media-desc">💡 ヤリ高（槍高）の徹底した補習・自習環境、真面目で熱い生徒たちのリアル</div>
+          </div>
+          <div>
+            <a href="https://www.youtube.com/results?search_query=%E4%BA%95%E3%83%8E%E5%A1%BE+%E4%B8%80%E5%AE%AE%E9%AB%98%E6%A0%A1" target="_blank" rel="noopener noreferrer" class="media-link-btn youtube">
+              <span>▶</span> YouTubeで動画を見る ↗
+            </a>
+          </div>
+        </div>
+        
+        <div class="media-card video-card">
+          <div>
+            <div class="media-header">
+              <span class="media-badge video">学校生活</span>
+              <span class="media-platform">愛知進学ナビ</span>
+            </div>
+            <div class="media-title">一宮高校の槍高祭と部活動！勉強だけじゃない文武両道のスクールライフ</div>
+            <div class="media-desc">💡 部活加入率の高さ、ファッション創造科の本格ファッションショー、伝統の行事</div>
+          </div>
+          <div>
+            <a href="https://www.youtube.com/results?search_query=%E4%B8%80%E5%AE%AE%E9%AB%98%E6%A0%A1+%E6%A7%8D%E9%AB%98%E7%A5%AD+%E5%AD%A6%E6%A0%A1%E7%94%9F%E6%B4%BB" target="_blank" rel="noopener noreferrer" class="media-link-btn youtube">
+              <span>▶</span> YouTubeで動画を見る ↗
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 公式SNS・公式動画 -->
+      <h3 style="font-size:1.05rem; color:#0f172a; margin: 24px 0 8px; display:flex; align-items:center; gap:6px;">
+        <span style="color:#2563eb;">🌐</span> 公式情報・学校プロモーション
+      </h3>
+      <div class="media-grid">
+        
+        <div class="media-card official-card">
+          <div>
+            <div class="media-header">
+              <span class="media-badge official">Web</span>
+            </div>
+            <div class="media-title">愛知県立一宮高等学校 公式サイト</div>
+            <div class="media-desc">普通科・ファッション創造科、進路情報、行事予定</div>
+          </div>
+          <div>
+            <a href="https://ichinomiya-h.aichi-c.ed.jp/" target="_blank" rel="noopener noreferrer" class="media-link-btn official-btn">
+              <span>🔗</span> リンクを開く ↗
+            </a>
+          </div>
         </div>
       </div>
     </div>
