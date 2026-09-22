@@ -382,18 +382,40 @@
       .section-card { padding: 18px 15px; }
       .daily-row { flex-direction: column; gap: 4px; }
       .daily-time { min-width: auto; }
+    .header-logo-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+    .header-logo-img {
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+      background: white;
+      border: 2px solid rgba(255,255,255,0.8);
     }
   </style>
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="apple-touch-icon" href="../logo.png">
 </head>
 <body>
 
   <header>
-    <div class="badge-bar">
-      <span class="badge">ランク A+</span>
-      <span class="badge">公立</span>
-      <span class="badge">尾張2群 Aグループ</span>
+    <div class="header-logo-wrap">
+      <a href="../index.html"><img src="../logo.png" alt="尾張・名古屋高校進学ナビ公式マスコット シャチホコフクロウ" class="header-logo-img"></a>
+      <div>
+        <div class="badge-bar" style="margin-bottom:6px;">
+          <span class="badge">ランク A+</span>
+          <span class="badge">公立</span>
+          <span class="badge">尾張2群 Aグループ</span>
+        </div>
+        <h1>瑞陵高等学校</h1>
+      </div>
     </div>
-    <h1>瑞陵高等学校</h1>
     <p>瑞陵高等学校で過ごす最高の高校生活！仲間と高め合い、一生の夢をつかむ3年間</p>
   </header>
 
