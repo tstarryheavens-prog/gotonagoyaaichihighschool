@@ -585,7 +585,11 @@ updatedSchoolsData.forEach((school) => {
       <p style="font-size:0.9rem; color:#475569;">👗 制服詳細：${school.uniformDetail}</p>
     </div>
 
-    ${school.score >= 33 && school.score <= 38 ? `
+    ${(() => {
+      const s = school.score;
+      const is35Range = (s.includes("33") || s.includes("34") || s.includes("35") || s.includes("36") || s.includes("37") || s.includes("38")) && !s.includes("43") && !s.includes("42") && !s.includes("45");
+      if (!is35Range) return '';
+      return `
     <!-- 激戦区！内申点35周辺フォーカス特別解説 -->
     <div class="section-card" style="border: 2px solid #f59e0b; background: linear-gradient(180deg, #fffbeb 0%, #ffffff 100%);">
       <h2 style="color: #b45309; border-bottom: 2px solid #fef3c7;">
@@ -602,7 +606,7 @@ updatedSchoolsData.forEach((school) => {
             <div style="font-weight: 800; color: #b45309; margin-bottom: 4px;">🎯 当日点の目標目安</div>
             <div style="font-size: 0.88rem; color: #475569;">
               ${school.type === 'public' ? 
-                `公立一般入試（110点満点）では、<strong>当日点${school.score >= 36 ? '82〜88点' : '76〜82点'}</strong>の確保が安全圏ライン。内申35を持っていると公立当日点計算（主にマークシート・校内順位決定）で大きなアドバンテージになります。` :
+                `公立一般入試（110点満点）では、<strong>当日点${school.score.includes('37') || school.score.includes('38') || school.score.includes('39') ? '82〜88点' : '76〜82点'}</strong>の確保が安全圏ライン。内申35を持っていると公立当日点計算（主にマークシート・校内順位決定）で大きなアドバンテージになります。` :
                 `私立一般入試では基礎〜標準問題の取りこぼしが命取り。<strong>正答率70〜75%以上</strong>を目標に、過去問で私立特有の出題傾向を掴んでおきましょう。`
               }
             </div>
@@ -611,7 +615,7 @@ updatedSchoolsData.forEach((school) => {
             <div style="font-weight: 800; color: #1d4ed8; margin-bottom: 4px;">🤝 おすすめの併願・組み合わせ</div>
             <div style="font-size: 0.88rem; color: #475569;">
               ${school.type === 'public' ?
-                `私立併願は<strong>名城大学附属・中京大中京・愛工大名電・椙山・東邦</strong>が鉄板。公立W出願では『${school.score >= 36 ? '挑戦校（名東・昭和・桜台等）と手堅い第2志望（松蔭・名古屋南・天白等）' : '第1志望本命と安全圏（熱田・日進西等）'}』を組み合わせると盤石です。` :
+                `私立併願は<strong>名城大学附属・中京大中京・愛工大名電・椙山・東邦</strong>が鉄板。公立W出願では『${school.score.includes('37') || school.score.includes('38') ? '挑戦校（名東・昭和・桜台等）と手堅い第2志望（松蔭・名古屋南・天白等）' : '第1志望本命と安全圏（熱田・日進西等）'}』を組み合わせると盤石です。` :
                 `公立との併願では<strong>昭和・松蔭・名東・名古屋南・天白</strong>を受験する生徒が多く併願します。私立単願・推薦を狙う場合は中学校での内申相談（12月）で35以上を維持できているかが重要です。`
               }
             </div>
@@ -623,7 +627,8 @@ updatedSchoolsData.forEach((school) => {
         </div>
       </div>
     </div>
-    ` : ''}
+    `;
+    })()}
 
     <!-- ここが魅力！学校生活と特色 -->
     <div class="section-card">

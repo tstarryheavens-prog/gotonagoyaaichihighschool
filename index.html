@@ -766,40 +766,35 @@
       </div>
     </div>
 
-    <!-- ★ 内申点35徹底フォーカス・特設ガイドカード -->
-    <div style="background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 50%, #fff7ed 100%); border: 2px solid #f59e0b; border-radius: 16px; padding: 22px 24px; margin-bottom: 25px; box-shadow: 0 4px 20px rgba(217, 119, 6, 0.12);">
-      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-bottom: 12px; border-bottom: 1px dashed #fcd34d; padding-bottom: 10px;">
-        <div style="display: flex; align-items: center; gap: 10px;">
-          <span style="font-size: 1.8rem; line-height: 1;">🎯</span>
+    <!-- ★ 【私の内申点・偏差値で目指すべきはここだ！】内申点別シミュレーター＆合格ロードマップ -->
+    <div style="background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 40%, #ffffff 100%); border: 2px solid #f59e0b; border-radius: 16px; padding: 24px; margin-bottom: 25px; box-shadow: 0 4px 20px rgba(217, 119, 6, 0.12);">
+      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; margin-bottom: 16px; border-bottom: 2px dashed #fcd34d; padding-bottom: 14px;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <span style="font-size: 2.2rem; line-height: 1;">🎯</span>
           <div>
-            <span style="background: #d97706; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 8px; border-radius: 4px;">愛知高校受験・最大の激戦区</span>
-            <h3 style="font-size: 1.2rem; color: #92400e; margin: 2px 0 0; font-weight: 800;">【内申点35周辺】合格ロードマップ＆公立・私立併願シミュレーション</h3>
+            <span style="background: #d97706; color: white; font-size: 0.74rem; font-weight: 800; padding: 3px 10px; border-radius: 4px; letter-spacing: 0.05em;">内申点連動・併願診断ナビ</span>
+            <h3 style="font-size: 1.25rem; color: #92400e; margin: 3px 0 0; font-weight: 800;">私の内申点・偏差値で目指すべきはここだ！【公立W出願＆私立併願マップ】</h3>
           </div>
         </div>
-        <button onclick="filterScore35Direct()" style="background: #d97706; color: white; border: none; padding: 8px 16px; border-radius: 8px; font-weight: 700; font-size: 0.84rem; cursor: pointer; display: flex; align-items: center; gap: 6px; box-shadow: 0 2px 6px rgba(217,119,6,0.3);">
-          <span>🔍</span> 内申35前後の高校だけを表示する
-        </button>
+        <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+          <label for="naishinSelect" style="font-size: 0.92rem; font-weight: 800; color: #78350f;">▼ あなたの内申点を選択：</label>
+          <select id="naishinSelect" onchange="onNaishinChange(this.value)" style="padding: 9px 16px; font-size: 1rem; font-weight: 800; color: #92400e; background: #ffffff; border: 2px solid #f59e0b; border-radius: 10px; cursor: pointer; outline: none; box-shadow: 0 2px 6px rgba(217,119,6,0.15);">
+            <option value="43">内申 43〜45（超トップ・旭丘/明和/東海/滝/一宮）</option>
+            <option value="40">内申 40〜42（上位進学校・向陽/菊里/瑞陵/千種/愛知/名高）</option>
+            <option value="37">内申 37〜39（難関挑戦・桜台/名東/一宮西/横須賀）</option>
+            <option value="35" selected>🎯 内申 35〜36（最激戦・昭和/松蔭/名南/名城/中京/名電/椙山）</option>
+            <option value="33">内申 33〜34（文武両道・天白/熱田/東邦/高蔵）</option>
+            <option value="30">内申 29〜32（中堅堅実・日進西/長久手/大同/至学館）</option>
+            <option value="26">内申 25〜28（基礎定着・鳴海/山田/市邨/同朋）</option>
+            <option value="22">内申 21〜24（実務・サポート・緑/享栄/大谷/菊華）</option>
+            <option value="18">内申 20以下（再スタート・守山/春日井泉/東邦通信）</option>
+          </select>
+        </div>
       </div>
-      <p style="font-size: 0.9rem; color: #78350f; line-height: 1.65; margin-bottom: 14px;">
-        愛知県の中学生・保護者が<strong>最も頭を悩ませるのが「内申点35（オール4前後）」</strong>です。「公立上位（千種・瑞陵・桜台）へ挑戦するか？」「堅実に昭和・松蔭・名古屋南を手堅く受けるか？」「私立は名城大附属・中京大中京・愛工大名電・椙山をどう組み合わせるか？」の選択が合否を左右します。
-      </p>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; font-size: 0.84rem;">
-        <div style="background: white; border: 1px solid #fde68a; border-radius: 10px; padding: 12px 14px;">
-          <strong style="color: #b45309; display: block; margin-bottom: 4px;">🏛️ 公立の王道ダブル出願パターン例</strong>
-          <ul style="margin: 0; padding-left: 18px; color: #451a03; line-height: 1.55;">
-            <li><strong>強気挑戦型</strong>：名東（2群A）＋ 昭和（2群A）or 天白（2群B）</li>
-            <li><strong>手堅く文武両道型</strong>：松蔭（1群B）＋ 熱田（1群A）</li>
-            <li><strong>南区・緑区進学型</strong>：桜台（1群B）＋ 名古屋南（1群A）</li>
-          </ul>
-        </div>
-        <div style="background: white; border: 1px solid #fde68a; border-radius: 10px; padding: 12px 14px;">
-          <strong style="color: #b45309; display: block; margin-bottom: 4px;">🏢 私立の安心併願・推薦候補</strong>
-          <ul style="margin: 0; padding-left: 18px; color: #451a03; line-height: 1.55;">
-            <li><strong>大学直結・理系人気</strong>：名城大附属（進学/特進）、愛工大名電</li>
-            <li><strong>文武両道・ブランド力</strong>：中京大中京（進学）、東邦（普通/文理）</li>
-            <li><strong>女子校・手厚さ</strong>：椙山女学園（内申33〜36で推薦・一般大人気）</li>
-          </ul>
-        </div>
+
+      <!-- 動的に切り替わる診断コンテンツ表示エリア -->
+      <div id="naishinResultContainer">
+        <!-- 初期表示は内申35 -->
       </div>
     </div>
 
@@ -1041,8 +1036,239 @@
       renderTable(filtered);
     }
 
+    // 内申点別・診断データ（内申35ベースの深度で全内申帯を完全網羅）
+    const naishinDiagnosisData = {
+      "43": {
+        title: "内申 43〜45（偏差値目安: 70〜72+）",
+        sub: "県下最高峰・公立私立トップ争い！東大・京大・国公立医学部を狙えるトップゾーン",
+        catchphrase: "愛知県のトップ層が集結。ほぼオール5（45点満点近く）が必要。1問のミスが合否を分けるハイレベル決戦！",
+        publicDouble: [
+          { tag: "尾張トップ王道", text: "旭丘（1群A）＋ 菊里（1群B）※鉄板の併願パターン" },
+          { tag: "名古屋市内名門", text: "明和（2群A）＋ 向陽（2群B）or 瑞陵（2群A）" },
+          { tag: "尾張北部最高峰", text: "一宮（1群A）＋ 一宮西（1群B）" }
+        ],
+        privateBackup: [
+          { tag: "全国屈指難関男子", text: "東海（普通）※医学部日本一の私立最高峰" },
+          { tag: "尾張共学最高峰", text: "滝（普通）※旭丘・明和・一宮受験生の併願先" },
+          { tag: "特待・特進併願", text: "愛知（選抜）、名古屋（文理選抜）、名城（特進）" }
+        ],
+        targetScore: "公立一般入試（110点満点）で <strong>98〜106点以上</strong>（各教科20点以上のハイアベレージ）。私立（東海・滝）では難問対策必須。",
+        strategyTip: "内申点は満点近くで差がつかないため、<strong>「当日の難問記述・応用力」が全て</strong>。過去問で捨て問と確実に取るべき難問の見極めを徹底すること。"
+      },
+      "40": {
+        title: "内申 40〜42（偏差値目安: 66〜69）",
+        sub: "難関公立・名門私立進学校ゾーン！名大・旧帝大・難関国公立・早慶を現実的に狙う層",
+        catchphrase: "通知表オール4＋主要教科で5が複数。公立上位校と人気私立特進のハイレベル併願が組める黄金帯！",
+        publicDouble: [
+          { tag: "都心人気トップ", text: "向陽（2群B）＋ 瑞陵（2群A）※名大合格急伸ペア" },
+          { tag: "文武両道・英語強", text: "千種（2群B）＋ 瑞陵（2群A）or 昭和（2群A）" },
+          { tag: "東部伝統進学", text: "菊里（1群B）＋ 桜台（1群B）or 名古屋南（1群A）" }
+        ],
+        privateBackup: [
+          { tag: "私立進学2大巨頭", text: "愛知（選抜/普通）、名古屋（文理）" },
+          { tag: "大学直結＆特進", text: "名城大学附属（特進/理数）、中京大中京（特進）" },
+          { tag: "女子名門", text: "愛知・名城に加え、金城や椙山の推薦・併願" }
+        ],
+        targetScore: "公立一般入試で <strong>88〜96点</strong> が目標ライン。私立特進の一般入試では得点率75〜80%をキープ。",
+        strategyTip: "内申40台を確保できていれば公立入試での安心感は抜群。公立第2志望を手堅く設定すれば、第1志望は強気で憧れの向陽・菊里・瑞陵に突撃できます。"
+      },
+      "37": {
+        title: "内申 37〜39（偏差値目安: 63〜65）",
+        sub: "公立上位挑戦＆私立上位特進ゾーン！国公立大・南山・MARCHをしっかり見据える層",
+        catchphrase: "「オール4に5が1〜2個」。上位校（瑞陵・千種）への挑戦か、手堅く名東・桜台・昭和で上位を狙うかの分岐点！",
+        publicDouble: [
+          { tag: "名東・東部人気", text: "名東（2群A）＋ 昭和（2群A）or 天白（2群B）" },
+          { tag: "南部文武両道", text: "桜台（1群B）＋ 名古屋南（1群A）" },
+          { tag: "尾張・知多拠点", text: "一宮西（1群B）or 横須賀（2群A）＋ 近隣公立" }
+        ],
+        privateBackup: [
+          { tag: "大学接続＆進学", text: "名城大学附属（特進/進学）、中京大中京（進学/特進）" },
+          { tag: "理系・文武両道", text: "愛工大名電（普特/情報）、東邦（文理）" },
+          { tag: "私立上位挑戦", text: "愛知（普通）、名古屋（文理）" }
+        ],
+        targetScore: "公立一般入試で <strong>82〜88点</strong>。理科・社会の知識問題で満点近くを取り、数学・英語の大問最後を拾えるかがカギ。",
+        strategyTip: "内申37〜39は私立高校の「特進・推薦相談」でも非常に有利な優遇ライン。12月の三者面談までに実技科目を落とさないことが最重要！"
+      },
+      "35": {
+        title: "🎯 内申 35〜36（偏差値目安: 60〜63）★最激戦区",
+        sub: "愛知県受験の最大ボリュームゾーン！公立文武両道・人気私立が密集する大激戦帯",
+        catchphrase: "通知表オール4（36点）前後！1問のミスで合否がひっくり返る大接戦。公立W出願と私立併願の組み合わせが合否の命運を握る！",
+        publicDouble: [
+          { tag: "強気挑戦型", text: "名東（2群A）＋ 昭和（2群A）or 天白（2群B）" },
+          { tag: "手堅く文武両道型", text: "松蔭（1群B）＋ 熱田（1群A）" },
+          { tag: "南部堅実進学型", text: "桜台（1群B）＋ 名古屋南（1群A）" }
+        ],
+        privateBackup: [
+          { tag: "理系・大学直結", text: "名城大学附属（進学/特進）、愛工大名電（進学/情報）" },
+          { tag: "文武両道ブランド", text: "中京大中京（進学）、東邦（普通/文理）" },
+          { tag: "名門女子校", text: "椙山女学園（内申33〜36で推薦・一般ともに大人気）" }
+        ],
+        targetScore: "公立一般入試で <strong>78〜84点</strong>（75点以下は危険水域）。私立一般では正答率70%死守。",
+        strategyTip: "内申35から「36〜38」へ1〜2点上がるだけで、受けられる公立・私立の安全度が激変します。定期テスト75点キープ＋実技4科で『4』を2つ以上獲るのが最優先課題！"
+      },
+      "33": {
+        title: "内申 33〜34（偏差値目安: 56〜59）",
+        sub: "充実の高校生活！文武両道公立（天白・熱田等）＆人気私立総合コースを狙う層",
+        catchphrase: "「ほぼオール4だが3が混ざる」状態。当日点勝負で上位公立に食い込むか、私立推薦で手堅く決めるかの駆け引き！",
+        publicDouble: [
+          { tag: "東部・中央文武", text: "天白（2群B）＋ 日進西（2群B）or 長久手（2群A）" },
+          { tag: "熱田・都心アクセス", text: "熱田（1群A）＋ 名古屋南（1群A）挑戦 or 近隣校" },
+          { tag: "松蔭チャレンジ", text: "松蔭（1群B）挑戦 ＋ 熱田（1群A）" }
+        ],
+        privateBackup: [
+          { tag: "私立人気中堅", text: "東邦（普通）、名経大高蔵（特進/進学）" },
+          { tag: "女子・理系併願", text: "椙山女学園（一般・推薦ボーダー）、愛工大名電（一般工科）" },
+          { tag: "大学直結手堅い", text: "中部大春日丘、愛知学院大・大同大関連校" }
+        ],
+        targetScore: "公立一般入試で <strong>72〜78点</strong>。大問1の計算・一行問題、漢字、リスニングでの失点は命取り。",
+        strategyTip: "当日点で75点を超えられれば松蔭や天白への逆転合格が現実的。私立推薦（名電・東邦・椙山・高蔵など）の基準を満たすか学校の先生と早めに相談を！"
+      },
+      "30": {
+        title: "内申 29〜32（偏差値目安: 51〜55）",
+        sub: "手堅い中堅進学校＆資格・大学内部推薦が手厚い私立狙いゾーン！",
+        catchphrase: "通知表は「3が中心、得意科目だけ4」。公立普通科の安心圏を確保しつつ、施設・サポート抜群の私立を併願！",
+        publicDouble: [
+          { tag: "東部・郊外堅実", text: "日進西（2群B）＋ 長久手（2群A）" },
+          { tag: "市内・近郊アクセス", text: "熱田（1群A）挑戦 ＋ 鳴海（1群A）or 山田（2群A）" },
+          { tag: "総合・専門学科", text: "春日井泉（総合）、名商・名市工などの専門学科" }
+        ],
+        privateBackup: [
+          { tag: "工業・就職・大学", text: "大同大学大同（特進/進学/機械）、愛工大名電（情報/科学技術）" },
+          { tag: "スポーツ・文理", text: "至学館（アドバンス/進学）、名経大高蔵（進学/商）" },
+          { tag: "ICT・個性派", text: "名経大市邨（ブライト/アカデミック）、東邦（普通）" }
+        ],
+        targetScore: "公立一般入試で <strong>64〜72点</strong>。基礎問題（配点の約6割）を絶対に落とさない解法徹底。",
+        strategyTip: "愛知県の公立高校入試はマークシート方式。難問に時間を使いすぎず、標準問題を青ペン解き直しで完璧にするだけで内申＋当日点がグングン伸びます。"
+      },
+      "26": {
+        title: "内申 25〜28（偏差値目安: 46〜50）",
+        sub: "基礎からの学び直し＆部活・個別指導が充実した面倒見の良い高校ゾーン！",
+        catchphrase: "「オール3前後（27点）」。高校から心機一転して指定校推薦や専門資格、大学進学を目指せる学校が多数！",
+        publicDouble: [
+          { tag: "市内普通科手堅い", text: "鳴海（1群A）＋ 緑（2群B）" },
+          { tag: "北部・西部アクセス", text: "山田（2群A）＋ 近隣公立・専門学科" },
+          { tag: "実務・資格重視", text: "愛知県立商・工・総合学科高校" }
+        ],
+        privateBackup: [
+          { tag: "ICT・探究名門", text: "名経大市邨（探究・個別最適化学習）" },
+          { tag: "芸術・多様性", text: "同朋（普通/音楽/美術）※自由で温かい校風" },
+          { tag: "資格・就職手厚い", text: "至学館（商業/普通）、享栄（特進/躍進）" }
+        ],
+        targetScore: "公立一般入試で <strong>54〜64点</strong>。教科書の太字単語、計算の基本ルールを確実に得点源にする。",
+        strategyTip: "公立の一般入試だけでなく、私立の「専願・推薦入試」を視野に入れると、1月中に進路が確定し高校入学準備に専念できます。"
+      },
+      "22": {
+        title: "内申 21〜24（偏差値目安: 42〜45）",
+        sub: "手厚いサポート・専門資格取得・アットホームな校風で自己実現を目指すゾーン！",
+        catchphrase: "「オール3に2が混ざる」。一人ひとりを丁寧に見てくれる面倒見の良い高校で、確実な卒業と就職・進学を掴み取る！",
+        publicDouble: [
+          { tag: "市内公立普通科", text: "緑（2群B）＋ 守山（1群A）" },
+          { tag: "専門・資格特化", text: "春日井泉（生活文化・ITビジネス）、県立工科・商業" }
+        ],
+        privateBackup: [
+          { tag: "資格・大手就職強", text: "享栄（機械・商業・普通）※就職実績抜群" },
+          { tag: "福祉・人権教育", text: "名古屋大谷（普通・福祉）※介護職員初任者研修対応" },
+          { tag: "保育・IT特化", text: "菊華（保育・福祉・情報・普通）" }
+        ],
+        targetScore: "公立一般入試で <strong>42〜52点</strong>。基礎問題・リスニング・漢字を確実に押さえる。",
+        strategyTip: "私立高校の資格取得コース（享栄・菊華・大谷など）は、手厚い就職指導や指定校推薦枠が充実。早い段階で見学会に参加して校風を確かめましょう。"
+      },
+      "18": {
+        title: "内申 20以下（偏差値目安: 40以下）",
+        sub: "無理のないペースで高校生活！少人数サポート・通信制・単位制も視野に入れた安心ゾーン",
+        catchphrase: "「内申が低くても大丈夫」。基礎からの学び直しができる公立校や、登校ペースを柔軟に選べるサポート校で確実に未来を切り拓く！",
+        publicDouble: [
+          { tag: "市内安心普通科", text: "守山（1群A）※少人数学び直し授業が手厚い" },
+          { tag: "総合・キャリア", text: "春日井泉（総合/専門）※多様な系列から選択" }
+        ],
+        privateBackup: [
+          { tag: "柔軟な学び", text: "東邦高校（単位制・通信制コース）" },
+          { tag: "資格・面倒見", text: "菊華（普通/専門コース）、享栄（躍進）" },
+          { tag: "サポート校", text: "各種提携通信制高校・フリースクール連携校" }
+        ],
+        targetScore: "公立一般入試で <strong>35〜45点</strong>。面接や自己PRがある入試方式も積極的に活用。",
+        strategyTip: "「中学校で勉強についていけなかった」「不登校気味だった」生徒でも、高校から楽しく登校している先輩がたくさんいます。まずは個別相談会へ足を運んでみましょう。"
+      }
+    };
+
+    function renderNaishinDiagnosis(val) {
+      const data = naishinDiagnosisData[val] || naishinDiagnosisData["35"];
+      const container = document.getElementById("naishinResultContainer");
+      if (!container) return;
+
+      container.innerHTML = `
+        <div style="background: white; border: 1px solid #fde68a; border-radius: 12px; padding: 18px 20px; margin-top: 4px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 8px;">
+            <h4 style="font-size: 1.15rem; color: #b45309; font-weight: 800; margin: 0;">${data.title}</h4>
+            <span style="background: #fef3c7; color: #92400e; font-size: 0.78rem; font-weight: 700; padding: 3px 8px; border-radius: 6px; border: 1px solid #fde68a;">${data.sub}</span>
+          </div>
+          <p style="font-size: 0.88rem; color: #78350f; line-height: 1.6; margin-bottom: 14px; font-weight: 500;">
+            ${data.catchphrase}
+          </p>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; font-size: 0.84rem; margin-bottom: 14px;">
+            <!-- 公立W出願パターン -->
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 12px 14px; border-left: 4px solid #0284c7;">
+              <strong style="color: #0369a1; display: block; margin-bottom: 6px; font-size: 0.9rem;">🏛️ おすすめ公立ダブル出願パターン</strong>
+              <ul style="margin: 0; padding-left: 18px; color: #334155; line-height: 1.6;">
+                ${data.publicDouble.map(item => `<li><strong>${item.tag}</strong>：${item.text}</li>`).join('')}
+              </ul>
+            </div>
+
+            <!-- 私立併願・推薦候補 -->
+            <div style="background: #fdfbf7; border: 1px solid #fde68a; border-radius: 10px; padding: 12px 14px; border-left: 4px solid #d97706;">
+              <strong style="color: #b45309; display: block; margin-bottom: 6px; font-size: 0.9rem;">🏢 おすすめ私立併願・推薦候補</strong>
+              <ul style="margin: 0; padding-left: 18px; color: #451a03; line-height: 1.6;">
+                ${data.privateBackup.map(item => `<li><strong>${item.tag}</strong>：${item.text}</li>`).join('')}
+              </ul>
+            </div>
+          </div>
+
+          <!-- 当日点目安 & 合格戦略アドバイス -->
+          <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 12px 16px; font-size: 0.85rem; color: #166534; line-height: 1.6; margin-bottom: 10px;">
+            🎯 <strong>公立一般・当日点の目標目安：</strong> ${data.targetScore}
+          </div>
+          <div style="background: #fffbeb; border: 1px solid #fde68a; border-radius: 8px; padding: 10px 16px; font-size: 0.83rem; color: #92400e; line-height: 1.55;">
+            💡 <strong>合格への戦略ワンポイント：</strong> ${data.strategyTip}
+          </div>
+
+          <div style="text-align: right; margin-top: 12px;">
+            <button onclick="filterBySelectedNaishin('${val}')" style="background: #2563eb; color: white; border: none; padding: 7px 16px; border-radius: 8px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 6px rgba(37,99,235,0.25);">
+              <span>📋</span> この内申点（${val}付近）の高校一覧をテーブルで絞り込む ↓
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    function onNaishinChange(val) {
+      renderNaishinDiagnosis(val);
+    }
+
+    function filterBySelectedNaishin(val) {
+      const v = parseInt(val);
+      let filterCategory = "all";
+      if (v >= 39) filterCategory = "high";
+      else if (v >= 33) filterCategory = "35";
+      else filterCategory = "mid";
+
+      document.querySelectorAll("[data-score]").forEach(b => b.classList.remove("active"));
+      const btn = document.querySelector(`[data-score="${filterCategory}"]`);
+      if (btn) btn.classList.add("active");
+      currentScoreFilter = filterCategory;
+      applyFilters();
+
+      const el = document.getElementById("schoolTable");
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }
+
     // 内申35直接フィルタ関数
     function filterScore35Direct() {
+      const select = document.getElementById("naishinSelect");
+      if (select) {
+        select.value = "35";
+        renderNaishinDiagnosis("35");
+      }
       document.querySelectorAll("[data-score]").forEach(b => b.classList.remove("active"));
       const targetBtn = document.querySelector('[data-score="35"]');
       if (targetBtn) targetBtn.classList.add("active");
@@ -1111,6 +1337,7 @@
 
     // Initial render
     renderTable(schoolsData);
+    renderNaishinDiagnosis("35");
   </script>
 </body>
 </html>
