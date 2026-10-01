@@ -185,6 +185,43 @@
       border-color: var(--primary);
     }
 
+    .filter-btn.btn-score35 {
+      background: #fffbeb;
+      border-color: #f59e0b;
+      color: #b45309;
+      font-weight: 700;
+    }
+    .filter-btn.btn-score35:hover {
+      background: #fef3c7;
+    }
+    .filter-btn.btn-score35.active {
+      background: #d97706;
+      border-color: #b45309;
+      color: white;
+      box-shadow: 0 2px 8px rgba(217, 119, 6, 0.3);
+    }
+
+    /* 内申35帯の行ハイライト */
+    tr.highlight-score35 {
+      background-color: #fffdf5;
+    }
+    tr.highlight-score35:hover {
+      background-color: #fef9e7;
+    }
+    .badge-focus35 {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+      color: white;
+      font-size: 0.68rem;
+      font-weight: 800;
+      padding: 2px 6px;
+      border-radius: 4px;
+      margin-left: 6px;
+      box-shadow: 0 1px 4px rgba(217,119,6,0.25);
+    }
+
     .search-input {
       padding: 9px 16px;
       border: 1px solid #cbd5e1;
@@ -638,7 +675,7 @@
       </div>
     </div>
     <h1>高校進学情報＆内申点完全ランキング</h1>
-    <p>公立・私立高校を内申点目安（最上位〜最低ラインまで）順に完全掲載！部活動の加入規定（自由/必須）、2026-2027年文化祭・説明会日程＆公式HPリンク付き。</p>
+    <p>公立・私立高校を内申点目安（最上位〜最低ラインまで）順に完全掲載！<strong style="color: #fef08a;">★激戦区・最大のボリュームゾーン【内申点35周辺（オール4狙い／名城・中京・昭和・松蔭・名古屋南・名電・天白等）】を徹底フォーカス中！</strong>部活規定（自由/必須）・文化祭日程付き。</p>
   </header>
 
   <nav style="background: white; border-bottom: 1px solid #e2e8f0; padding: 10px 20px; display: flex; justify-content: center; gap: 8px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.04); flex-wrap: wrap;">
@@ -700,6 +737,13 @@
         <button class="filter-btn" data-uniform="ブレザー">ブレザー</button>
         <button class="filter-btn" data-uniform="セーラー/学ラン">セーラー/学ラン</button>
       </div>
+      <div class="filter-group">
+        <span class="filter-label">内申点帯:</span>
+        <button class="filter-btn active" data-score="all">すべて</button>
+        <button class="filter-btn btn-score35" data-score="35" title="愛知県最激戦区！内申33〜38の公立・私立高校をピンポイント表示">🎯 内申35前後 (33〜38集中)</button>
+        <button class="filter-btn" data-score="high">上位・難関 (39以上)</button>
+        <button class="filter-btn" data-score="mid">中堅・実務 (32以下)</button>
+      </div>
       <div>
         <input type="text" id="searchInput" class="search-input" placeholder="🔍 高校名・区・部活・駅名で検索...">
       </div>
@@ -711,6 +755,43 @@
       <div>
         <h3>愛知県の高校における「部活動の加入ルール」について</h3>
         <p>私立高校や公立トップ校（旭丘・千種・向陽・菊里・瑞陵など）は<strong>「自由（任意加入）」</strong>が多い一方、公立上位・中堅校（明和・一宮・桜台・名東・松蔭・昭和・天白など）は<strong>「1年次は全員いずれかの部活に登録（1年次必須）」</strong>というルールを設けている学校が多数あります。放課後の勉強時間や外部の習い事、通学時間を考慮して選ぶのがポイントです。</p>
+      </div>
+    </div>
+
+    <!-- ★ 内申点35徹底フォーカス・特設ガイドカード -->
+    <div style="background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 50%, #fff7ed 100%); border: 2px solid #f59e0b; border-radius: 16px; padding: 22px 24px; margin-bottom: 25px; box-shadow: 0 4px 20px rgba(217, 119, 6, 0.12);">
+      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-bottom: 12px; border-bottom: 1px dashed #fcd34d; padding-bottom: 10px;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 1.8rem; line-height: 1;">🎯</span>
+          <div>
+            <span style="background: #d97706; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 8px; border-radius: 4px;">愛知高校受験・最大の激戦区</span>
+            <h3 style="font-size: 1.2rem; color: #92400e; margin: 2px 0 0; font-weight: 800;">【内申点35周辺】合格ロードマップ＆公立・私立併願シミュレーション</h3>
+          </div>
+        </div>
+        <button onclick="filterScore35Direct()" style="background: #d97706; color: white; border: none; padding: 8px 16px; border-radius: 8px; font-weight: 700; font-size: 0.84rem; cursor: pointer; display: flex; align-items: center; gap: 6px; box-shadow: 0 2px 6px rgba(217,119,6,0.3);">
+          <span>🔍</span> 内申35前後の高校だけを表示する
+        </button>
+      </div>
+      <p style="font-size: 0.9rem; color: #78350f; line-height: 1.65; margin-bottom: 14px;">
+        愛知県の中学生・保護者が<strong>最も頭を悩ませるのが「内申点35（オール4前後）」</strong>です。「公立上位（千種・瑞陵・桜台）へ挑戦するか？」「堅実に昭和・松蔭・名古屋南を手堅く受けるか？」「私立は名城大附属・中京大中京・愛工大名電・椙山をどう組み合わせるか？」の選択が合否を左右します。
+      </p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; font-size: 0.84rem;">
+        <div style="background: white; border: 1px solid #fde68a; border-radius: 10px; padding: 12px 14px;">
+          <strong style="color: #b45309; display: block; margin-bottom: 4px;">🏛️ 公立の王道ダブル出願パターン例</strong>
+          <ul style="margin: 0; padding-left: 18px; color: #451a03; line-height: 1.55;">
+            <li><strong>強気挑戦型</strong>：名東（2群A）＋ 昭和（2群A）or 天白（2群B）</li>
+            <li><strong>手堅く文武両道型</strong>：松蔭（1群B）＋ 熱田（1群A）</li>
+            <li><strong>南区・緑区進学型</strong>：桜台（1群B）＋ 名古屋南（1群A）</li>
+          </ul>
+        </div>
+        <div style="background: white; border: 1px solid #fde68a; border-radius: 10px; padding: 12px 14px;">
+          <strong style="color: #b45309; display: block; margin-bottom: 4px;">🏢 私立の安心併願・推薦候補</strong>
+          <ul style="margin: 0; padding-left: 18px; color: #451a03; line-height: 1.55;">
+            <li><strong>大学直結・理系人気</strong>：名城大附属（進学/特進）、愛工大名電</li>
+            <li><strong>文武両道・ブランド力</strong>：中京大中京（進学）、東邦（普通/文理）</li>
+            <li><strong>女子校・手厚さ</strong>：椙山女学園（内申33〜36で推薦・一般大人気）</li>
+          </ul>
+        </div>
       </div>
     </div>
 
@@ -769,12 +850,12 @@
         </ul>
       </div>
 
-      <div class="info-card">
-        <h3>🎯 中学2年生が今すぐやるべき3カ条</h3>
+      <div class="info-card" style="border-left: 4px solid #f59e0b; background: linear-gradient(135deg, #ffffff 0%, #fffdf5 100%);">
+        <h3 style="color: #b45309;">🎯 【内申点35】で勝つための合否分岐点</h3>
         <ul>
-          <li><strong>1. 提出物・授業態度を徹底する</strong>：愛知県は内申点の重要度が全国トップクラス。提出物を完璧にして「4」「5」を増やす。</li>
-          <li><strong>2. 英語・数学の中1・中2内容を穴埋め</strong>：公立当日点の出題は1・2年の内容が半分以上。今のうちに苦手単元を潰す！</li>
-          <li><strong>3. オープンスクール・文化祭を見学する</strong>：各校のリンクから学校HPをチェックし、秋の文化祭や見学会に行くと勉強へのやる気が劇的に変わります！</li>
+          <li><strong>オール4（36点）の壁</strong>：「3が2〜3個ある内申33〜35」と「主要5教科すべて4＋実技1つ5で内申37」では受験できる高校の自由度が段違いに変わります。実技4教科（保体・美術・技術家庭・音楽）で「4以上」をもぎ取ることが内申35突破の最速ルートです。</li>
+          <li><strong>私立の滑り止め（特待・推薦）の決定力</strong>：名城大附属・中京大中京・愛工大名電・東邦・椙山女学園など、愛知の人気私立は内申34〜36が推薦・併願の大きなボーダーライン。私立をガッチリ固めることで公立本番に強気で突っ込めます。</li>
+          <li><strong>当日点目標は「80点〜85点 / 110点満点」</strong>：昭和・松蔭・名古屋南・天白などは当日点重視（マーク式22点×5教科）。内申35前後の層は本番で1問2点のミスを抑えた人が勝ち残ります。</li>
         </ul>
       </div>
     </div>
@@ -848,6 +929,12 @@
         if (item.clubPolicy.includes("1年次")) clubBadgeClass = "club-1year";
         else if (item.clubPolicy.includes("全員必須")) clubBadgeClass = "club-required";
 
+        // 内申35帯のハイライト判定 (33〜38)
+        const isScore35Focus = (item.score.includes("33") || item.score.includes("34") || item.score.includes("35") || item.score.includes("36") || item.score.includes("37") || item.score.includes("38")) && !item.score.includes("43") && !item.score.includes("42") && !item.score.includes("45");
+        if (isScore35Focus) {
+          tr.classList.add("highlight-score35");
+        }
+
         tr.innerHTML = `
           <td>
             <div style="display: flex; align-items: center; gap: 6px;">
@@ -855,6 +942,7 @@
               <span class="school-type ${item.type === 'public' ? 'type-public' : 'type-private'}">${item.typeLabel}</span>
             </div>
             <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">${item.group}</div>
+            ${isScore35Focus ? `<div style="margin-top:4px;"><span class="badge-focus35">🎯 内申35前後</span></div>` : ''}
           </td>
           <td>
             <div class="school-name-cell">
@@ -871,7 +959,9 @@
             </div>
           </td>
           <td>
-            <div><span class="score-badge">${item.score}</span></div>
+            <div>
+              <span class="score-badge" ${isScore35Focus ? 'style="color:#d97706; font-size:1.25rem;"' : ''}>${item.score}</span>
+            </div>
             <div class="score-sub">偏差値目安: 約${item.deviation}</div>
           </td>
           <td>
@@ -901,6 +991,7 @@
     let currentTypeFilter = "all";
     let currentClubFilter = "all";
     let currentUniformFilter = "all";
+    let currentScoreFilter = "all";
     let currentSearchTerm = "";
 
     function applyFilters() {
@@ -911,6 +1002,23 @@
         const matchClub = currentClubFilter === "all" || school.clubPolicy.includes(currentClubFilter);
         // Uniform filter
         const matchUniform = currentUniformFilter === "all" || school.uniform.includes(currentUniformFilter);
+        // Score filter
+        let matchScore = true;
+        if (currentScoreFilter === "35") {
+          // 内申33〜38帯（名城・桜台・名東・中京・横須賀・昭和・松蔭・名古屋南・椙山・名電・天白・熱田・東邦・高蔵）
+          const s = school.score;
+          matchScore = (s.includes("33") || s.includes("34") || s.includes("35") || s.includes("36") || s.includes("37") || s.includes("38")) && !s.includes("43") && !s.includes("42") && !s.includes("45");
+        } else if (currentScoreFilter === "high") {
+          // 39以上
+          const s = school.score;
+          matchScore = s.includes("39") || s.includes("40") || s.includes("41") || s.includes("42") || s.includes("43") || s.includes("44") || s.includes("45");
+        } else if (currentScoreFilter === "mid") {
+          // 32以下
+          const num = parseInt(school.deviation);
+          const s = school.score;
+          matchScore = (!s.includes("35") && !s.includes("36") && !s.includes("37") && !s.includes("38") && !s.includes("39") && !s.includes("40") && !s.includes("41") && !s.includes("42") && !s.includes("43") && !s.includes("44") && !s.includes("45")) || s.includes("28〜32") || s.includes("29〜33") || s.includes("31〜35") || s.includes("32〜35");
+        }
+
         // Search filter
         const term = currentSearchTerm.toLowerCase();
         const matchSearch = school.name.toLowerCase().includes(term) ||
@@ -919,10 +1027,21 @@
                             school.features.toLowerCase().includes(term) ||
                             school.events.toLowerCase().includes(term);
 
-        return matchType && matchClub && matchUniform && matchSearch;
+        return matchType && matchClub && matchUniform && matchScore && matchSearch;
       });
 
       renderTable(filtered);
+    }
+
+    // 内申35直接フィルタ関数
+    function filterScore35Direct() {
+      document.querySelectorAll("[data-score]").forEach(b => b.classList.remove("active"));
+      const targetBtn = document.querySelector('[data-score="35"]');
+      if (targetBtn) targetBtn.classList.add("active");
+      currentScoreFilter = "35";
+      applyFilters();
+      const el = document.getElementById("schoolTable");
+      if (el) el.scrollIntoView({ behavior: "smooth" });
     }
 
     // Event listeners
@@ -949,6 +1068,15 @@
         document.querySelectorAll("[data-uniform]").forEach(b => b.classList.remove("active"));
         btn.classList.add("active");
         currentUniformFilter = btn.getAttribute("data-uniform");
+        applyFilters();
+      });
+    });
+
+    document.querySelectorAll("[data-score]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll("[data-score]").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        currentScoreFilter = btn.getAttribute("data-score");
         applyFilters();
       });
     });
