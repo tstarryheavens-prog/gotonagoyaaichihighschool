@@ -532,12 +532,13 @@ updatedSchoolsData.forEach((school) => {
 
   <nav class="top-nav">
     <a href="../index.html">📊 内申点ランキングTOP</a>
+    <a href="../autumn-tour-guide.html">🍂 秋の見学会チェック</a>
     <a href="../schedule.html">📅 学年別進学スケジュール</a>
     <a href="../test-study-guide.html">📝 普段のテスト対策</a>
     <a href="../ai-study-guide.html">🤖 最新AI勉強法</a>
     <a href="../ai-prompts.html">⚡️ 神プロンプト集</a>
     <a href="../community.html">💬 質問・相談チャネル</a>
-    <a href="../techniques.html">💡 受験テクニック20選＆過去問</a>
+    <a href="https://naogoya-aichi-koukoujyuken.hatenadiary.com" target="_blank" rel="noopener" style="color: #ea580c; font-weight: 700;">📝 公式ブログ ↗</a>
   </nav>
 
   <div class="container">
