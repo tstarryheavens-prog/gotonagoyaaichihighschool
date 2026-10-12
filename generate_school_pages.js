@@ -533,6 +533,7 @@ updatedSchoolsData.forEach((school) => {
   <nav class="top-nav">
     <a href="../index.html">📊 内申点ランキングTOP</a>
     <a href="../autumn-tour-guide.html">🍂 秋の見学会チェック</a>
+    <a href="../mock-exam-guide.html">📈 模試判定の読み方</a>
     <a href="../schedule.html">📅 学年別進学スケジュール</a>
     <a href="../test-study-guide.html">📝 普段のテスト対策</a>
     <a href="../ai-study-guide.html">🤖 最新AI勉強法</a>
