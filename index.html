@@ -1784,6 +1784,74 @@
     </div>
   </div>
 
+  <!-- 通学ルート検索モーダル（Googleマップ連携） -->
+  <div class="modal-overlay" id="routeModal" onclick="closeModalOnOuter(event, 'routeModal')">
+    <div class="modal-card route-modal-card">
+      <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border-soft); padding-bottom: 12px; margin-bottom: 14px;">
+        <h2 style="font-size: 1.22rem; font-weight: 800; color: #0F172A; margin: 0; display: flex; align-items: center; gap: 8px;">
+          <span>🗺️</span> 通学ルート・所要時間チェック
+        </h2>
+        <button onclick="closeModal('routeModal')" style="background: none; border: none; font-size: 1.25rem; cursor: pointer; color: #94A3B8;">
+          ✕
+        </button>
+      </div>
+
+      <div class="route-school-badge">
+        <span>🏫 到着地：</span>
+        <span id="routeDestSchoolName" style="color: #1E293B; font-weight: 900;">高校名</span>
+        <span id="routeDestSchoolLoc" style="font-size: 0.78rem; color: #64748B; font-weight: normal; margin-left: auto;"></span>
+      </div>
+
+      <div class="note-box" style="margin: 0 0 16px; padding: 10px 14px; font-size: 0.82rem;">
+        🦉 <strong>シャチフク先輩：</strong>「乗り換え回数や坂道、自転車と電車の組み合わせを事前に知っておくと、入学後の通学がグッとイメージしやすくなるよ！Googleマップで今すぐ検索しよう！」
+      </div>
+
+      <div class="route-origin-options">
+        <div>
+          <label style="font-size: 0.84rem; font-weight: 800; color: var(--text-sub); display: block; margin-bottom: 6px;">
+            📍 出発地を指定：
+          </label>
+          <div style="display: flex; gap: 8px;">
+            <input type="text" id="routeOriginInput" placeholder="最寄り駅・自宅住所・バス停（例：名古屋駅、金山駅、一宮市...）" style="flex-grow: 1; padding: 9px 12px; border: 1.5px solid var(--border-soft); border-radius: 10px; font-size: 0.88rem; outline: none; font-family: inherit;">
+            <button type="button" onclick="setOriginToCurrent()" style="background: #F1EFEA; border: 1px solid #CBD5E1; color: var(--text-main); padding: 8px 12px; border-radius: 10px; font-size: 0.8rem; font-weight: 800; cursor: pointer; white-space: nowrap;">
+              📍 現在地
+            </button>
+          </div>
+          <div class="quick-station-chips">
+            <span style="font-size: 0.72rem; color: var(--text-muted); align-self: center;">主要駅クイック入力：</span>
+            <span class="station-chip" onclick="setOriginText('名古屋駅')">名古屋駅</span>
+            <span class="station-chip" onclick="setOriginText('金山駅')">金山駅</span>
+            <span class="station-chip" onclick="setOriginText('栄駅')">栄駅</span>
+            <span class="station-chip" onclick="setOriginText('大曽根駅')">大曽根駅</span>
+            <span class="station-chip" onclick="setOriginText('一宮駅')">一宮駅</span>
+            <span class="station-chip" onclick="setOriginText('春日井駅')">春日井駅</span>
+          </div>
+        </div>
+
+        <div>
+          <label style="font-size: 0.84rem; font-weight: 800; color: var(--text-sub); display: block; margin-bottom: 6px;">
+            🚲 通学方法（移動手段）：
+          </label>
+          <div class="route-mode-selector">
+            <button type="button" class="route-mode-btn active" data-mode="transit" onclick="selectRouteMode('transit', this)">
+              🚃 電車・バス（公共交通）
+            </button>
+            <button type="button" class="route-mode-btn" data-mode="bicycling" onclick="selectRouteMode('bicycling', this)">
+              🚲 自転車
+            </button>
+            <button type="button" class="route-mode-btn" data-mode="walking" onclick="selectRouteMode('walking', this)">
+              🚶 徒歩
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <button type="button" onclick="launchGoogleMapsRoute()" class="btn-open-google-maps">
+        <span>🗺️ Googleマップで通学ルートを開く ↗</span>
+      </button>
+    </div>
+  </div>
+
   <!-- データファイル読み込み -->
   <script src="schools_data.js"></script>
 
@@ -1894,10 +1962,13 @@
                   ${school.events}
                 </div>
 
-                <div style="display: flex; gap: 6px;">
+                <div style="display: flex; gap: 6px; flex-wrap: wrap;">
                   <a href="${school.pageUrl}" class="card-link-btn btn-detail-page" style="flex: 1; text-align: center; justify-content: center;">
                     詳細を見る ↗
                   </a>
+                  <button type="button" class="btn-route-check" onclick="openRouteModal('${school.name}', '${school.location}')" style="padding: 6px 12px; font-size: 0.8rem;">
+                    🗺️ 通学ルート
+                  </button>
                   <a href="${school.url}" target="_blank" rel="noopener" class="card-link-btn btn-official-web">
                     公式 ↗
                   </a>
@@ -2032,6 +2103,9 @@
             <a href="${item.pageUrl}" class="card-link-btn btn-detail-page" style="flex: 1; justify-content: center;">
               ✨ 特色・高校生活を見る ↗
             </a>
+            <button type="button" class="btn-route-check" onclick="openRouteModal('${item.name}', '${item.location}')">
+              🗺️ 通学ルート
+            </button>
             <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="card-link-btn btn-official-web">
               🌐 公式 ↗
             </a>
@@ -2062,6 +2136,9 @@
               <a href="${item.pageUrl}" class="card-link-btn btn-detail-page" style="padding: 2px 7px; font-size: 0.72rem;">
                 特色 ↗
               </a>
+              <button type="button" class="btn-route-check" onclick="openRouteModal('${item.name}', '${item.location}')" style="padding: 2px 7px; font-size: 0.72rem;">
+                🗺️ ルート
+              </button>
               <a href="${item.url}" target="_blank" rel="noopener" class="card-link-btn btn-official-web" style="padding: 2px 7px; font-size: 0.72rem;">
                 公式 ↗
               </a>
@@ -2464,6 +2541,82 @@
       if (event.target.id === id) {
         closeModal(id);
       }
+    }
+
+    // ========================================================
+    // 通学ルート検索（Googleマップ連携）ロジック
+    // ========================================================
+    let currentRouteDestName = "";
+    let currentRouteDestLoc = "";
+    let currentRouteMode = "transit"; // 'transit' | 'bicycling' | 'walking'
+
+    function openRouteModal(schoolName, schoolLocation) {
+      currentRouteDestName = schoolName;
+      currentRouteDestLoc = schoolLocation || "";
+
+      const nameEl = document.getElementById("routeDestSchoolName");
+      const locEl = document.getElementById("routeDestSchoolLoc");
+      const inputEl = document.getElementById("routeOriginInput");
+
+      if (nameEl) nameEl.textContent = schoolName;
+      if (locEl) locEl.textContent = schoolLocation ? `📍 ${schoolLocation}` : "";
+      if (inputEl) inputEl.value = ""; // リセット
+
+      // デフォルトモードを電車・バスにリセット
+      selectRouteMode("transit", document.querySelector('.route-mode-btn[data-mode="transit"]'));
+
+      openModal("routeModal");
+    }
+
+    function selectRouteMode(mode, btnElement) {
+      currentRouteMode = mode;
+      document.querySelectorAll(".route-mode-btn").forEach(btn => btn.classList.remove("active"));
+      if (btnElement) {
+        btnElement.classList.add("active");
+      } else {
+        const target = document.querySelector(`.route-mode-btn[data-mode="${mode}"]`);
+        if (target) target.classList.add("active");
+      }
+    }
+
+    function setOriginToCurrent() {
+      const inputEl = document.getElementById("routeOriginInput");
+      if (inputEl) {
+        inputEl.value = "現在地";
+        inputEl.focus();
+      }
+    }
+
+    function setOriginText(stationName) {
+      const inputEl = document.getElementById("routeOriginInput");
+      if (inputEl) {
+        inputEl.value = stationName;
+        inputEl.focus();
+      }
+    }
+
+    function launchGoogleMapsRoute() {
+      const inputEl = document.getElementById("routeOriginInput");
+      const originVal = inputEl ? inputEl.value.trim() : "";
+
+      // 目的地：愛知県内の高校なので学校名＋愛知県/所在地
+      let destQuery = currentRouteDestName;
+      if (!destQuery.includes("高校") && !destQuery.includes("学校")) {
+        destQuery += " 高校";
+      }
+      if (currentRouteDestLoc) {
+        destQuery += " " + currentRouteDestLoc;
+      }
+
+      let url = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(destQuery)}&travelmode=${currentRouteMode}`;
+
+      // 出発地が指定されていて「現在地」以外の場合は origin パラメータを追加
+      // 「現在地」または空欄の場合は origin パラメータを付けないことで、Googleマップ側で自動的に端末の現在地が出発点になる
+      if (originVal && originVal !== "現在地") {
+        url += `&origin=${encodeURIComponent(originVal)}`;
+      }
+
+      window.open(url, "_blank", "noopener,noreferrer");
     }
 
     // ========================================================

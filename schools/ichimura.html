@@ -21,6 +21,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../common.css">
   <style>
     :root {
       --primary: #2563eb;
@@ -483,7 +484,12 @@
           <div class="val" style="font-size:1.05rem;">ブレザー</div>
         </div>
       </div>
-      <p style="font-size:0.9rem; color:#475569; margin-bottom:12px;">📍 所在地：名古屋市千種区北千種</p>
+      <p style="font-size:0.9rem; color:#475569; margin-bottom:8px;">📍 所在地：名古屋市千種区北千種</p>
+      <div style="margin-bottom:12px;">
+        <button type="button" class="btn-route-check" onclick="openRouteModal('名古屋経済大市邨高等学校', '名古屋市千種区北千種')" style="display:inline-flex; align-items:center; gap:6px; padding: 7px 14px; font-size: 0.85rem; border-radius: 8px;">
+          🗺️ Googleマップで通学ルートを調べる（現在地・主要駅・自転車・公共交通） ↗
+        </button>
+      </div>
       <p style="font-size:0.9rem; color:#475569;">👗 制服詳細：デザイナーズブランドのおしゃれな制服</p>
     </div>
 
@@ -678,7 +684,10 @@
       <div style="font-size:0.95rem; color:#15803d; line-height:1.6; margin-bottom:18px;">
         【市邨祭】2026年9月26日(土)・27日(日)<br>【入試説明会】2026年10月24日(土)・11月14日(土)
       </div>
-      <div style="text-align:center;">
+      <div style="text-align:center; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
+        <button type="button" class="btn-route-check" onclick="openRouteModal('名古屋経済大市邨高等学校', '名古屋市千種区北千種')" style="display:inline-flex; align-items:center; gap:8px; padding: 12px 22px; font-size: 0.95rem; border-radius: 10px; background: white; border: 1.5px solid var(--primary); color: var(--primary); cursor: pointer; font-weight: 700; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);">
+          🗺️ 通学ルートを調べる（Googleマップ） ↗
+        </button>
         <a href="https://ichimura.ed.jp/" target="_blank" rel="noopener noreferrer" class="btn-official">
           🌐 名古屋経済大市邨高等学校 公式サイトを見る ↗
         </a>
@@ -696,5 +705,151 @@
     </footer>
   </div>
 
+  <!-- 通学ルート検索モーダル（Googleマップ連携） -->
+  <div class="modal-overlay" id="routeModal" onclick="closeModalOnOuter(event, 'routeModal')">
+    <div class="modal-card route-modal-card">
+      <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border-soft); padding-bottom: 12px; margin-bottom: 14px;">
+        <h2 style="font-size: 1.22rem; font-weight: 800; color: #0F172A; margin: 0; display: flex; align-items: center; gap: 8px;">
+          <span>🗺️</span> 通学ルート・所要時間チェック
+        </h2>
+        <button onclick="closeModal('routeModal')" style="background: none; border: none; font-size: 1.25rem; cursor: pointer; color: #94A3B8;">
+          ✕
+        </button>
+      </div>
+
+      <div class="route-school-badge">
+        <span>🏫 到着地：</span>
+        <span id="routeDestSchoolName" style="color: #1E293B; font-weight: 900;">名古屋経済大市邨高等学校</span>
+        <span id="routeDestSchoolLoc" style="font-size: 0.78rem; color: #64748B; font-weight: normal; margin-left: auto;">📍 名古屋市千種区北千種</span>
+      </div>
+
+      <div class="note-box" style="margin: 0 0 16px; padding: 10px 14px; font-size: 0.82rem;">
+        🦉 <strong>シャチフク先輩：</strong>「乗り換え回数や坂道、自転車と電車の組み合わせを事前に知っておくと、入学後の通学がグッとイメージしやすくなるよ！Googleマップで今すぐ検索しよう！」
+      </div>
+
+      <div class="route-origin-options">
+        <div>
+          <label style="font-size: 0.84rem; font-weight: 800; color: var(--text-sub); display: block; margin-bottom: 6px;">
+            📍 出発地を指定：
+          </label>
+          <div style="display: flex; gap: 8px;">
+            <input type="text" id="routeOriginInput" placeholder="最寄り駅・自宅住所・バス停（例：名古屋駅、金山駅、一宮市...）" style="flex-grow: 1; padding: 9px 12px; border: 1.5px solid var(--border-soft); border-radius: 10px; font-size: 0.88rem; outline: none; font-family: inherit;">
+            <button type="button" onclick="setOriginToCurrent()" style="background: #F1EFEA; border: 1px solid #CBD5E1; color: var(--text-main); padding: 8px 12px; border-radius: 10px; font-size: 0.8rem; font-weight: 800; cursor: pointer; white-space: nowrap;">
+              📍 現在地
+            </button>
+          </div>
+          <div class="quick-station-chips">
+            <span style="font-size: 0.72rem; color: var(--text-muted); align-self: center;">主要駅クイック入力：</span>
+            <span class="station-chip" onclick="setOriginText('名古屋駅')">名古屋駅</span>
+            <span class="station-chip" onclick="setOriginText('金山駅')">金山駅</span>
+            <span class="station-chip" onclick="setOriginText('栄駅')">栄駅</span>
+            <span class="station-chip" onclick="setOriginText('大曽根駅')">大曽根駅</span>
+            <span class="station-chip" onclick="setOriginText('一宮駅')">一宮駅</span>
+            <span class="station-chip" onclick="setOriginText('春日井駅')">春日井駅</span>
+          </div>
+        </div>
+
+        <div>
+          <label style="font-size: 0.84rem; font-weight: 800; color: var(--text-sub); display: block; margin-bottom: 6px;">
+            🚲 通学方法（移動手段）：
+          </label>
+          <div class="route-mode-selector">
+            <button type="button" class="route-mode-btn active" data-mode="transit" onclick="selectRouteMode('transit', this)">
+              🚃 電車・バス（公共交通）
+            </button>
+            <button type="button" class="route-mode-btn" data-mode="bicycling" onclick="selectRouteMode('bicycling', this)">
+              🚲 自転車
+            </button>
+            <button type="button" class="route-mode-btn" data-mode="walking" onclick="selectRouteMode('walking', this)">
+              🚶 徒歩
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <button type="button" onclick="launchGoogleMapsRoute()" class="btn-open-google-maps">
+        <span>🗺️ Googleマップで通学ルートを開く ↗</span>
+      </button>
+    </div>
+  </div>
+
+  <script>
+    function openModal(id) {
+      const modal = document.getElementById(id);
+      if (modal) modal.style.display = "flex";
+    }
+
+    function closeModal(id) {
+      const modal = document.getElementById(id);
+      if (modal) modal.style.display = "none";
+    }
+
+    function closeModalOnOuter(event, id) {
+      if (event.target.id === id) {
+        closeModal(id);
+      }
+    }
+
+    let currentRouteDestName = "名古屋経済大市邨高等学校";
+    let currentRouteDestLoc = "名古屋市千種区北千種";
+    let currentRouteMode = "transit";
+
+    function openRouteModal(schoolName, schoolLocation) {
+      if (schoolName) currentRouteDestName = schoolName;
+      if (schoolLocation) currentRouteDestLoc = schoolLocation;
+      const inputEl = document.getElementById("routeOriginInput");
+      if (inputEl) inputEl.value = "";
+      selectRouteMode("transit", document.querySelector('.route-mode-btn[data-mode="transit"]'));
+      openModal("routeModal");
+    }
+
+    function selectRouteMode(mode, btnElement) {
+      currentRouteMode = mode;
+      document.querySelectorAll(".route-mode-btn").forEach(btn => btn.classList.remove("active"));
+      if (btnElement) {
+        btnElement.classList.add("active");
+      } else {
+        const target = document.querySelector('.route-mode-btn[data-mode="' + mode + '"]');
+        if (target) target.classList.add("active");
+      }
+    }
+
+    function setOriginToCurrent() {
+      const inputEl = document.getElementById("routeOriginInput");
+      if (inputEl) {
+        inputEl.value = "現在地";
+        inputEl.focus();
+      }
+    }
+
+    function setOriginText(stationName) {
+      const inputEl = document.getElementById("routeOriginInput");
+      if (inputEl) {
+        inputEl.value = stationName;
+        inputEl.focus();
+      }
+    }
+
+    function launchGoogleMapsRoute() {
+      const inputEl = document.getElementById("routeOriginInput");
+      const originVal = inputEl ? inputEl.value.trim() : "";
+
+      let destQuery = currentRouteDestName;
+      if (!destQuery.includes("高校") && !destQuery.includes("学校")) {
+        destQuery += " 高校";
+      }
+      if (currentRouteDestLoc) {
+        destQuery += " " + currentRouteDestLoc;
+      }
+
+      let url = "https://www.google.com/maps/dir/?api=1&destination=" + encodeURIComponent(destQuery) + "&travelmode=" + currentRouteMode;
+
+      if (originVal && originVal !== "現在地") {
+        url += "&origin=" + encodeURIComponent(originVal);
+      }
+
+      window.open(url, "_blank", "noopener,noreferrer");
+    }
+  </script>
 </body>
 </html>
