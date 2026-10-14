@@ -1463,8 +1463,19 @@
          【広告枠①：ページ最上部（検索パネルの上）】
     ========================================================= -->
     <div class="ad-banner-wrapper">
-      <span class="ad-banner-label">スポンサーリンク</span>
-      <div style="display: flex; justify-content: center; align-items: center; margin: 8px 0;">
+      <span class="ad-banner-label">スポンサーリンク / PR</span>
+      <div style="margin: 8px auto; max-width: 728px; min-height: 90px; text-align: center;">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-1988464307898443"
+             data-ad-slot="auto"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+      <div style="display: flex; justify-content: center; align-items: center; margin: 6px 0;">
         <a href="https://px.a8.net/svt/ejp?a8mat=4BE70L+69NDD6+320A+BXIYP" rel="nofollow">
           <img border="0" width="468" height="60" alt="高校進学・受験学習バナー" src="https://www29.a8.net/svt/bgt?aid=261002757379&wid=004&eno=01&mid=s00000014257002004000&mc=1" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
         </a>
@@ -1615,8 +1626,19 @@
          【広告枠②：学校一覧直下】
     ========================================================= -->
     <div class="ad-banner-wrapper">
-      <span class="ad-banner-label">スポンサーリンク</span>
-      <div style="display: flex; justify-content: center; align-items: center; margin: 16px 0;">
+      <span class="ad-banner-label">スポンサーリンク / PR</span>
+      <div style="margin: 12px auto; max-width: 728px; min-height: 90px; text-align: center;">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-1988464307898443"
+             data-ad-slot="auto"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+      <div style="display: flex; justify-content: center; align-items: center; margin: 12px 0;">
         <a href="https://px.a8.net/svt/ejp?a8mat=4BE70L+662RQI+36T2+TYQVL" rel="nofollow">
           <img border="0" width="300" height="250" alt="高校受験・学習支援バナー" src="https://www29.a8.net/svt/bgt?aid=261002757373&wid=004&eno=01&mid=s00000014879005033000&mc=1" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 14px rgba(0,0,0,0.06);">
         </a>
@@ -1697,15 +1719,17 @@
          【広告枠③：フッター直前】
     ========================================================= -->
     <div class="ad-banner-wrapper">
-      <span class="ad-banner-label">おすすめ学習ガイド</span>
-      <div class="study-sponsor-card" id="adSlotBottom">
-        <span class="study-sponsor-pill">✏️ 中学2年生・3年生向け 学習サポート特集</span>
-        <h4 style="font-size: 1.05rem; font-weight: 800; color: #1E293B; margin-bottom: 6px;">
-          内申点アップ＆愛知県公立マーク式入試で差をつける学習法
-        </h4>
-        <p style="font-size: 0.84rem; color: #64748B; margin-bottom: 0;">
-          定期テスト対策の徹底から、愛知全県模試での合格判定アップまで。日々の弱点克服とAI活用勉強法を組み合わせた進路対策を応援します。
-        </p>
+      <span class="ad-banner-label">スポンサーリンク / PR</span>
+      <div style="margin: 12px auto; max-width: 728px; min-height: 90px; text-align: center;">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-1988464307898443"
+             data-ad-slot="auto"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
       </div>
     </div>
 
@@ -2044,7 +2068,7 @@
       // 2) テーブル描画
       tbody.innerHTML = "";
 
-      data.forEach(item => {
+      data.forEach((item, index) => {
         const isKept = keptIds.includes(item.id);
 
         let clubBadgeClass = "club-free";
@@ -2117,6 +2141,34 @@
         `;
         cardGrid.appendChild(card);
 
+        // ---- 4校ごとにネイティブインフィード広告（Google AdSense）を挿入 ----
+        if ((index + 1) % 4 === 0) {
+          const adCard = document.createElement("div");
+          adCard.className = "school-card ad-infeed-card";
+          adCard.innerHTML = `
+            <div>
+              <div class="ad-infeed-badge-row">
+                <span class="ad-infeed-badge">🎓 おすすめ進学・学習支援</span>
+                <span class="ad-sponsor-label">スポンサーPR</span>
+              </div>
+              <div class="ad-infeed-title">高校受験・内申点アップ＆合格戦略サポート</div>
+              <div class="ad-infeed-desc">愛知・尾張の志望校合格に向けた効率的な学習法・定期テスト対策・最新の高校入試情報。</div>
+              <div class="ad-infeed-body">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-1988464307898443"
+                     data-ad-slot="auto"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+              </div>
+            </div>
+            <div style="margin-top: 10px; font-size: 0.72rem; color: #94A3B8; text-align: center;">
+              愛知の高校受験生・保護者の進路選択を応援するおすすめプログラム
+            </div>
+          `;
+          cardGrid.appendChild(adCard);
+        }
+
         // ---- テーブル行要素生成 ----
         const tr = document.createElement("tr");
         if (isScore35Focus) tr.classList.add("row-focus35");
@@ -2177,7 +2229,40 @@
           </td>
         `;
         tbody.appendChild(tr);
+
+        // ---- 8校ごとにテーブル内スポンサー行を挿入 ----
+        if ((index + 1) % 8 === 0) {
+          const adTr = document.createElement("tr");
+          adTr.style.background = "#FFFDF9";
+          adTr.innerHTML = `
+            <td colspan="8" style="padding: 16px; border: 1.5px dashed var(--accent-border);">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <span class="ad-infeed-badge">🎓 スポンサーPR・高校受験学習支援</span>
+                <span class="ad-sponsor-label">広告</span>
+              </div>
+              <div style="text-align: center; min-height: 90px; display: flex; align-items: center; justify-content: center;">
+                <ins class="adsbygoogle"
+                     style="display:block; width: 100%;"
+                     data-ad-client="ca-pub-1988464307898443"
+                     data-ad-slot="auto"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+              </div>
+            </td>
+          `;
+          tbody.appendChild(adTr);
+        }
       });
+
+      // AdSense配信トリガー
+      try {
+        const adElements = document.querySelectorAll(".adsbygoogle:not([data-adsbygoogle-status])");
+        adElements.forEach(() => {
+          (window.adsbygoogle = window.adsbygoogle || []).push({});
+        });
+      } catch (e) {
+        // 開発環境やブロッカー等でのエラーを握りつぶし
+      }
     }
 
     // ========================================================

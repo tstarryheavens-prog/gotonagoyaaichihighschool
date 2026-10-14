@@ -555,3 +555,67 @@ footer {
   box-shadow: 0 6px 18px rgba(16, 185, 129, 0.36);
   background: linear-gradient(135deg, #059669 0%, #047857 100%);
 }
+
+/* ========================================================
+   Google AdSense / ネイティブインフィード広告スタイル
+   ======================================================== */
+.ad-infeed-card {
+  background: #FFFDF9;
+  border: 1.5px dashed var(--accent-border);
+  border-radius: 16px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.02);
+  min-height: 280px;
+}
+.ad-infeed-badge-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.ad-infeed-badge {
+  background: #FEF3C7;
+  color: #B45309;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 6px;
+  border: 1px solid #FDE68A;
+}
+.ad-sponsor-label {
+  font-size: 0.7rem;
+  color: #94A3B8;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+.ad-infeed-title {
+  font-size: 0.96rem;
+  font-weight: 800;
+  color: #1E293B;
+  margin-bottom: 4px;
+}
+.ad-infeed-desc {
+  font-size: 0.8rem;
+  color: #64748B;
+  line-height: 1.45;
+  margin-bottom: 12px;
+}
+.ad-infeed-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 120px;
+  width: 100%;
+  overflow: hidden;
+}
+.ad-container-native {
+  width: 100%;
+  text-align: center;
+  margin: 16px auto;
+  overflow: hidden;
+}
