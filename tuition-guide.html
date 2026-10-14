@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>【愛知高校学費・無償化完全ガイド】私立実質0円の判定基準＆3年間トータル実質出費シミュレーター</title>
+  <meta name="description" content="愛知県（名古屋・尾張）の高校学費・授業料無償化・入学金補助を徹底解説！年収ではなく住民税課税標準額で決まる判定基準、共働き夫婦合算、公立vs私立の3年間手出し総額（約40万〜290万）、私立特待生枠まで保護者目線で網羅。">
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1988464307898443"
+     crossorigin="anonymous"></script>
+
+  <!-- A8.net リンクマネージャー -->
+  <script src="//statics.8me.jp/a8link/a8linkmgr.js"></script>
+  <script>
+    a8linkmgr({
+      "config_id": "AiCzxW5LM9avBb8VJ393"
+    });
+  </script>
+
+  <!-- 共通スタイルシート -->
+  <link rel="stylesheet" href="common.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="logo.png">
+
+  <style>
+    /* 学費ガイド専用カスタムスタイル */
+    :root {
+      --gold-accent: #D97706;
+      --gold-bg: #FEF9C3;
+      --gold-border: #F59E0B;
+    }
+
+    .tuition-header {
+      background: linear-gradient(135deg, #1E3550 0%, #2C4A6F 60%, #2E6F40 100%);
+      color: #FFFFFF;
+      padding: 38px 20px 32px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+    .tuition-badge-bar {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+    .tuition-badge {
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      padding: 4px 14px;
+      border-radius: 9999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      backdrop-filter: blur(4px);
+    }
+    .tuition-header h1 {
+      font-size: 1.85rem;
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+    .tuition-header p {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.92);
+      max-width: 820px;
+      margin: 0 auto;
+      line-height: 1.65;
+    }
+
+    /* シャチフク先輩メッセージバナー */
+    .mascot-hero-banner {
+      background: #FFFFFF;
+      border: 2px solid var(--border-soft);
+      border-radius: 18px;
+      padding: 20px 24px;
+      margin: 24px auto 20px;
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+    }
+    .mascot-hero-img {
+      width: 72px;
+      height: 72px;
+      flex-shrink: 0;
+      border-radius: 18px;
+      background: #FFFDF9;
+      border: 2px solid #EAE4DC;
+      padding: 4px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .mascot-hero-bubble {
+      flex: 1;
+    }
+    .mascot-hero-name {
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+    .mascot-hero-quote {
+      font-size: 1.02rem;
+      font-weight: 800;
+      color: #1E293B;
+      line-height: 1.5;
+    }
+
+    /* よくある誤解カード（付箋風3枚） */
+    .misconceptions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin: 20px 0 32px;
+    }
+    .misconception-card {
+      background: #FFFDF8;
+      border-radius: 16px;
+      padding: 18px 20px;
+      border: 1.5px solid #F1ECE4;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.03);
+      position: relative;
+      overflow: hidden;
+    }
+    .misconception-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: #E2DDD5;
+    }
+    .misconception-card.card-1::before { background: #3B82F6; }
+    .misconception-card.card-2::before { background: #E67E22; }
+    .misconception-card.card-3::before { background: #10B981; }
+
+    .misconception-tag {
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 6px;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+    .card-1 .misconception-tag { background: #EFF6FF; color: #1D4ED8; }
+    .card-2 .misconception-tag { background: #FFF7ED; color: #C2410C; }
+    .card-3 .misconception-tag { background: #ECFDF5; color: #047857; }
+
+    .misconception-question {
+      font-size: 0.96rem;
+      font-weight: 800;
+      color: #1E293B;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+    }
+    .misconception-answer {
+      font-size: 0.88rem;
+      color: #475569;
+      line-height: 1.55;
+    }
+
+    /* セクション汎用枠 */
+    .content-box {
+      background: #FFFFFF;
+      border-radius: 18px;
+      padding: 28px 26px;
+      margin: 28px 0;
+      border: 1.5px solid var(--border-card);
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.03);
+    }
+    .section-title-wrap {
+      margin-bottom: 20px;
+      border-bottom: 2px solid #F1ECE4;
+      padding-bottom: 12px;
+    }
+    .section-title {
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: #0F172A;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-subtitle {
+      font-size: 0.86rem;
+      color: var(--text-sub);
+      margin-top: 4px;
+    }
+
+    /* シミュレーター・ピル型セレクター */
+    .income-pill-selector {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      margin-bottom: 20px;
+      scrollbar-width: none;
+    }
+    .income-pill-selector::-webkit-scrollbar {
+      display: none;
+    }
+    .income-pill {
+      background: #F8F6F2;
+      border: 1.5px solid var(--border-soft);
+      padding: 10px 16px;
+      border-radius: 12px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-sub);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+    .income-pill:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+    .income-pill.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #FFFFFF;
+      box-shadow: 0 3px 10px rgba(44, 74, 111, 0.25);
+    }
+    .income-pill.pill-tashi.active {
+      background: var(--forest);
+      border-color: var(--forest);
+      box-shadow: 0 3px 10px rgba(46, 111, 64, 0.25);
+    }
+
+    /* シミュレーション結果カード */
+    .sim-result-card {
+      background: #FFFDF9;
+      border: 2px solid var(--border-soft);
+      border-radius: 16px;
+      padding: 24px;
+      transition: all 0.3s ease;
+    }
+    .sim-result-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px dashed #E2DDD5;
+      padding-bottom: 14px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .sim-bracket-name {
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: #1E293B;
+    }
+    .sim-bracket-tax {
+      font-size: 0.78rem;
+      color: #64748B;
+      background: #F1EFEA;
+      padding: 3px 10px;
+      border-radius: 9999px;
+    }
+
+    .sim-metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    .sim-metric-item {
+      background: #FFFFFF;
+      border: 1.5px solid #EAE4DC;
+      border-radius: 12px;
+      padding: 14px 16px;
+    }
+    .sim-metric-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #64748B;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .sim-metric-value {
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: #0F172A;
+      font-family: 'Zen Maru Gothic', sans-serif;
+    }
+    .sim-metric-value.free {
+      color: var(--forest);
+    }
+    .sim-metric-value.highlight {
+      color: var(--accent);
+    }
+    .sim-metric-sub {
+      font-size: 0.75rem;
+      color: #94A3B8;
+      margin-top: 4px;
+    }
+
+    .sim-advisor-box {
+      background: #F0FDF4;
+      border: 1.5px solid #BBF7D0;
+      border-radius: 12px;
+      padding: 14px 18px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .sim-advisor-avatar {
+      font-size: 1.8rem;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .sim-advisor-text {
+      font-size: 0.88rem;
+      color: #166534;
+      line-height: 1.55;
+    }
+
+    /* アコーディオン（判定の落とし穴） */
+    .tax-details-box {
+      background: #F8FAFC;
+      border: 1.5px solid #CBD5E1;
+      border-radius: 14px;
+      overflow: hidden;
+      margin-top: 14px;
+    }
+    .tax-summary {
+      padding: 16px 20px;
+      font-size: 0.98rem;
+      font-weight: 800;
+      color: #1E293B;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #FFFFFF;
+      border-bottom: 1px solid #E2E8F0;
+      list-style: none;
+    }
+    .tax-summary::-webkit-details-marker {
+      display: none;
+    }
+    .tax-summary-badge {
+      font-size: 0.72rem;
+      background: #FEF3C7;
+      color: #B45309;
+      padding: 2px 8px;
+      border-radius: 6px;
+      border: 1px solid #FDE68A;
+      font-weight: 800;
+    }
+    .tax-content {
+      padding: 20px;
+      font-size: 0.88rem;
+      color: #334155;
+      line-height: 1.65;
+    }
+    .tax-calc-box {
+      background: #FFFFFF;
+      border: 2px dashed #94A3B8;
+      border-radius: 10px;
+      padding: 14px 16px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #0F172A;
+      margin: 12px 0;
+      text-align: center;
+    }
+    .tax-steps-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 14px 0;
+    }
+    .tax-step-item {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 12px 14px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .tax-step-num {
+      background: #3B82F6;
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 800;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* リアル総支出 比較テーブル */
+    .expense-table-wrapper {
+      overflow-x: auto;
+      margin: 18px 0;
+      border-radius: 14px;
+      border: 1.5px solid var(--border-soft);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+      -webkit-overflow-scrolling: touch;
+    }
+    .expense-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.86rem;
+      background: #FFFFFF;
+      min-width: 680px;
+    }
+    .expense-table th, .expense-table td {
+      padding: 13px 16px;
+      border-bottom: 1px solid #EAE4DC;
+      text-align: left;
+    }
+    .expense-table th {
+      background: #F8F6F2;
+      color: #334155;
+      font-weight: 800;
+      font-size: 0.84rem;
+    }
+    .expense-table th.col-public {
+      background: #F0F9FF;
+      color: #0369A1;
+      border-bottom: 2px solid #BAE6FD;
+    }
+    .expense-table th.col-private-free {
+      background: #F0FDF4;
+      color: #15803D;
+      border-bottom: 2px solid #BBF7D0;
+    }
+    .expense-table th.col-private-full {
+      background: #FFFBEB;
+      color: #B45309;
+      border-bottom: 2px solid #FDE68A;
+    }
+    .expense-table tr:hover td {
+      background: #FCFBF9;
+    }
+    .expense-table tr.row-total {
+      background: #FFFDF5;
+      font-weight: 800;
+      font-size: 0.98rem;
+    }
+    .expense-table tr.row-total td {
+      border-bottom: none;
+      padding: 16px;
+    }
+
+    /* キャッシュフロー注意喚起 */
+    .cashflow-alert-box {
+      background: #FFFBEB;
+      border: 1.5px solid #FDE68A;
+      border-left: 5px solid #D97706;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 18px 0;
+      font-size: 0.88rem;
+      color: #92400E;
+      line-height: 1.6;
+    }
+
+    /* 私立特待生ゴールドカード */
+    .scholarship-card {
+      background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%);
+      border: 2px solid #F59E0B;
+      border-radius: 18px;
+      padding: 26px;
+      margin: 28px 0;
+      box-shadow: 0 6px 20px rgba(245, 158, 11, 0.12);
+      position: relative;
+    }
+    .scholarship-ribbon {
+      position: absolute;
+      top: -12px;
+      right: 20px;
+      background: #D97706;
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 900;
+      padding: 4px 14px;
+      border-radius: 9999px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+    .scholarship-title {
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: #78350F;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .scholarship-content {
+      font-size: 0.9rem;
+      color: #451A03;
+      line-height: 1.68;
+    }
+
+    /* サイト内回遊バナー */
+    .nav-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .nav-action-card {
+      background: #FFFFFF;
+      border: 1.5px solid var(--border-soft);
+      border-radius: 14px;
+      padding: 20px;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+    .nav-action-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      border-color: var(--primary);
+    }
+    .nav-action-card h3 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #0F172A;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .nav-action-card p {
+      font-size: 0.82rem;
+      color: #64748B;
+      line-height: 1.45;
+      margin-bottom: 12px;
+    }
+    .nav-action-arrow {
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: var(--primary);
+      text-align: right;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+
+    @media (max-width: 640px) {
+      .tuition-header h1 { font-size: 1.45rem; }
+      .content-box { padding: 20px 16px; }
+      .mascot-hero-banner { flex-direction: column; text-align: center; }
+      .sim-metrics-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- グローバルナビゲーション -->
+  <nav class="top-nav">
+    <div class="top-nav-inner">
+      <a href="index.html">📊 内申点ランキングTOP</a>
+      <a href="public-vs-private-guide.html">⚖️ 公立・私立比較</a>
+      <a href="tuition-guide.html" class="active">💰 学費・補助金ガイド</a>
+      <a href="mock-exam-guide.html">📈 模試判定の読み方</a>
+      <a href="autumn-tour-guide.html">🍂 秋の見学会チェック</a>
+      <a href="schedule.html">📅 進学スケジュール</a>
+      <a href="test-study-guide.html">📝 普段のテスト対策</a>
+      <a href="ai-study-guide.html">🤖 最新AI勉強法</a>
+      <a href="ai-prompts.html">⚡️ 神プロンプト集</a>
+      <a href="community.html" class="nav-community">💬 質問・相談チャネル</a>
+      <a href="https://naogoya-aichi-koukoujyuken.hatenadiary.com" target="_blank" rel="noopener" class="nav-blog">📝 公式ブログ ↗</a>
+    </div>
+  </nav>
+
+  <!-- ヘッダー -->
+  <header class="tuition-header">
+    <div class="tuition-badge-bar">
+      <span class="tuition-badge">2026〜2027年 愛知県最新制度対応</span>
+      <span class="tuition-badge">国＋愛知県のダブル補助金</span>
+      <span class="tuition-badge">公立 vs 私立 リアル総支出比較</span>
+    </div>
+    <h1>高校学費・授業料無償化 完全ガイド</h1>
+    <p>「私立は高すぎて無理？」と諦める前に要チェック！年収ではなく住民税で決まる判定基準、愛知県独自の入学金補助、3年間で実際に手元から出ていく現金（キャッシュフロー）のリアルを徹底解説します。</p>
+  </header>
+
+  <div class="container">
+
+    <!-- シャチフク先輩の吹き出し -->
+    <div class="mascot-hero-banner">
+      <img src="logo.png" alt="尾張・名古屋高校進学ナビ公式マスコット シャチホコフクロウ" class="mascot-hero-img">
+      <div class="mascot-hero-bubble">
+        <div class="mascot-hero-name">🦉 シャチフク先輩の学費ナビゲート</div>
+        <div class="mascot-hero-quote">
+          「『私立＝高いから無理』と諦める前にチェック！国と愛知県のダブル補助で、実質負担は昔と大きく変わっているんだよ🦉」
+        </div>
+        <p style="font-size: 0.82rem; color: #64748B; margin-top: 4px;">
+          愛知県は全国屈指の私学手厚さ。授業料だけでなく「入学金の補助（最大20万円）」もあるのが大きな特徴です！
+        </p>
+      </div>
+    </div>
+
+    <!-- よくある誤解カード（付箋風・3枚） -->
+    <div class="misconceptions-grid">
+      <div class="misconception-card card-1">
+        <span class="misconception-tag">よくある誤解 ①</span>
+        <div class="misconception-question">
+          <span>❌</span> 「年収制限でうちは1円も補助が出ない？」
+        </div>
+        <div class="misconception-answer">
+          <strong>⭕️ 愛知県独自の上乗せ（年収約720万円未満まで）があります！</strong><br>
+          国の制度（年収約590万未満）を超えても、愛知県独自の授業料軽減・入学金補助で手厚くカバーされます。
+        </div>
+      </div>
+
+      <div class="misconception-card card-2">
+        <span class="misconception-tag">よくある誤解 ②</span>
+        <div class="misconception-question">
+          <span>❌</span> 「授業料が無償＝高校生活は全部タダ？」
+        </div>
+        <div class="misconception-answer">
+          <strong>⭕️ 施設費・制服・修学旅行などの『隠れ出費』が必要です！</strong><br>
+          無償化されるのは「授業料」のみ。私立では施設費や指定品代として3年間で90〜150万円程度の手出しが発生します。
+        </div>
+      </div>
+
+      <div class="misconception-card card-3">
+        <span class="misconception-tag">よくある誤解 ③</span>
+        <div class="misconception-question">
+          <span>❌</span> 「いつ補助金のお金が戻ってくる？」
+        </div>
+        <div class="misconception-answer">
+          <strong>⭕️ 補助金は後から還付。春に現金の立替が必要です！</strong><br>
+          申請は入学後（4〜6月）に行い、還付は秋〜冬。入学手続き時（2〜4月）にはまとまった現金（35〜45万円）の準備が必須です。
+        </div>
+      </div>
+    </div>
+
+    <!-- 広告枠① -->
+    <div class="ad-banner-wrapper">
+      <span class="ad-banner-label">スポンサーリンク</span>
+      <div style="display: flex; justify-content: center; align-items: center; margin: 8px 0;">
+        <a href="https://px.a8.net/svt/ejp?a8mat=4BE70L+69NDD6+320A+BXIYP" rel="nofollow">
+          <img border="0" width="468" height="60" alt="高校進学・受験学習バナー" src="https://www29.a8.net/svt/bgt?aid=261002757379&wid=004&eno=01&mid=s00000014257002004000&mc=1" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+        </a>
+        <img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=4BE70L+69NDD6+320A+BXIYP" alt="">
+      </div>
+    </div>
+
+    <!-- ② 【ワンタップ判定】世帯年収別・学費シミュレーション（メインUI） -->
+    <section class="content-box" id="simulatorSection">
+      <div class="section-title-wrap">
+        <h2 class="section-title">
+          <span>🎯</span> 【ワンタップ判定】世帯年収別・学費シミュレーション
+        </h2>
+        <p class="section-subtitle">
+          ご家庭の年収帯をタップしてください。公立・私立それぞれの授業料負担と愛知県独自の入学金補助がパッと切り替わります。
+        </p>
+      </div>
+
+      <!-- 年収帯ピル型セレクター -->
+      <div class="income-pill-selector">
+        <button type="button" class="income-pill active" onclick="selectIncomeBracket('under590', this)">
+          〜590万円未満（実質無償）
+        </button>
+        <button type="button" class="income-pill" onclick="selectIncomeBracket('590to720', this)">
+          590万〜720万円未満（愛知独自軽減）
+        </button>
+        <button type="button" class="income-pill" onclick="selectIncomeBracket('720to910', this)">
+          720万〜910万円未満（国補助のみ）
+        </button>
+        <button type="button" class="income-pill" onclick="selectIncomeBracket('over910', this)">
+          910万円以上（全額自己負担）
+        </button>
+        <button type="button" class="income-pill pill-tashi" onclick="selectIncomeBracket('multiChild', this)">
+          ✨【特例】多子世帯（子3人以上）
+        </button>
+      </div>
+
+      <!-- シミュレーション結果表示コンテナ -->
+      <div id="simResultContainer">
+        <!-- JSで動的レンダリング -->
+      </div>
+
+      <!-- ③ 判定の落とし穴！「額面年収」と「課税所得」の違い（アコーディオン解説） -->
+      <div class="tax-details-box" style="margin-top: 24px;">
+        <details>
+          <summary class="tax-summary">
+            <span style="display: flex; align-items: center; gap: 8px;">
+              <span>⚠️</span> 判定の落とし穴！「額面年収」ではなく「住民税の課税所得」で決まる？
+            </span>
+            <span class="tax-summary-badge">重要ポイントをチェック ▼</span>
+          </summary>
+          <div class="tax-content">
+            <p>
+              高校無償化の判定基準は、給与明細の「額面年収」ではなく、毎年6月に決まる<strong>「住民税の課税所得額」</strong>を基にした以下の計算式で厳密に算出されます。
+            </p>
+
+            <div class="tax-calc-box">
+              判定基準額 ＝ 住民税の課税標準額（課税所得） × 6％ － 市町村民税の調整控除
+            </div>
+
+            <p style="font-size: 0.85rem; color: #64748B;">
+              ※名古屋市などの政令指定都市では「市民税の課税標準額×8%－調整控除×(3/4)」で算出され、結果は同一基準になります。
+            </p>
+
+            <h4 style="font-size: 0.95rem; font-weight: 800; color: #0F172A; margin: 16px 0 8px;">
+              📋 6月に届く「住民税決定通知書」のどこを見れば一発で分かる？
+            </h4>
+            <div class="tax-steps-list">
+              <div class="tax-step-item">
+                <span class="tax-step-num">1</span>
+                <div>
+                  <strong>通知書を手元に用意</strong><br>
+                  毎年5〜6月に勤務先から配布される「給与所得等に係る特別徴収税額の決定・変更通知書」を見ます。
+                </div>
+              </div>
+              <div class="tax-step-item">
+                <span class="tax-step-num">2</span>
+                <div>
+                  <strong>「課税標準」欄の「総所得金額（課税所得）」を確認</strong><br>
+                  給与収入から給与所得控除を引いた後の金額です。
+                </div>
+              </div>
+              <div class="tax-step-item">
+                <span class="tax-step-num">3</span>
+                <div>
+                  <strong>判定ライン（基準額）と照合</strong><br>
+                  ・<strong>15万4,500円未満</strong> ➔ 年収約590万円未満（私立実質無償化）<br>
+                  ・<strong>21万1,400円未満</strong> ➔ 年収約720万円未満（愛知県独自の軽減・入学金補助対象）<br>
+                  ・<strong>30万4,200円未満</strong> ➔ 年収約910万円未満（公立無償化対象）
+                </div>
+              </div>
+            </div>
+
+            <div style="background: #FFFBEB; border: 1px solid #FDE68A; border-radius: 8px; padding: 12px 14px; font-size: 0.84rem; color: #92400E; margin-top: 10px;">
+              💡 <strong>共働き世帯の超重要ポイント：</strong><br>
+              夫婦どちらか一方の年収ではなく、<strong>「夫婦両方の判定基準額の合算」</strong>で判定されます。夫・妻それぞれの住民税通知書をチェックして足し合わせる必要があります！
+            </div>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ④ 「授業料0円でもかかる！」3年間のリアル総支出 比較表 -->
+    <section class="content-box">
+      <div class="section-title-wrap">
+        <h2 class="section-title">
+          <span>📊</span> 「授業料0円でもかかる！」3年間のリアル総支出 比較表
+        </h2>
+        <p class="section-subtitle">
+          無償化になっても手元から出ていく「持ち出し現金（キャッシュフロー）」を包み隠さず比較しました。
+        </p>
+      </div>
+
+      <div class="expense-table-wrapper">
+        <table class="expense-table">
+          <thead>
+            <tr>
+              <th style="width: 22%;">費目</th>
+              <th class="col-public" style="width: 26%;">🏛️ 公立高校（3年間）</th>
+              <th class="col-private-free" style="width: 26%;">🌸 私立高校（実質無償ゾーン）</th>
+              <th class="col-private-full" style="width: 26%;">🏫 私立高校（全額負担ゾーン）</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>授業料</strong></td>
+              <td><strong style="color: var(--forest);">0円</strong>（就学支援金）</td>
+              <td><strong style="color: var(--forest);">0円</strong>（国＋愛知県の補助）</td>
+              <td>約120〜135万円</td>
+            </tr>
+            <tr>
+              <td><strong>入学金（実質手出し）</strong></td>
+              <td>約 5,600円</td>
+              <td><strong>約 0〜10万円</strong>（県補助最大20万適用）</td>
+              <td>約 20万円</td>
+            </tr>
+            <tr>
+              <td><strong>施設設備費・教育充実費</strong></td>
+              <td>ほぼ 0円</td>
+              <td>約 30〜50万円</td>
+              <td>約 30〜50万円</td>
+            </tr>
+            <tr>
+              <td><strong>制服・指定品・PC端末代</strong></td>
+              <td>約 10〜15万円</td>
+              <td>約 18〜25万円</td>
+              <td>約 18〜25万円</td>
+            </tr>
+            <tr>
+              <td><strong>教科書・副教材費</strong></td>
+              <td>約 5〜8万円</td>
+              <td>約 8〜12万円</td>
+              <td>約 8〜12万円</td>
+            </tr>
+            <tr>
+              <td><strong>修学旅行積立・校外学習</strong></td>
+              <td>約 10〜13万円（国内中心）</td>
+              <td>約 20〜35万円（海外/遠方多）</td>
+              <td>約 20〜35万円</td>
+            </tr>
+            <tr>
+              <td><strong>通学交通費（定期代目安）</strong></td>
+              <td>約 5〜15万円（自転車・近場多）</td>
+              <td>約 15〜30万円（電車通学多）</td>
+              <td>約 15〜30万円</td>
+            </tr>
+            <tr class="row-total">
+              <td><strong>【3年間総手出し目安】</strong></td>
+              <td><strong style="font-size: 1.15rem; color: #0284C7;">約 40〜60万円</strong></td>
+              <td><strong style="font-size: 1.15rem; color: var(--forest);">約 90〜150万円</strong></td>
+              <td><strong style="font-size: 1.15rem; color: #B45309;">約 220〜290万円</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- キャッシュフローのリアル注記 -->
+      <div class="cashflow-alert-box">
+        <div style="font-weight: 800; font-size: 0.95rem; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;">
+          <span>⚠️</span> 保護者が一番焦る「キャッシュフロー（現金立て替え）」のリアル！
+        </div>
+        国の就学支援金や愛知県の補助金は、<strong>「高校に入学して申請した後、秋〜冬（10月〜翌年1月頃）に還付・相殺」</strong>される仕組みです。<br>
+        そのため、<strong>入学手続き時（2月〜4月）には、入学金・制服代・前期諸費などとして【公立で約15〜20万円／私立で約35〜45万円】のまとまった現金を一旦立て替える必要があります</strong>。合格直後に慌てないよう、中3の秋〜冬には手元口座にスタンバイさせておきましょう！
+      </div>
+    </section>
+
+    <!-- ⑤ 内申35〜36層必見！「私立特待生（奨学生）」という逆転ルート -->
+    <div class="scholarship-card">
+      <div class="scholarship-ribbon">🔥 内申35前後の親御さん必見！</div>
+      <h2 class="scholarship-title">
+        <span>🏆</span> 【特待生・奨学生制度】公立上位を狙える学力で「私立授業料＋入学金全額免除」の逆転ルート
+      </h2>
+      <div class="scholarship-content">
+        <p style="margin-bottom: 10px;">
+          愛知県の私立高校（<strong>名城大学附属・中京大中京・愛工大名電・東邦・愛知・名古屋</strong>など）では、中学校の内申点（オール4＝内申36前後〜）や、一般入試の当日点上位者向けに、<strong>世帯年収に関係なく『入学金全額免除』『3年間の授業料全額免除・給付』</strong>となる特待生（スカラシップ）制度を設けています。
+        </p>
+        <p style="margin-bottom: 10px;">
+          「公立トップ〜上位（向陽・瑞陵・千種・昭和など）を目指せる実力がありながら、あえて私立の特進特待生枠で進学し、浮いた学費で手厚い進学指導を受けて名大・難関国公立大学を目指す」という進路選択をするご家庭も増えています。
+        </p>
+        <div style="background: rgba(255,255,255,0.7); border-radius: 10px; padding: 10px 14px; font-size: 0.84rem; color: #78350F; font-weight: 700;">
+          💡 <strong>ポイント：</strong> 特待生枠は「推薦入試（内申基準）」と「一般入試（当日点上位者）」の2パターンがあります。秋の私立高校説明会で特待の最新基準を必ず確認しておきましょう！
+        </div>
+      </div>
+    </div>
+
+    <!-- 広告枠② -->
+    <div class="ad-banner-wrapper">
+      <span class="ad-banner-label">スポンサーリンク</span>
+      <div style="display: flex; justify-content: center; align-items: center; margin: 16px 0;">
+        <a href="https://px.a8.net/svt/ejp?a8mat=4BE70L+662RQI+36T2+TYQVL" rel="nofollow">
+          <img border="0" width="300" height="250" alt="高校受験・学習支援バナー" src="https://www29.a8.net/svt/bgt?aid=261002757373&wid=004&eno=01&mid=s00000014879005033000&mc=1" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 14px rgba(0,0,0,0.06);">
+        </a>
+        <img border="0" width="1" height="1" src="https://www12.a8.net/0.gif?a8mat=4BE70L+662RQI+36T2+TYQVL" alt="">
+      </div>
+    </div>
+
+    <!-- ⑥ サイト内回遊リンク（親が次に知りたくなる情報） -->
+    <section class="content-box">
+      <div class="section-title-wrap">
+        <h2 class="section-title">
+          <span>🧭</span> 親御さんが次にチェックしている高校進学ナビ
+        </h2>
+        <p class="section-subtitle">
+          学費のイメージが湧いたら、次はお子様の内申点に合わせた志望校選びや校風比較に進みましょう！
+        </p>
+      </div>
+
+      <div class="nav-cards-grid">
+        <a href="index.html" class="nav-action-card">
+          <div>
+            <h3><span>📊</span> 内申点ランキングTOP</h3>
+            <p>愛知・尾張の全公立・私立高校を内申点・偏差値順に一括比較！内申35前後の激戦ゾーンもワンタップで探せます。</p>
+          </div>
+          <div class="nav-action-arrow">高校一覧・W出願シミュレーターを見る ➔</div>
+        </a>
+
+        <a href="public-vs-private-guide.html" class="nav-action-card">
+          <div>
+            <h3><span>⚖️</span> 公立・私立徹底比較</h3>
+            <p>校風・施設・大学進学実績・部活動の厳しさなど、学費以外の決定的な違いを親目線で比較解説しています。</p>
+          </div>
+          <div class="nav-action-arrow">公立・私立の違いを見る ➔</div>
+        </a>
+
+        <a href="community.html" class="nav-action-card">
+          <div>
+            <h3><span>💬</span> 進路相談カフェ・リアルQ&A</h3>
+            <p>「私立の学費、実際どれくらいかかった？」「塾なしで公立行ける？」など、匿名で気軽に質問・情報交換できます。</p>
+          </div>
+          <div class="nav-action-arrow">みんなの相談ボードを見る ➔</div>
+        </a>
+      </div>
+    </section>
+
+    <!-- フッター・免責事項 -->
+    <footer>
+      <p style="font-size: 0.78rem; color: #94A3B8; max-width: 820px; margin: 0 auto 16px; line-height: 1.6;">
+        ※掲載の補助金額・世帯年収目安は、愛知県私学振興課および文部科学省の公表資料（2025〜2026年度版）を基にした一般的なモデル世帯（夫婦＋高校生1人・中学生1人）の試算例です。実際の支給額は扶養家族の構成、社会保険料控除、各種税額控除等により異なりますので、必ず各学校の募集要項および愛知県公式ホームページの最新情報をご確認ください。
+      </p>
+      <p>© 尾張・名古屋地区 高校進学情報ガイド / 本サイトは中学生・保護者の進路選択を支援するポータルサイトです。</p>
+    </footer>
+  </div>
+
+  <!-- シミュレーター制御スクリプト -->
+  <script>
+    const simData = {
+      under590: {
+        name: "世帯年収 〜約590万円未満（私立実質無償化ゾーン）",
+        taxRange: "判定基準額: 15万4,500円未満",
+        publicTuition: "実質 0円",
+        publicSub: "国の就学支援金（年11万8,800円）で全額カバー",
+        privateTuition: "実質 0円",
+        privateSub: "国（上限39.6万）＋愛知県上乗せで全額カバー",
+        admissionAid: "最大 20万円 補助",
+        admissionSub: "愛知県独自の私立高校入学納付金等補助金（ほぼ全額免除）",
+        advisorAdvice: "私立の推薦・専願入試を安心して受けられるゾーンです！授業料と入学金の大半が補助されるため、制服代・施設設備費・修学旅行積立などの『諸費用（3年で約90〜140万）』の備えだけでOKになります。"
+      },
+      "590to720": {
+        name: "世帯年収 約590万〜720万円未満（愛知県独自軽減ゾーン）",
+        taxRange: "判定基準額: 15万4,500円 〜 21万1,400円未満",
+        publicTuition: "実質 0円",
+        publicSub: "国の就学支援金（年11万8,800円）で全額カバー",
+        privateTuition: "実質 年数万円〜10万円前後",
+        privateSub: "国の基本額（11.8万）に加え、愛知県が約20万〜28万円を独自上乗せ補助！",
+        admissionAid: "最大 10万円 補助",
+        admissionSub: "愛知県独自の入学納付金補助金（半額程度補助）",
+        advisorAdvice: "愛知県独自の私学支援の恩恵を最も実感できるゾーンです！国の制度だけだと私立授業料が重くなりますが、愛知県の手厚い上乗せで月1万円前後の負担で済みます。公立と私立を前向きに比較検討できます。"
+      },
+      "720to910": {
+        name: "世帯年収 約720万〜910万円未満（国の就学支援金基本ゾーン）",
+        taxRange: "判定基準額: 21万1,400円 〜 30万4,200円未満",
+        publicTuition: "実質 0円",
+        publicSub: "国の就学支援金（年11万8,800円）で全額カバー",
+        privateTuition: "年 約25万〜32万円の自己負担",
+        privateSub: "国の基本支援金（年11万8,800円）のみ適用",
+        admissionAid: "対象外（全額自己負担）",
+        admissionSub: "私立の入学金約20万円は全額自己負担",
+        advisorAdvice: "公立高校であれば授業料0円ですが、私立高校に進学する場合は3年間で約200万円前後の手出しとなります。私立を併願する際は『特待生制度（内申や当日点で授業料全額免除）』のある学校を積極的にチェックするのが賢い選択です！"
+      },
+      over910: {
+        name: "世帯年収 約910万円以上（全額自己負担ゾーン）",
+        taxRange: "判定基準額: 30万4,200円以上",
+        publicTuition: "年 約11万8,800円（月額9,900円）",
+        publicSub: "国の所得制限により就学支援金の対象外",
+        privateTuition: "年 約40万〜45万円（全額自己負担）",
+        privateSub: "3年間で授業料約120〜135万円＋諸会費",
+        admissionAid: "対象外（全額自己負担）",
+        admissionSub: "私立の入学金約20万円は全額自己負担",
+        advisorAdvice: "国・県ともに授業料補助の対象外となります。私立では3年間で250万〜300万円程度の総支出を想定しておきましょう。私立の『入試当日点上位者向け特待生枠（世帯年収制限なし）』を勝ち取ると大幅な節約になります。"
+      },
+      multiChild: {
+        name: "✨【特例措置】多子世帯（扶養する子どもが3人以上）",
+        taxRange: "国・愛知県による所得制限の大幅緩和・無償化拡充対象",
+        publicTuition: "実質 0円",
+        publicSub: "所得制限に関わらず全額無償化対象",
+        privateTuition: "実質 0円 または 大幅軽減",
+        privateSub: "国の多子世帯支援拡充および愛知県の授業料減免制度",
+        admissionAid: "最大 20万円 補助（拡充対象）",
+        admissionSub: "多子世帯特例での入学金・納付金減免枠あり",
+        advisorAdvice: "国および愛知県において、多子世帯（子ども3人以上を扶養）に対する大学・高校の授業料無償化が大幅に拡充されています！年収制限を超えていても実質無償や大幅軽減となる特例対象になる可能性が高いため、必ず秋〜冬の最新募集要項で申請条件をご確認ください。"
+      }
+    };
+
+    function renderSimResult(bracketKey) {
+      const data = simData[bracketKey];
+      if (!data) return;
+
+      const container = document.getElementById("simResultContainer");
+      if (!container) return;
+
+      const isFree = data.privateTuition.includes("実質 0円");
+
+      container.innerHTML = `
+        <div class="sim-result-card">
+          <div class="sim-result-header">
+            <div>
+              <div class="sim-bracket-name">${data.name}</div>
+              <div style="font-size: 0.8rem; color: #64748B; margin-top: 2px;">${data.taxRange}</div>
+            </div>
+            <span class="sim-bracket-tax">${bracketKey === 'multiChild' ? '特例枠' : '住民税判定'}</span>
+          </div>
+
+          <div class="sim-metrics-grid">
+            <div class="sim-metric-item">
+              <div class="sim-metric-label">🏛️ 公立高校 年間授業料</div>
+              <div class="sim-metric-value free">${data.publicTuition}</div>
+              <div class="sim-metric-sub">${data.publicSub}</div>
+            </div>
+
+            <div class="sim-metric-item">
+              <div class="sim-metric-label">🌸 私立高校 年間授業料実質負担</div>
+              <div class="sim-metric-value ${isFree ? 'free' : 'highlight'}">${data.privateTuition}</div>
+              <div class="sim-metric-sub">${data.privateSub}</div>
+            </div>
+
+            <div class="sim-metric-item">
+              <div class="sim-metric-label">🎁 愛知県独自 私立入学金補助</div>
+              <div class="sim-metric-value highlight">${data.admissionAid}</div>
+              <div class="sim-metric-sub">${data.admissionSub}</div>
+            </div>
+          </div>
+
+          <div class="sim-advisor-box">
+            <div class="sim-advisor-avatar">🦉</div>
+            <div class="sim-advisor-text">
+              <strong>シャチフク先輩のアドバイス：</strong><br>
+              ${data.advisorAdvice}
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function selectIncomeBracket(key, btnEl) {
+      document.querySelectorAll(".income-pill").forEach(btn => btn.classList.remove("active"));
+      if (btnEl) btnEl.classList.add("active");
+      renderSimResult(key);
+    }
+
+    // 初期表示：〜590万未満
+    renderSimResult("under590");
+  </script>
+</body>
+</html>
