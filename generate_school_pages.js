@@ -955,6 +955,8 @@ updatedSchoolsData.forEach((school) => {
       window.open(url, "_blank", "noopener,noreferrer");
     }
   </script>
+  <!-- 広告マネージャー（A8.net自動配信＆空き地ゼロ化） -->
+  <script src="../ads_manager.js"></script>
 </body>
 </html>`;
 

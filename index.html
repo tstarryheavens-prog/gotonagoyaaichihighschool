@@ -1877,6 +1877,8 @@
     </div>
   </div>
 
+  <!-- 広告マネージャー（A8.net自動配信＆空き地ゼロ化） -->
+  <script src="ads_manager.js"></script>
   <!-- データファイル読み込み -->
   <script src="schools_data.js"></script>
 
@@ -2141,31 +2143,32 @@
         `;
         cardGrid.appendChild(card);
 
-        // ---- 4校ごとにネイティブインフィード広告（Google AdSense）を挿入 ----
+        // ---- 4校ごとにネイティブインフィード広告（A8.net & AdSenseハイブリッド）を挿入 ----
         if ((index + 1) % 4 === 0) {
           const adCard = document.createElement("div");
           adCard.className = "school-card ad-infeed-card";
-          adCard.innerHTML = `
-            <div>
-              <div class="ad-infeed-badge-row">
-                <span class="ad-infeed-badge">🎓 おすすめ進学・学習支援</span>
-                <span class="ad-sponsor-label">スポンサーPR</span>
+          if (typeof generateInfeedCardHtml === "function") {
+            adCard.innerHTML = generateInfeedCardHtml(Math.floor(index / 4));
+          } else {
+            adCard.innerHTML = `
+              <div>
+                <div class="ad-infeed-badge-row">
+                  <span class="ad-infeed-badge">🎓 おすすめ進学・学習支援</span>
+                  <span class="ad-sponsor-label">スポンサーPR</span>
+                </div>
+                <div class="ad-infeed-title">高校受験・内申点アップ＆合格戦略サポート</div>
+                <div class="ad-infeed-desc">愛知・尾張の志望校合格に向けた効率的な学習法・定期テスト対策・最新の高校入試情報。</div>
+                <div class="ad-infeed-body">
+                  <ins class="adsbygoogle"
+                       style="display:block"
+                       data-ad-client="ca-pub-1988464307898443"
+                       data-ad-slot="auto"
+                       data-ad-format="auto"
+                       data-full-width-responsive="true"></ins>
+                </div>
               </div>
-              <div class="ad-infeed-title">高校受験・内申点アップ＆合格戦略サポート</div>
-              <div class="ad-infeed-desc">愛知・尾張の志望校合格に向けた効率的な学習法・定期テスト対策・最新の高校入試情報。</div>
-              <div class="ad-infeed-body">
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-1988464307898443"
-                     data-ad-slot="auto"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-              </div>
-            </div>
-            <div style="margin-top: 10px; font-size: 0.72rem; color: #94A3B8; text-align: center;">
-              愛知の高校受験生・保護者の進路選択を応援するおすすめプログラム
-            </div>
-          `;
+            `;
+          }
           cardGrid.appendChild(adCard);
         }
 
@@ -2234,22 +2237,26 @@
         if ((index + 1) % 8 === 0) {
           const adTr = document.createElement("tr");
           adTr.style.background = "#FFFDF9";
-          adTr.innerHTML = `
-            <td colspan="8" style="padding: 16px; border: 1.5px dashed var(--accent-border);">
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                <span class="ad-infeed-badge">🎓 スポンサーPR・高校受験学習支援</span>
-                <span class="ad-sponsor-label">広告</span>
-              </div>
-              <div style="text-align: center; min-height: 90px; display: flex; align-items: center; justify-content: center;">
-                <ins class="adsbygoogle"
-                     style="display:block; width: 100%;"
-                     data-ad-client="ca-pub-1988464307898443"
-                     data-ad-slot="auto"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-              </div>
-            </td>
-          `;
+          if (typeof generateInfeedTableRowHtml === "function") {
+            adTr.innerHTML = generateInfeedTableRowHtml(Math.floor(index / 8));
+          } else {
+            adTr.innerHTML = `
+              <td colspan="8" style="padding: 16px; border: 1.5px dashed var(--accent-border);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                  <span class="ad-infeed-badge">🎓 スポンサーPR・高校受験学習支援</span>
+                  <span class="ad-sponsor-label">広告</span>
+                </div>
+                <div style="text-align: center; min-height: 90px; display: flex; align-items: center; justify-content: center;">
+                  <ins class="adsbygoogle"
+                       style="display:block; width: 100%;"
+                       data-ad-client="ca-pub-1988464307898443"
+                       data-ad-slot="auto"
+                       data-ad-format="auto"
+                       data-full-width-responsive="true"></ins>
+                </div>
+              </td>
+            `;
+          }
           tbody.appendChild(adTr);
         }
       });
