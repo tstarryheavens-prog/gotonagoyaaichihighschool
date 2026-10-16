@@ -108,7 +108,86 @@ updatedSchoolsData.forEach((school) => {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${school.name}の特色・学校生活・年間スケジュール＆進学実績【尾張高校ナビ】</title>
   <meta name="description" content="${school.name}（${school.location}）の特色、制服、部活動の加入規定、進学実績、年間行事スケジュール、1日の生活の流れを徹底解説！">
-  
+
+  <!-- Schema.org JSON-LD (AI Discovery / Agentic Web & Rich Results) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["HighSchool", "EducationalOrganization"],
+        "@id": "https://aichi-highschool.jp/schools/${school.id}.html#school",
+        "name": "${school.name}",
+        "description": "${school.features} 合格目安内申点: ${school.score}、偏差値: ${school.deviation}。進学実績: ${school.results}",
+        "url": "${school.url}",
+        "address": {
+          "@type": "PostalAddress",
+          "addressRegion": "愛知県",
+          "streetAddress": "${school.location}"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://aichi-highschool.jp/schools/${school.id}.html",
+        "url": "https://aichi-highschool.jp/schools/${school.id}.html",
+        "name": "${school.name}の特色・学校生活・年間スケジュール＆進学実績【尾張高校ナビ】",
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://aichi-highschool.jp/#website",
+          "name": "尾張・名古屋地区 高校進学ナビ",
+          "url": "https://aichi-highschool.jp/"
+        },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "ホーム",
+              "item": "https://aichi-highschool.jp/index.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "${school.name}",
+              "item": "https://aichi-highschool.jp/schools/${school.id}.html"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "${school.name}の目安となる内申点や偏差値は？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "${school.name}の合格目安内申点は${school.score}、偏差値は約${school.deviation}（${school.rank}ランク）です。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "${school.name}の部活動や制服の規定はどうなっていますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "部活動規定は「${school.clubPolicy}」（${school.clubDetail}）です。制服規定は「${school.uniform}」（${school.uniformDetail}）です。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "${school.name}の文化祭や説明会の日程はいつですか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "${school.events.replace(/<br>/g, ' / ').replace(/"/g, '\\"')}"
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
   <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1988464307898443"
      crossorigin="anonymous"></script>
@@ -533,6 +612,7 @@ updatedSchoolsData.forEach((school) => {
 
   <nav class="top-nav">
     <a href="../index.html">📊 内申点ランキングTOP</a>
+    <a href="../composite-selection-guide.html">🔀 複合選抜・W出願</a>
     <a href="../public-vs-private-guide.html">⚖️ 公立・私立比較</a>
     <a href="../tuition-guide.html">💰 学費・補助金ガイド</a>
     <a href="../mock-exam-guide.html">📈 模試判定の読み方</a>

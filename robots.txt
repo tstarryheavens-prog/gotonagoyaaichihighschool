@@ -1,0 +1,34 @@
+# robots.txt for Aichi High School Room (尾張・名古屋地区 高校進学ナビ)
+# Optimizing for AI Discovery, Agentic Web & Search Engines
+
+User-agent: *
+Allow: /
+Disallow: /scratch/
+Disallow: /.git/
+
+# OpenAI Search & Browsing Bots (ChatGPT Search)
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic Claude
+User-agent: Claude-Web
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Googlebot & Extended
+User-agent: Googlebot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# AI Discovery Manifests (llmstxt.org)
+# https://aichi-highschool.jp/llms.txt
+# https://aichi-highschool.jp/llms-full.txt
+Sitemap: https://aichi-highschool.jp/sitemap.xml

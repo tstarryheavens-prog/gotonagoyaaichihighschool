@@ -6,6 +6,61 @@
   <title>尾張・名古屋地区 高校進学ナビ【公立・私立 内申点完全ランキング＆部活規定・文化祭日程】</title>
   <meta name="description" content="愛知県（尾張・名古屋地区）の公立・私立高校を内申点目安から直感比較！公立W出願＆私立併願シミュレーター、部活動規定、制服、文化祭日程、キープ比較機能を完全網羅。">
 
+  <!-- Schema.org JSON-LD (AI Discovery / Agentic Web) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://aichi-highschool.jp/#website",
+        "url": "https://aichi-highschool.jp/",
+        "name": "尾張・名古屋地区 高校進学ナビ",
+        "description": "愛知県尾張・名古屋地区の公立・私立高校の内申点目安、公立W出願・私立併願シミュレーター、部活規定、文化祭日程データベース",
+        "inLanguage": "ja"
+      },
+      {
+        "@type": "WebApplication",
+        "@id": "https://aichi-highschool.jp/#simulator",
+        "name": "愛知県公立高校 W出願＆私立併願シミュレーター",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "description": "内申点（9教科45点満点）を入力することで、愛知県公立高校の尾張1群・2群、Aグループ・Bグループの最適なW出願パターンと併願私立高校を即座に判定するシミュレーションツール"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "愛知県の公立高校入試の「W出願（ダブル出願）」とは何ですか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "愛知県の公立高校普通科では、尾張1群または尾張2群の同一群内において、Aグループから1校、Bグループから1校の最大2校を同時に出願・受験できる制度です。第1志望が不合格でも第2志望校で合否判定を受けられます。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "愛知県の高校入試で内申点はどのように計算されますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "中学3年生の9教科×5段階評定の合計45点満点です。学力検査（当日点110点満点）と組み合わせて高校ごとの傾斜配点（当日点重視の判定方式IIなど）によって総合判定されます。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "私立高校授業料の実質無償化は愛知県でどう適用されますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "国の就学支援金に加え、愛知県独自の授業料軽減助成金により、年収目安約840万円未満の世帯では県内私立高校の平均授業料相当額が実質全額補助されます。"
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
   <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1988464307898443"
      crossorigin="anonymous"></script>
@@ -18,6 +73,7 @@
     });
   </script>
 
+  <link rel="alternate" type="text/markdown" href="llms.txt" title="AI Agents / LLM Context (llms.txt)">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Noto+Sans+JP:wght@400;500;700;800&family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -1408,6 +1464,7 @@
   <nav class="top-nav">
     <div class="top-nav-inner">
       <a href="index.html" class="active">📊 内申点ランキングTOP</a>
+      <a href="composite-selection-guide.html">🔀 複合選抜・W出願</a>
       <a href="public-vs-private-guide.html">⚖️ 公立・私立比較</a>
       <a href="tuition-guide.html">💰 学費・補助金ガイド</a>
       <a href="mock-exam-guide.html">📈 模試判定の読み方</a>
@@ -1739,6 +1796,10 @@
         <a onclick="openModal('privacyModal')">プライバシーポリシー・免責事項</a>
         <span>|</span>
         <a onclick="openModal('contactModal')">お問い合わせ</a>
+        <span>|</span>
+        <a href="llms.txt" target="_blank" rel="noopener">AI/LLM用データ (llms.txt)</a>
+        <span>|</span>
+        <a href="api/schools.json" target="_blank" rel="noopener">オープンデータ API (JSON)</a>
       </div>
       <p>© 尾張・名古屋地区 高校進学情報ガイド / 本サイトは中学生・保護者の進路選択を支援するポータルサイトです。</p>
     </footer>
