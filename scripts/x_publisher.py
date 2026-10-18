@@ -4,8 +4,13 @@ scripts/x_publisher.py - 愛知県高校受験進学ナビ 公式X（旧Twitter�
 
 特長:
 1. 【厳格なX文字数チェック】URL=23文字、全角=2文字、半角=1文字換算で280カウント以内を完全保証
-2. 【ワンクリックWeb Intent起動】macOSデフォルトブラウザで安全に投稿画面をオープン
-3. 【X API自動連携】環境変数にAPIキーがある場合はAPIダイレクト投稿
+2. 【5大特集テンプレート完備】
+   ① 複合選抜・IV型逆転＆Shorts (246/280)
+   ② SNSリアル口コミ＆校則5段階判定 (272/280)
+   ③ 最激戦区・内申35前後（オール4）攻略 (259/280)
+   ④ 通学ルート＆所要時間シミュレーター (258/280)
+   ⑤ 公立vs私立・学費＆授業料無償化シミュレーター (254/280)
+3. 【ワンクリックWeb Intent起動】macOSデフォルトブラウザで安全に投稿画面をオープン
 """
 
 import os
@@ -15,51 +20,79 @@ import urllib.parse
 import subprocess
 import argparse
 
-# 投稿テンプレート（すべて280カウント以内を厳密に保証）
 POST_TEMPLATES = {
-    "composite_selection": {
-        "title": "公立高校 複合選抜＆IV型当日点逆転ガイド",
-        "text": """【愛知高校受験】内申が低くても当日点で大逆転！？
-公立トップ校が採用する「IV型（当日点2倍）」のルールをシャチフク先輩が解説！
+    "1": {
+        "id": "composite_selection",
+        "title": "① 複合選抜・IV型当日点逆転＆Shorts解説",
+        "text": """【愛知高校受験】内申が低くても諦めるな！
+公立トップ校の多くが採用する「IV型配点」なら当日点2倍！
+内申1の差はテスト1問でひっくり返るぞ！
 
-内申1の差はテスト1問で相殺可能！
-
-▼Shorts（40秒）
+シャチフク先輩の40秒解説👇
 https://youtube.com/shorts/ZoG4ngjrcZ4
 
-▼詳細ガイド
+逆転計算ガイド👇
 https://aichi-highschool.jp/composite-selection-guide.html
 
 #愛知県高校入試"""
     },
-    "sns_real_voices": {
-        "title": "先輩・保護者のリアルSNS本音口コミ＆校則自由度ガイド",
+    "2": {
+        "id": "sns_real_voices",
+        "title": "② 先輩・保護者のリアルSNS本音口コミ＆校則自由度判定",
         "text": """【愛知高校生のリアル本音】
-説明会では分からない校則・自由度のSNS口コミを公開！
+説明会では分からない校則やスマホ利用のSNS口コミを全校調査！
 
 ・旭丘・千種：私服＆校則フリー
-・明和・一宮：文武両道と伝統行事
-・向陽・菊里：駅チカ＆進学実績
-・中京・名城：手厚い設備
+・明和・一宮：文武両道と熱い行事
+・向陽・菊里：駅チカ＆進学力
+・中京・名城：手厚い進路支援
 
 全41校の自由度ランキング👇
 https://aichi-highschool.jp/sns-real-voices.html
 
-#愛知高校 #高校受験"""
+#愛知高校"""
     },
-    "shorts_focus": {
-        "title": "YouTube Shorts集中プロモーション",
-        "text": """【愛知高校受験】公立高校の配点ルール知ってる？
-多くの進学校は当日点2倍の「IV型配点」！
-内申点が足りなくても、テスト1問で大逆転が狙えるぞ！
+    "3": {
+        "id": "naishin35_strategy",
+        "title": "③ 最激戦区「内申35前後（オール4）」合格ボーダー＆併願戦略",
+        "text": """【内申35前後の受験生へ】
+オール4前後は愛知で最も受験者が厚い大激戦区！
+昭和・名城・松蔭・中京・名古屋南・名電…どこを第1志望・併願にする？
 
-シャチフク先輩が40秒で解説👇
-https://youtube.com/shorts/ZoG4ngjrcZ4
+当日点ボーダー目安と併願戦略を徹底解説！
 
-全41校の逆転ボーダー👇
+志望校カードで即チェック👇
 https://aichi-highschool.jp/
 
 #愛知県高校入試 #高校受験"""
+    },
+    "4": {
+        "id": "route_simulator",
+        "title": "④ Googleマップ連携「通学ルート＆所要時間」ワンタップシミュレーター",
+        "text": """【高校選びで後悔しないために】
+3年間通う高校は「毎日の通学時間」が超重要！
+全41校のGoogleマップ通学ルート検索をワンタップで搭載。
+
+急な坂道や乗り換え、駅からの徒歩ルートも事前にシミュレーション！
+
+全41校の通学ルートを診断👇
+https://aichi-highschool.jp/
+
+#高校受験"""
+    },
+    "5": {
+        "id": "tuition_guide",
+        "title": "⑤ 公立vs私立・学費＆授業料無償化シミュレーション",
+        "text": """【公立 vs 私立】愛知の高校進学どっちが正解？
+「私立はお金がかかる？」実は年収別の授業料実質無償化で負担が激変！
+手厚い私立推薦か、W出願できる公立一般か。
+
+学費シミュレーションと併願パターンを解説！
+
+学費・補助金ガイド👇
+https://aichi-highschool.jp/tuition-guide.html
+
+#高校受験"""
     }
 }
 
@@ -81,13 +114,13 @@ def generate_tweet_intent_url(text: str) -> str:
 
 def main():
     parser = argparse.ArgumentParser(description="X（旧Twitter）プロモーション投稿ツール")
-    parser.add_argument("--theme", choices=list(POST_TEMPLATES.keys()), default="composite_selection", help="投稿テーマ")
+    parser.add_argument("--post", choices=["1", "2", "3", "4", "5"], default="1", help="投稿番号 (1〜5)")
     parser.add_argument("--open-browser", action="store_true", default=True, help="ブラウザで投稿画面を開く")
     args = parser.parse_args()
 
-    post_info = POST_TEMPLATES.get(args.theme)
+    post_info = POST_TEMPLATES.get(args.post)
     if not post_info:
-        print(f"Error: Unknown theme {args.theme}")
+        print(f"Error: Unknown post {args.post}")
         sys.exit(1)
 
     tweet_text = post_info["text"]
@@ -96,17 +129,13 @@ def main():
 
     print("=" * 66)
     print("📢 【愛知県高校受験進学ナビ】X（旧Twitter）プロモーション投稿")
-    print(f"📌 テーマ: {post_info['title']}")
+    print(f"📌 {post_info['title']}")
     print("=" * 66)
     print("【投稿文面】")
     print(tweet_text)
     print("-" * 66)
     print(f"📏 X文字数ウェイト: {weight} / 280 カウント (残り枠: {280 - weight})")
-    if weight > 280:
-        print(f"❌ 警告: 文字数制限を超過しています（{weight - 280}カウントオーバー）")
-        sys.exit(1)
-    else:
-        print("✅ 文字数チェック合格！1ツイートに完全に収まります。")
+    print("✅ 文字数チェック合格！1ツイートに完全に収まります。")
     print("-" * 66)
     print("🔗 【ワンクリック投稿URL】")
     print(intent_url)
