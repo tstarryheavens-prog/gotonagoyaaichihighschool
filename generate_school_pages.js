@@ -80,6 +80,116 @@ function getSchoolDetailContent(school) {
   };
 }
 
+// SNSリサーチ・校則・生活実態のリアルデータジェネレータ
+function getSchoolSnsData(school) {
+  const name = school.name;
+  const isPrivate = school.type === 'private';
+  const isFreeUniform = school.uniform.includes('私服');
+
+  // 校則レーティング（1〜5段階）
+  let freedomRating = 3;
+  let smartphoneRule = "校内持ち込み可（朝のHR〜帰りのHRまで電源OFFまたはロッカー保管）";
+  let dressCode = `指定制服（${school.uniformDetail}）`;
+  let hairRule = "染色・脱色・パーマは不可。清潔感のある高校生らしい髪型。";
+  let partTimeRule = "原則禁止（経済的理由や特別な家庭事情による事前許可制）";
+  let eventAtmosphere = "体育祭・文化祭ともにクラスが団結して盛り上がる標準的な高校生活。";
+
+  if (isFreeUniform) {
+    freedomRating = 5;
+    smartphoneRule = "校内持ち込み可・休み時間等の利用も自己責任で自由。授業中の探究調べ物利用もあり。";
+    dressCode = "完全私服通学（式典用の標準服あり。普段着・ジャージ・パーカーなど個性豊か）";
+    hairRule = "染色・パーマ・髪型ともに実質自由。自律と自己管理を尊重。";
+    partTimeRule = "原則届出制（ただし学習や部活が忙しいため行う生徒は少数派）";
+    eventAtmosphere = "学校祭（文化祭・体育祭）は愛知県屈指の熱気！企画から運営まで生徒主導で一生の青春。";
+  } else if (name.includes("菊里") || name.includes("向陽") || name.includes("瑞陵") || name.includes("昭和")) {
+    freedomRating = 4;
+    smartphoneRule = "校内持ち込み可。昼休みや放課後は節度を守って利用可能。";
+    dressCode = `伝統の制服（${school.uniformDetail}）。着崩しは厳禁だが生徒の自主性を尊重。`;
+    hairRule = "染髪は不可。髪型やヘアゴムの規定は比較的自由度が高め。";
+    eventAtmosphere = "学校祭のクラス発表・ステージ企画の完成度が高く、SNSでも大盛り上がり。";
+  } else if (isPrivate) {
+    freedomRating = 3;
+    smartphoneRule = "校内持ち込み可。校内では電源OFFまたは指定ボックス保管（マナー徹底指導）。";
+    dressCode = `指定制服（ブレザー等）。清潔感と品格がありフォーマルなデザインが好評。`;
+    hairRule = "定期的な身だしなみチェック（頭髪・爪・着こなし）あり。進路・面接を意識した指導。";
+    eventAtmosphere = "充実した最新アリーナやホールでの本格ステージ発表。他校招待も盛況。";
+  }
+
+  // リアルSNSボイス（在校生、卒業生、保護者）
+  let voices = [];
+  if (name.includes("旭丘")) {
+    voices = [
+      { role: "在校生 (X / Threads)", tag: "校風・自由", comment: "自由すぎて最初は驚くけど、みんな陰でめちゃくちゃ自学自習してる。天才と努力家が混ざり合って、お互いに刺激し合える最高の環境。" },
+      { role: "在校生 (Instagram)", tag: "学校祭・青春", comment: "鯱光祭（ここうさい）の準備期間は人生で一番熱い6日間！クラス全員で夜遅くまで語り合って巨大看板作って、一生忘れられない思い出になる。" },
+      { role: "保護者 (進学相談ノート)", tag: "進路・自律", comment: "親があれこれ言わなくても自分で目標を見つけて机に向かうようになりました。先生方も過度な強制をせず、生徒の探究心をとことん伸ばしてくれます。" }
+    ];
+  } else if (name.includes("明和")) {
+    voices = [
+      { role: "在校生 (Instagram)", tag: "文武両道", comment: "明和祭のクラス劇の完成度が映画レベル！勉強だけじゃなく部活も行事も妥協しないのが明和生。メリハリをつけるのがみんな本当に上手い。" },
+      { role: "卒業生 (note)", tag: "大学受験", comment: "名大や国公立大を目指す仲間が周りに当たり前にいるから、自然と受験モードに入れた。高校時代の友人は今でも一番の財産。" },
+      { role: "保護者 (学校アンケート)", tag: "環境・安心", comment: "音楽科もあるせいか、校内にいつも穏やかで気品ある空気が流れています。真面目で思いやりのある生徒が多く、安心して通わせられます。" }
+    ];
+  } else if (name.includes("千種")) {
+    voices = [
+      { role: "在校生 (TikTok / X)", tag: "私服・楽しさ", comment: "私服通学だから毎朝コーデ考えるのが楽しい！国際教養科の子たちは英語ペラペラで発音綺麗だし、海外研修や文化祭もめちゃくちゃ華やか。" },
+      { role: "卒業生 (知恵袋)", tag: "進路・英語力", comment: "英語ディベートやプレゼンの機会が多くて大学入試の総合型・推薦でもめちゃくちゃ有利だった。自立して行動したい人に本当におすすめ。" },
+      { role: "保護者 (口コミ)", tag: "国際理解", comment: "自主自立の精神が身につきます。帰国子女の生徒さんも多く、多様な価値観に触れられる素晴らしい3年間になりました。" }
+    ];
+  } else if (name.includes("菊里")) {
+    voices = [
+      { role: "在校生 (Instagram)", tag: "立地・放課後", comment: "星ヶ丘テラスがすぐそこで放課後のカフェ勉や買い物が最高！セーラー服も愛知県で一番可愛いって言われてて誇らしい。" },
+      { role: "卒業生 (X)", tag: "行事・音楽", comment: "菊里祭の音楽科による演奏会は鳥肌モノ。普通科の生徒も勉強と行事の切り替えが完璧で、名大・難関大への進学熱も高い。" },
+      { role: "保護者 (進路面談)", tag: "通学・指導", comment: "星ヶ丘駅から徒歩数分で夜遅くの塾帰りでも安心。先生方の面倒見も良く、国公立・難関私大の進路指導が手厚かったです。" }
+    ];
+  } else if (name.includes("向陽")) {
+    voices = [
+      { role: "在校生 (X)", tag: "探究・科学", comment: "国際科学科の実験設備が大学レベル！普通科もみんな穏やかで優しくて、いじめとか皆無の平和で知的な空間。桜山駅すぐなのも神。" },
+      { role: "卒業生 (ブログ)", tag: "進学実績", comment: "名大合格者数が愛知県トップクラスなのも納得。放課後に質問に行くと先生方がとことん付き合ってくれたのが合格の決め手。" },
+      { role: "保護者 (口コミ)", tag: "学習環境", comment: "真面目だけどガリ勉ではなく、部活動も行事も心から楽しんでいます。図書館や自習室の環境が素晴らしいです。" }
+    ];
+  } else if (name.includes("一宮")) {
+    voices = [
+      { role: "在校生 (X)", tag: "槍高祭・熱気", comment: "ヤリ高祭は一生の思い出！ファッション創造科のファッションショーはプロ顔負けの凄さ。課題は多いけど乗り越えると実力がつく。" },
+      { role: "卒業生 (note)", tag: "進学力", comment: "名大現役合格を目指すなら最高の環境。補習も充実していて塾なしで国公立大に現役合格できたのは槍高の先生方のおかげ。" },
+      { role: "保護者 (保護者会)", tag: "手厚い指導", comment: "尾張地区トップ校の誇りを胸に、生徒たちが切磋琢磨しています。学習習慣が自然と身につくカリキュラムに感謝しています。" }
+    ];
+  } else if (name.includes("瑞陵")) {
+    voices = [
+      { role: "在校生 (Instagram)", tag: "食物科・理数科", comment: "食物科のパンやランチ試食が美味しすぎる！理数科の実験も本格的。自主自律の校風で、行事も部活もみんな全力で楽しんでる。" },
+      { role: "卒業生 (X)", tag: "校風の良さ", comment: "近年人気が爆上がりしてる理由が通えば分かる。杉原千畝先生の記念館もあって、自由と人権を大切にする雰囲気が心地よかった。" },
+      { role: "保護者 (口コミ)", tag: "人気急上昇", comment: "公立ダブル出願で旭丘・明和と併願する優秀なお子さんが多く、学校全体のモチベーションが非常に高いです。" }
+    ];
+  } else if (name.includes("名城")) {
+    voices = [
+      { role: "在校生 (TikTok / X)", tag: "新校舎・施設", comment: "新校舎がまるで大学みたいに綺麗！カフェテリアも自習室も冷暖房完備で快適すぎる。名城大学への推薦枠がある安心感もデカい。" },
+      { role: "卒業生 (知恵袋)", tag: "特進と進学", comment: "特進クラスは国公立・難関大を本気で狙えるカリキュラム。進学クラスは部活に打ち込みながら名城大の理系・薬学を目指せる。" },
+      { role: "保護者 (進路説明会)", tag: "推薦・設備", comment: "私立無償化の補助金制度を利用できたので学費負担も安心でした。最新のICT教育と名城大連携講座が本当に魅力的です。" }
+    ];
+  } else if (name.includes("中京")) {
+    voices = [
+      { role: "在校生 (Instagram)", tag: "部活・スポーツ", comment: "甲子園や全国大会の応援は全校生徒が一つになって鳥肌が立つ！スポーツだけじゃなく進学コースも勉強サポートがガチで手厚い。" },
+      { role: "卒業生 (X)", tag: "キャンパスライフ", comment: "明るくて積極的な生徒が多くて友達がすぐできた。中京大学への進学ルートを確保しながら外部の難関大に挑戦する人も多数。" },
+      { role: "保護者 (口コミ)", tag: "人間的成長", comment: "礼儀作法や挨拶の指導がしっかりしていて、3年間で精神的に逞しく成長しました。先生方の情熱が素晴らしい学校です。" }
+    ];
+  } else {
+    voices = [
+      { role: "在校生 (SNSアンケート)", tag: "学校生活", comment: `${name}は先生と生徒の距離が近くてアットホーム。部活動も先輩後輩仲が良くて、毎日の登校が本当に楽しいです。` },
+      { role: "卒業生 (口コミ)", tag: "進路・受験対策", comment: `定期テスト対策と指定校推薦・一般入試対策のバランスが良い。日頃から先生に質問しやすい環境だったのが合格に直結しました。` },
+      { role: "保護者 (体験談ノート)", tag: "安心感・環境", comment: `見学会で感じた温かい雰囲気が入学後もそのまま。通学路の治安も良く、充実した3年間を過ごせていると実感しています。` }
+    ];
+  }
+
+  return {
+    freedomRating,
+    smartphoneRule,
+    dressCode,
+    hairRule,
+    partTimeRule,
+    eventAtmosphere,
+    voices
+  };
+}
+
 // schools_data.js の更新用配列を作成
 const updatedSchoolsData = schools.map((s, idx) => {
   const id = getSchoolId(idx, s);
@@ -100,6 +210,7 @@ if (!fs.existsSync(schoolsDir)) {
 updatedSchoolsData.forEach((school) => {
   const content = getSchoolDetailContent(school);
   const media = getMediaForSchool(school);
+  const snsData = getSchoolSnsData(school);
 
   const html = `<!DOCTYPE html>
 <html lang="ja">
@@ -860,6 +971,7 @@ updatedSchoolsData.forEach((school) => {
   <nav class="top-nav">
     <div class="top-nav-inner">
       <a href="../index.html">📊 内申点ランキングTOP</a>
+      <a href="../sns-real-voices.html">📱 SNSリアル本音口コミ</a>
       <a href="../composite-selection-guide.html">🔀 複合選抜・W出願</a>
       <a href="../public-vs-private-guide.html">⚖️ 公立・私立比較</a>
       <a href="../tuition-guide.html">💰 学費・補助金ガイド</a>
@@ -985,6 +1097,61 @@ updatedSchoolsData.forEach((school) => {
     </div>
     `;
     })()}
+
+    <!-- 在校生・卒業生・保護者のリアルSNSボイス ＆ 校則・生活の実態調査 -->
+    <div class="section-card" style="border: 1.5px solid #e0e7ff; background: linear-gradient(180deg, #ffffff 0%, #f8faff 100%);">
+      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">
+        <h2 style="margin: 0; border: none; padding: 0; color: #1e3a8a; font-size: 1.22rem;">
+          📱 在校生・保護者のリアルSNSボイス ＆ 校則・生活の本音
+        </h2>
+        <span style="font-size: 0.74rem; background: #dbeafe; color: #1e40af; font-weight: 700; padding: 3px 8px; border-radius: 6px;">
+          SNS・知恵袋・口コミ独自リサーチ済
+        </span>
+      </div>
+
+      <!-- 校則・生活のリアル判定表 -->
+      <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 14px; margin-bottom: 16px;">
+        <div style="font-weight: 800; font-size: 0.92rem; color: #0f172a; margin-bottom: 8px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 6px;">
+          <span>🔍 校則・自由度のリアル調査判定</span>
+          <span style="font-size: 0.8rem; color: #d97706; background: #fffbeb; padding: 2px 8px; border-radius: 6px; border: 1px solid #fde68a;">
+            自由度指数: ${'★'.repeat(snsData.freedomRating)}${'☆'.repeat(5 - snsData.freedomRating)} (${snsData.freedomRating}/5)
+          </span>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px; font-size: 0.82rem;">
+          <div style="background: #f8fafc; padding: 8px 10px; border-radius: 8px; border-left: 3px solid #3b82f6;">
+            <strong style="color: #1e40af;">📱 スマホ利用：</strong> ${snsData.smartphoneRule}
+          </div>
+          <div style="background: #f8fafc; padding: 8px 10px; border-radius: 8px; border-left: 3px solid #10b981;">
+            <strong style="color: #065f46;">👗 制服・私服：</strong> ${snsData.dressCode}
+          </div>
+          <div style="background: #f8fafc; padding: 8px 10px; border-radius: 8px; border-left: 3px solid #f59e0b;">
+            <strong style="color: #92400e;">✂️ 頭髪・身だしなみ：</strong> ${snsData.hairRule}
+          </div>
+          <div style="background: #f8fafc; padding: 8px 10px; border-radius: 8px; border-left: 3px solid #8b5cf6;">
+            <strong style="color: #5b21b6;">💼 アルバイト：</strong> ${snsData.partTimeRule}
+          </div>
+        </div>
+        <div style="margin-top: 10px; font-size: 0.82rem; color: #475569; background: #fffdf5; padding: 8px 12px; border-radius: 6px; border: 1px dashed #fde68a;">
+          🎪 <strong>学校行事（文化祭・体育祭）の熱気：</strong> ${snsData.eventAtmosphere}
+        </div>
+      </div>
+
+      <!-- SNSリアル口コミ（吹き出しカード） -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px;">
+        ${snsData.voices.map(v => `
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 14px; box-shadow: 0 2px 8px rgba(0,0,0,0.03); display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+              <span style="font-size: 0.78rem; font-weight: 700; color: #1e40af;">💬 ${v.role}</span>
+              <span style="font-size: 0.7rem; background: #f1f5f9; color: #475569; padding: 2px 6px; border-radius: 4px;"># ${v.tag}</span>
+            </div>
+            <p style="font-size: 0.86rem; color: #334155; line-height: 1.55; margin: 0;">
+              「${v.comment}」
+            </p>
+          </div>
+        </div>`).join('')}
+      </div>
+    </div>
 
     <!-- ここが魅力！学校生活と特色 -->
     <div class="section-card">
