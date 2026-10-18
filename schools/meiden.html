@@ -123,71 +123,315 @@
       padding-bottom: 70px;
     }
     header {
-      background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #3b82f6 100%);
+      background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #2563eb 100%);
       color: white;
-      padding: 35px 20px 25px;
-      text-align: center;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+      padding: 12px 18px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
     }
-    header h1 {
-      font-family: 'M PLUS Rounded 1c', sans-serif;
-      font-size: 2rem;
-      font-weight: 800;
-      margin-bottom: 8px;
-    }
-    header p {
-      font-size: 0.95rem;
-      opacity: 0.95;
-      max-width: 800px;
+    .header-inner {
+      max-width: 1080px;
       margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .header-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .header-logo-img {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+      background: white;
+      border: 1.5px solid rgba(255,255,255,0.9);
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    .header-titles {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
     }
     .badge-bar {
       display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-bottom: 12px;
+      align-items: center;
+      gap: 6px;
       flex-wrap: wrap;
     }
     .badge {
-      background: rgba(255, 255, 255, 0.2);
-      padding: 4px 14px;
+      background: rgba(255, 255, 255, 0.22);
+      padding: 2px 8px;
       border-radius: 9999px;
-      font-size: 0.82rem;
+      font-size: 0.72rem;
       font-weight: 700;
       backdrop-filter: blur(4px);
     }
+    .badge-rank {
+      background: #f59e0b;
+      color: #78350f;
+      font-weight: 800;
+    }
+    header h1 {
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 800;
+      margin: 0;
+      line-height: 1.25;
+      color: #ffffff;
+    }
+    .header-catchphrase {
+      font-size: 0.8rem;
+      color: #e0e7ff;
+      margin: 0;
+      max-width: 460px;
+      line-height: 1.4;
+    }
 
+    /* 1行横スクロール・ナビゲーション */
     .top-nav {
       background: white;
       border-bottom: 1px solid var(--border-color);
-      padding: 10px 20px;
-      display: flex;
-      justify-content: center;
-      gap: 12px;
+      padding: 6px 12px;
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-      flex-wrap: wrap;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+    }
+    .top-nav-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      overflow-x: auto;
+      white-space: nowrap;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+    .top-nav-inner::-webkit-scrollbar {
+      display: none;
     }
     .top-nav a {
       text-decoration: none;
       color: var(--text-main);
       font-weight: 600;
-      font-size: 0.88rem;
-      padding: 6px 14px;
-      border-radius: 8px;
+      font-size: 0.78rem;
+      padding: 4px 10px;
+      border-radius: 6px;
       transition: all 0.2s;
+      flex-shrink: 0;
+      background: #f8fafc;
+      border: 1px solid #f1f5f9;
     }
     .top-nav a:hover, .top-nav a.active {
       background: var(--primary-light);
       color: var(--primary);
+      border-color: #bfdbfe;
     }
 
     .container {
-      max-width: 1050px;
+      max-width: 1080px;
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 0 16px;
+    }
+
+    /* ファーストビュー：コンテンツと広告の横並びトップセクション */
+    .hero-top-grid {
+      display: grid;
+      grid-template-columns: 1fr 310px;
+      gap: 16px;
+      margin: 14px 0 18px;
+      align-items: stretch;
+    }
+
+    /* 左カラム：入試基本データ＆スペック（スクロール不要で即座に見える！） */
+    .hero-spec-card {
+      background: white;
+      border-radius: 14px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 3px 14px rgba(0, 0, 0, 0.04);
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .hero-spec-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 12px;
+      border-bottom: 2px solid #f1f5f9;
+      padding-bottom: 8px;
+      flex-wrap: wrap;
+    }
+    .hero-spec-title {
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .hero-spec-loc {
+      font-size: 0.8rem;
+      color: #64748b;
+      font-weight: 500;
+    }
+
+    /* 4分割スペックボックス */
+    .hero-metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .hero-metric-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 8px 12px;
+    }
+    .hero-metric-box.metric-score {
+      background: #eff6ff;
+      border-color: #bfdbfe;
+    }
+    .hero-metric-box.metric-dev {
+      background: #fffbeb;
+      border-color: #fde68a;
+    }
+    .hero-metric-label {
+      font-size: 0.72rem;
+      color: #64748b;
+      font-weight: 700;
+      display: block;
+      margin-bottom: 2px;
+    }
+    .hero-metric-box.metric-score .hero-metric-label { color: #1e40af; }
+    .hero-metric-box.metric-dev .hero-metric-label { color: #b45309; }
+
+    .hero-metric-val {
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #1e293b;
+      line-height: 1.2;
+    }
+    .hero-metric-box.metric-score .hero-metric-val { color: #1d4ed8; }
+    .hero-metric-box.metric-dev .hero-metric-val { color: #d97706; }
+    .hero-metric-val-sub {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #334155;
+    }
+
+    /* ボタン＆アクション行 */
+    .hero-actions-row {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+    .btn-route-action {
+      flex: 1;
+      min-width: 170px;
+      background: #10b981;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      box-shadow: 0 2px 6px rgba(16, 185, 129, 0.22);
+      transition: all 0.2s;
+    }
+    .btn-route-action:hover {
+      background: #059669;
+    }
+    .btn-official-action {
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.2s;
+      box-shadow: 0 2px 6px rgba(37, 99, 235, 0.2);
+    }
+    .btn-official-action:hover {
+      background: #1d4ed8;
+    }
+
+    /* 親子体験談スリムノート */
+    .hero-parent-note {
+      background: #fffdf5;
+      border: 1px solid #fde68a;
+      border-radius: 8px;
+      padding: 7px 10px;
+      font-size: 0.76rem;
+      color: #92400e;
+      line-height: 1.45;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* 右カラム：横並びスポンサー広告カード */
+    .hero-ad-card {
+      background: white;
+      border-radius: 14px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 3px 14px rgba(0, 0, 0, 0.04);
+      padding: 10px 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: #fffdfa;
+    }
+    .hero-ad-badge-row {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      align-items: center;
+      margin-bottom: 4px;
+      font-size: 0.68rem;
+      color: #94a3b8;
+    }
+    .hero-ad-badge {
+      background: #fef3c7;
+      color: #b45309;
+      font-weight: 700;
+      padding: 1px 6px;
+      border-radius: 4px;
+    }
+    .hero-ad-img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .hero-ad-footer-text {
+      font-size: 0.7rem;
+      color: #64748b;
+      margin-top: 4px;
+      line-height: 1.35;
     }
 
     /* 高収益化を狙う広告バナー枠（自然な配置） */
@@ -464,27 +708,26 @@
       line-height: 1.8;
     }
 
+    @media (max-width: 860px) {
+      .hero-top-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
     @media (max-width: 640px) {
-      header h1 { font-size: 1.45rem; }
-      .container { padding: 0 12px; }
-      .section-card { padding: 18px 15px; }
+      header { padding: 10px 14px; }
+      header h1 { font-size: 1.25rem; }
+      .header-logo-img { width: 38px; height: 38px; }
+      .container { padding: 0 10px; }
+      .hero-metrics-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+      .hero-metric-val { font-size: 1.15rem; }
+      .section-card { padding: 18px 14px; }
       .daily-row { flex-direction: column; gap: 4px; }
       .daily-time { min-width: auto; }
-    .header-logo-wrap {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 15px;
-      margin-bottom: 12px;
-      flex-wrap: wrap;
-    }
-    .header-logo-img {
-      width: 64px;
-      height: 64px;
-      border-radius: 16px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.18);
-      background: white;
-      border: 2px solid rgba(255,255,255,0.8);
     }
   </style>
   <link rel="icon" type="image/png" href="../favicon.png">
@@ -492,97 +735,107 @@
 </head>
 <body>
 
+  <!-- ヘッダー：コンパクト＆高品質 -->
   <header>
-    <div class="header-logo-wrap">
-      <a href="../index.html"><img src="../logo.png" alt="尾張・名古屋高校進学ナビ公式マスコット シャチホコフクロウ" class="header-logo-img"></a>
-      <div>
-        <div class="badge-bar" style="margin-bottom:6px;">
-          <span class="badge">ランク B+</span>
-          <span class="badge">私立</span>
-          <span class="badge">私立共学校（普特・進学・科学技術・情報）</span>
+    <div class="header-inner">
+      <div class="header-brand">
+        <a href="../index.html" class="logo-link"><img src="../logo.png" alt="尾張・名古屋高校進学ナビ公式マスコット シャチホコフクロウ" class="header-logo-img"></a>
+        <div class="header-titles">
+          <div class="badge-bar">
+            <span class="badge badge-rank">ランク B+</span>
+            <span class="badge">私立</span>
+            <span class="badge">私立共学校（普特・進学・科学技術・情報）</span>
+          </div>
+          <h1>愛知工業大学名電高等学校</h1>
         </div>
-        <h1>愛知工業大学名電高等学校</h1>
       </div>
+      <p class="header-catchphrase">愛知工業大学名電高等学校で過ごす最高の高校生活！仲間と高め合い、一生の夢をつかむ3年間</p>
     </div>
-    <p>愛知工業大学名電高等学校で過ごす最高の高校生活！仲間と高め合い、一生の夢をつかむ3年間</p>
   </header>
 
+  <!-- 1行横スクロール・ナビゲーション -->
   <nav class="top-nav">
-    <a href="../index.html">📊 内申点ランキングTOP</a>
-    <a href="../composite-selection-guide.html">🔀 複合選抜・W出願</a>
-    <a href="../public-vs-private-guide.html">⚖️ 公立・私立比較</a>
-    <a href="../tuition-guide.html">💰 学費・補助金ガイド</a>
-    <a href="../mock-exam-guide.html">📈 模試判定の読み方</a>
-    <a href="../autumn-tour-guide.html">🍂 秋の見学会チェック</a>
-    <a href="../schedule.html">📅 学年別進学スケジュール</a>
-    <a href="../test-study-guide.html">📝 普段のテスト対策</a>
-    <a href="../ai-study-guide.html">🤖 最新AI勉強法</a>
-    <a href="../ai-prompts.html">⚡️ 神プロンプト集</a>
-    <a href="../community.html">💬 質問・相談チャネル</a>
-    <a href="https://naogoya-aichi-koukoujyuken.hatenadiary.com" target="_blank" rel="noopener" style="color: #ea580c; font-weight: 700;">📝 公式ブログ ↗</a>
+    <div class="top-nav-inner">
+      <a href="../index.html">📊 内申点ランキングTOP</a>
+      <a href="../composite-selection-guide.html">🔀 複合選抜・W出願</a>
+      <a href="../public-vs-private-guide.html">⚖️ 公立・私立比較</a>
+      <a href="../tuition-guide.html">💰 学費・補助金ガイド</a>
+      <a href="../mock-exam-guide.html">📈 模試判定の読み方</a>
+      <a href="../autumn-tour-guide.html">🍂 秋の見学会チェック</a>
+      <a href="../schedule.html">📅 学年別進学スケジュール</a>
+      <a href="../test-study-guide.html">📝 普段のテスト対策</a>
+      <a href="../ai-study-guide.html">🤖 最新AI勉強法</a>
+      <a href="../ai-prompts.html">⚡️ 神プロンプト集</a>
+      <a href="../community.html">💬 質問・相談チャネル</a>
+      <a href="https://naogoya-aichi-koukoujyuken.hatenadiary.com" target="_blank" rel="noopener" style="color: #ea580c; font-weight: 700;">📝 公式ブログ ↗</a>
+    </div>
   </nav>
 
   <div class="container">
 
-    <!-- 親と子のリアル体験談・調査ノート -->
-    <div style="background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%); border: 1px solid #fde68a; border-radius: 12px; padding: 14px 18px; margin: 18px auto 8px; display: flex; gap: 12px; align-items: center;">
-      <div style="font-size: 1.6rem; line-height: 1; flex-shrink: 0;">👨‍👩‍👧‍👦</div>
-      <div style="font-size: 0.84rem; color: #92400e; line-height: 1.45;">
-        <strong style="color: #b45309; display: block; margin-bottom: 2px;">【保護者発・実体験連動ノート】</strong>
-        子供から『愛知工業大学名電高等学校ってどんな高校？本当に自分に合ってる？』と聞かれたのをきっかけに、通学のリアル、制服の着こなし、部活動と勉強の両立の実態を親目線でとことん調べ上げたまとめです。
-      </div>
-    </div>
+    <!-- ファーストビュー：入試基本スペック ＆ スポンサー広告 横並びトップセクション -->
+    <div class="hero-top-grid">
+      <!-- 左カラム：高校入試・基本データ（スクロール不要で即座に視認可能！） -->
+      <div class="hero-spec-card">
+        <div class="hero-spec-header">
+          <div class="hero-spec-title">
+            <span>🏫 愛知工業大学名電高等学校 入試・基本データ</span>
+          </div>
+          <span class="hero-spec-loc">📍 所在地：名古屋市千種区若水</span>
+        </div>
 
-    <!-- 広告枠①（ユーザーの興味関心が高い記事上部） -->
-    <div class="ad-banner-wrapper">
-      <span class="ad-banner-label">スポンサーリンク / PR</span>
-      <div style="margin: 8px auto; max-width: 728px; min-height: 90px; text-align: center;">
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-1988464307898443"
-             data-ad-slot="auto"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-      </div>
-      <div style="display: flex; justify-content: center; align-items: center; margin: 8px 0;">
-        <a href="https://px.a8.net/svt/ejp?a8mat=4BE70L+69NDD6+320A+BXIYP" rel="nofollow">
-          <img border="0" width="468" height="60" alt="高校進学・受験学習バナー" src="https://www29.a8.net/svt/bgt?aid=261002757379&wid=004&eno=01&mid=s00000014257002004000&mc=1" style="max-width: 100%; height: auto; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
-        </a>
-        <img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=4BE70L+69NDD6+320A+BXIYP" alt="">
-      </div>
-    </div>
+        <div class="hero-metrics-grid">
+          <div class="hero-metric-box metric-score">
+            <span class="hero-metric-label">合格目安 内申点</span>
+            <div class="hero-metric-val">34〜38 <span style="font-size:0.75rem; font-weight:normal;">/45点</span></div>
+          </div>
+          <div class="hero-metric-box metric-dev">
+            <span class="hero-metric-label">偏差値 目安</span>
+            <div class="hero-metric-val">約 60</div>
+          </div>
+          <div class="hero-metric-box">
+            <span class="hero-metric-label">部活動ルール</span>
+            <div class="hero-metric-val-sub">自由（任意）</div>
+          </div>
+          <div class="hero-metric-box">
+            <span class="hero-metric-label">制服スタイル</span>
+            <div class="hero-metric-val-sub">ブレザー</div>
+          </div>
+        </div>
 
-    <!-- 基本データオーバービュー -->
-    <div class="section-card">
-      <h2>🏫 愛知工業大学名電高等学校の入試・基本データ</h2>
-      <div class="info-overview-grid">
-        <div class="info-box">
-          <div class="label">合格目安 内申点</div>
-          <div class="val">34〜38 <span style="font-size:0.8rem; font-weight:normal;">/45点</span></div>
+        <div class="hero-actions-row">
+          <button type="button" class="btn-route-action" onclick="openRouteModal('愛知工業大学名電高等学校', '名古屋市千種区若水')">
+            🗺️ Googleマップ通学ルート
+          </button>
+          <a href="https://www.meiden.ed.jp/" target="_blank" rel="noopener" class="btn-official-action">
+            🌐 高校公式サイト ↗
+          </a>
         </div>
-        <div class="info-box">
-          <div class="label">偏差値 目安</div>
-          <div class="val">約 60</div>
-        </div>
-        <div class="info-box">
-          <div class="label">部活動ルール</div>
-          <div class="val" style="font-size:1.05rem;">自由（任意）</div>
-        </div>
-        <div class="info-box">
-          <div class="label">制服スタイル</div>
-          <div class="val" style="font-size:1.05rem;">ブレザー</div>
+
+        <div class="hero-parent-note">
+          <span style="font-size: 1.1rem; flex-shrink: 0;">👨‍👩‍👧‍👦</span>
+          <div>
+            <strong>保護者・調査ノート：</strong> 制服詳細: 現代的な濃紺ブレザー。愛知工業大学へ多数内部進学。特進クラスから国公立・難関理工系大学へ合格。を支える圧倒的な学習環境と、仲間同士で高め合う切磋琢磨の空気感。
+          </div>
         </div>
       </div>
-      <p style="font-size:0.9rem; color:#475569; margin-bottom:8px;">📍 所在地：名古屋市千種区若水</p>
-      <div style="margin-bottom:12px;">
-        <button type="button" class="btn-route-check" onclick="openRouteModal('愛知工業大学名電高等学校', '名古屋市千種区若水')" style="display:inline-flex; align-items:center; gap:6px; padding: 7px 14px; font-size: 0.85rem; border-radius: 8px;">
-          🗺️ Googleマップで通学ルートを調べる（現在地・主要駅・自転車・公共交通） ↗
-        </button>
+
+      <!-- 右カラム：スポンサー広告バナー枠（横並びで配置） -->
+      <div class="hero-ad-card">
+        <div class="hero-ad-badge-row">
+          <span class="hero-ad-badge">🎓 スポンサーPR</span>
+          <span>広告リンク</span>
+        </div>
+        <div class="hero-ad-banner-body">
+          <a href="https://px.a8.net/svt/ejp?a8mat=4BE70L+662RQI+36T2+TYQVL" rel="nofollow" target="_blank" style="display:inline-block; line-height:0;">
+            <img border="0" width="300" height="250" alt="高校受験・学習支援バナー" src="https://www29.a8.net/svt/bgt?aid=261002757373&wid=004&eno=01&mid=s00000014879005033000&mc=1" class="hero-ad-img">
+          </a>
+          <img border="0" width="1" height="1" src="https://www12.a8.net/0.gif?a8mat=4BE70L+662RQI+36T2+TYQVL" alt="" style="display:none;">
+        </div>
+        <div class="hero-ad-footer-text">
+          愛知県高校入試・内申点対策＆オンライン学習
+        </div>
       </div>
-      <p style="font-size:0.9rem; color:#475569;">👗 制服詳細：現代的な濃紺ブレザー</p>
     </div>
 
     
