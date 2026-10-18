@@ -1025,6 +1025,9 @@ updatedSchoolsData.forEach((school) => {
           <a href="${school.url}" target="_blank" rel="noopener" class="btn-official-action">
             🌐 高校公式サイト ↗
           </a>
+          <a href="https://twitter.com/intent/tweet?text=${encodeURIComponent('【' + school.name + '】特色・内申目安(' + school.score + ')・先輩のリアルSNS口コミをチェック！\nhttps://aichi-highschool.jp/schools/' + school.id + '.html\n#愛知高校 #高校受験 #' + school.name)}" target="_blank" rel="noopener" class="btn-official-action" style="background:#0f172a; box-shadow:0 2px 6px rgba(15,23,42,0.2);">
+            𝕏 でシェア
+          </a>
         </div>
 
         <div class="hero-parent-note">
@@ -1225,6 +1228,21 @@ updatedSchoolsData.forEach((school) => {
         <span style="color:#ef4444;">▶</span> 受験生必見！本音の学校紹介＆合格分析動画
       </h3>
       <div class="media-grid">
+        <div class="media-card video-card" style="border: 2px solid #ef4444; background: linear-gradient(135deg, #fff5f5 0%, #ffffff 100%);">
+          <div>
+            <div class="media-header">
+              <span class="media-badge video" style="background:#ef4444; color:white;">公式Shorts</span>
+              <span class="media-platform">愛知高校受験進学ナビ</span>
+            </div>
+            <div class="media-title">【愛知高校受験】内申が低くても当日点で大逆転！？公立高校「IV型配点」の秘密</div>
+            <div class="media-desc">💡 旭丘・明和・千種・向陽など公立トップ校が採用する当日点2倍ルールの要点を40秒でサクッと解説！</div>
+          </div>
+          <div>
+            <a href="https://youtube.com/shorts/N3M59Nhgnwc" target="_blank" rel="noopener noreferrer" class="media-link-btn youtube" style="background:#dc2626; color:white;">
+              <span>▶</span> YouTube Shortsを見る ↗
+            </a>
+          </div>
+        </div>
         ${media.reviews.map(rev => `
         <div class="media-card video-card">
           <div>
