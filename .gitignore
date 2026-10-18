@@ -1,0 +1,6 @@
+# Temporary files and caches
+scripts/shorts/temp/
+scripts/shorts/test_*.mp3
+.DS_Store
+*.pyc
+__pycache__/

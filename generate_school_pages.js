@@ -1238,7 +1238,7 @@ updatedSchoolsData.forEach((school) => {
             <div class="media-desc">💡 旭丘・明和・千種・向陽など公立トップ校が採用する当日点2倍ルールの要点を40秒でサクッと解説！</div>
           </div>
           <div>
-            <a href="https://youtube.com/shorts/N3M59Nhgnwc" target="_blank" rel="noopener noreferrer" class="media-link-btn youtube" style="background:#dc2626; color:white;">
+            <a href="https://youtube.com/shorts/ZoG4ngjrcZ4" target="_blank" rel="noopener noreferrer" class="media-link-btn youtube" style="background:#dc2626; color:white;">
               <span>▶</span> YouTube Shortsを見る ↗
             </a>
           </div>

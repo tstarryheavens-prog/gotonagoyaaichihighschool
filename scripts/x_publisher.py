@@ -28,7 +28,7 @@ POST_TEMPLATES = {
 https://aichi-highschool.jp/composite-selection-guide.html
 
 ▼YouTube Shortsで40秒解説！
-https://youtube.com/shorts/N3M59Nhgnwc
+https://youtube.com/shorts/ZoG4ngjrcZ4
 
 #愛知県高校入試 #高校受験 #内申点 #複合選抜 #逆転合格""",
         "url": "https://aichi-highschool.jp/composite-selection-guide.html"
