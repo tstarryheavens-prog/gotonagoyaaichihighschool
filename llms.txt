@@ -12,6 +12,7 @@
 - [高校進学ナビ トップ / W出願シミュレーター](https://aichi-highschool.jp/index.html): 内申点から公立W出願・私立併願の組み合わせを即時シミュレーション、全高校比較テーブル。
 - [愛知県 公立高校入試スケジュール・年間イベント](https://aichi-highschool.jp/schedule.html): 出願日、学力検査日、面接日、合格発表日、オープンスクール・学校説明会日程。
 - [愛知県 私立高校学費・授業料実質無償化ガイド](https://aichi-highschool.jp/tuition-guide.html): 世帯年収別の補助金額計算、授業料・入学金・施設維持費の実質負担シミュレーション。
+- [愛知県 公立推薦選抜・特色選抜＆私立推薦攻略ガイド](https://aichi-highschool.jp/recommendation-guide.html): 学力検査なしの選抜ルール、自薦型特色選抜の対象校・検査内容、私立推薦の内申基準と面接対策。
 - [愛知県 高校生・保護者のリアルSNS本音口コミ＆校則ガイド](https://aichi-highschool.jp/sns-real-voices.html): X・Instagram・TikTok・知恵袋から調査したスマホ・私服制服・髪型・文化祭の熱気・通学事情のリアル。
 - [愛知県 公立高校 複合選抜＆W出願・校内順位決定方式ガイド](https://aichi-highschool.jp/composite-selection-guide.html): 尾張1群・2群の組み合わせルール、校内順位決定方式（I〜V型）、マークシート当日点逆転法。
 - [公立高校 vs 私立高校 徹底比較ガイド](https://aichi-highschool.jp/public-vs-private-guide.html): 3年間の総費用、カリキュラム、進路指導、校則の違い。
