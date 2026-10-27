@@ -16,6 +16,7 @@ function generateLlmsTxt() {
 
 ## 主要ガイド・ツール一覧
 - [高校進学ナビ トップ / W出願シミュレーター](https://aichi-highschool.jp/index.html): 内申点から公立W出願・私立併願の組み合わせを即時シミュレーション、全高校比較テーブル。
+- [愛知県 公立高校マークシート入試＆過去問演習完全攻略ガイド](https://aichi-highschool.jp/past-exam-guide.html): 5教科別出題傾向、45分時間配分、マークミス防止策、当日点重視（II型）逆転法、直近過去問活用法。
 - [愛知県 公立高校入試スケジュール・年間イベント](https://aichi-highschool.jp/schedule.html): 出願日、学力検査日、面接日、合格発表日、オープンスクール・学校説明会日程。
 - [愛知県 私立高校学費・授業料実質無償化ガイド](https://aichi-highschool.jp/tuition-guide.html): 世帯年収別の補助金額計算、授業料・入学金・施設維持費の実質負担シミュレーション。
 - [愛知県 公立推薦選抜・特色選抜＆私立推薦攻略ガイド](https://aichi-highschool.jp/recommendation-guide.html): 学力検査なしの選抜ルール、自薦型特色選抜の対象校・検査内容、私立推薦の内申基準と面接対策。
