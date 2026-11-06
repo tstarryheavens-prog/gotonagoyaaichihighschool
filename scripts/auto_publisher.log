@@ -1,0 +1,10 @@
+[2026-11-06 09:00:05] === 愛知高校受験ナビ 定期自動更新パイプライン開始 ===
+[2026-11-06 09:00:05] 選定トピック: [14] 【愛知の私立高校】奨学金・特待生（授業料免除）制度まとめ！公立併願で狙える基準・内申・当日点の目安
+[2026-11-06 09:00:06] [✓] Hatena HTML 保存: 14_tokutai_scholarship_guide.html
+[2026-11-06 09:00:06] [✓] はてなブログ投稿完了 (ステータス: 201)
+[2026-11-06 09:00:07] [✓] サイトHTML 保存: tokutai-scholarship-guide.html
+[2026-11-06 09:00:07] [✓] Added tokutai-scholarship-guide.html to generate_school_pages.js nav
+[2026-11-06 09:00:08] [✓] Added tokutai-scholarship-guide.html to index.html nav
+[2026-11-06 09:00:08] node generate_school_pages.js 実行中...
+[2026-11-06 09:00:17] [✓] 全校ページ再生成完了: Successfully generated 41 individual school pages in ./schools/
+Successfully updated schools_data.js
