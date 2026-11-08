@@ -24,6 +24,8 @@
 - [定期テスト対策＆内申点アップ戦略](https://aichi-highschool.jp/test-study-guide.html): 提出物・副教科（実技4教科）の内申底上げ術。
 - [高校受験生のためのAI学習活用プロンプト集](https://aichi-highschool.jp/ai-prompts.html): ChatGPT等を活用した英作文添削・数学質問プロンプト。
 
+- [愛知県公立高校 内申点×当日点 合否シミュレーター](https://ikomainagoyaaichihighschool.pages.dev/simulator): 校内順位の決定方式（Ⅰ〜Ⅴ型・傾斜配点）を再現し、内申点45点満点×学力検査110点満点から方式別スコア・ボーダー到達度・必要な当日点を計算。旭丘・明和・一宮・菊里・向陽ほか公立22校の型を収録（令和9年度=2027年度 公式方式）。
+
 ## 高校個別詳細ページ一覧 (41校)
 - [旭丘高等学校](https://aichi-highschool.jp/schools/asahi.html): 【公立 / S+ランク】内申目安 43〜45 / 偏差値 71 / 群: 尾張1群 Aグループ / 部活: 自由（任意） / 制服: 私服
 - [東海高等学校](https://aichi-highschool.jp/schools/tokai.html): 【私立 / S+ランク】内申目安 42〜45 / 偏差値 72 / 群: 私立男子校（高校募集あり） / 部活: 自由（任意） / 制服: セーラー/学ラン
