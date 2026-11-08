@@ -80,11 +80,12 @@ def process(path: str, schools: dict) -> str:
             html = new
             changed = True
 
-    # 2) 学校ページのCTA
-    if depth == 1 and os.path.basename(os.path.dirname(path)) == "schools":
+    # 2) CTA（学校ページ＋ナビを持たない独立ページ）
+    is_school = depth == 1 and os.path.basename(os.path.dirname(path)) == "schools"
+    if is_school or 'class="top-nav"' not in html:
         sid = os.path.splitext(os.path.basename(path))[0]
         if CTA_SENTINEL not in html:
-            m = re.search(r'(<div class="container">[ \t]*\n)', html)
+            m = re.search(r'(<div class="container"[^>]*>[ \t]*\n)', html)
             if m:
                 html = html[: m.end()] + "\n    " + cta_html(prefix, sid, schools.get(sid)) + html[m.end():]
                 changed = True
