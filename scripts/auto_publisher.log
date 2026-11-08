@@ -8,3 +8,5 @@
 [2026-11-06 09:00:08] node generate_school_pages.js 実行中...
 [2026-11-06 09:00:17] [✓] 全校ページ再生成完了: Successfully generated 41 individual school pages in ./schools/
 Successfully updated schools_data.js
+[2026-11-06 09:01:25] [✓] Git commit & push 完了 (Cloudflare Pages 自動デプロイ)
+[2026-11-06 09:01:25] === 愛知高校受験ナビ 定期自動更新パイプライン完了 ===

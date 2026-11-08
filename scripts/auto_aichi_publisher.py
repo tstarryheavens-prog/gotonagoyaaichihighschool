@@ -33,6 +33,104 @@ try:
 except ImportError:
     hatena_publisher = None
 
+# ============================================================
+# 長文執筆エンジン（2026-11-06: 1記事 純テキスト10,000字以上を必須化）
+# 従来は固定文面の記事（実測 数百字）をそのまま はてなブログと本サイトへ投稿していた。
+# SmartAILife 側 article_generator.py の「10章逐次生成 + 文字数ゲート」を共用し、
+# 10,000字に届かない記事は投稿も git push も行わない（スタブ記事の量産を止める）。
+# ============================================================
+MIN_ARTICLE_CHARS = int(os.getenv("MIN_ARTICLE_CHARS", "10000"))
+LONGFORM_ENGINE_DIRS = [
+    "/Volumes/Docker/SmartAILife/ai_company/02_production",   # フォールバック (article_generator)
+]
+LONGFORM_TOOL_DIR = "/Volumes/Docker/SmartAILife/tools"
+
+
+def load_longform_writer():
+    """long-form-writer スキルのエンジン (long_form_writer.py) を import して返す"""
+    if Path(LONGFORM_TOOL_DIR).exists() and LONGFORM_TOOL_DIR not in sys.path:
+        sys.path.insert(0, LONGFORM_TOOL_DIR)
+    try:
+        import long_form_writer
+        return long_form_writer
+    except Exception as e:
+        print(f"[!] long_form_writer の import 失敗: {e}", file=sys.stderr)
+        return None
+
+
+
+def load_longform_engine():
+    """共用の長文エンジン (article_generator) を import して返す。取得できなければ None"""
+    for d in LONGFORM_ENGINE_DIRS:
+        if Path(d).exists():
+            if d not in sys.path:
+                sys.path.insert(0, d)
+            try:
+                import article_generator
+                return article_generator
+            except Exception as e:
+                print(f"[!] 長文エンジンの import 失敗 ({d}): {e}", file=sys.stderr)
+    return None
+
+
+def build_longform_body(topic: dict, engine) -> tuple:
+    """10,000字以上の特集記事本文（HTML）を組み上げる (本文, ゲート情報)
+
+    1st: long-form-writer スキルの共通エンジン (SmartAILife/tools/long_form_writer.py)
+    2nd: 既存の article_generator (Strata 逐次生成 + 増補)
+    """
+    idea = {
+        "id": f"aichi_feature_{topic['id']}",
+        "site_id": "aichi-high",
+        "division_title": "愛知高校受験ナビ",
+        "title": topic["title"],
+        "summary": topic["description"],
+        "target_audience": "愛知県の公立・私立高校受験を控える中学生とその保護者",
+        "source_name": "愛知県公立高校入試（複合選抜）の公表資料・尾張高校ナビの全校データ",
+        "source_url": "https://ai-living-lab.pages.dev/divisions/aichi-high/",
+        "direct_quote": topic["description"],
+        "suggested_outline": topic["categories"],
+    }
+
+    lfw = load_longform_writer()
+    if lfw is not None:
+        # ドラフトはサイトのgitリポジトリ外に置く（誤コミット防止）
+        draft_dir = Path("/Volumes/Docker/SmartAILife/output/aichi_drafts")
+        draft_dir.mkdir(parents=True, exist_ok=True)
+        draft_md = draft_dir / f"aichi_{topic['id']}_longform.md"
+        try:
+            log("[*] 長文エンジン: long-form-writer (long_form_writer.py, backend=auto) を使用")
+            res = lfw.write_long_article(
+                topic=f"{topic['title']}\n\n{topic['description']}\n対象読者: 愛知県の高校受験生と保護者",
+                target_words=max(MIN_ARTICLE_CHARS + 3000, 13000),
+                backend="auto",
+                min_chars=MIN_ARTICLE_CHARS,
+                output_path=str(draft_md),
+                fmt="md",
+            )
+            gate = {
+                "chars": res["chars"],
+                "rounds": res["rounds"],
+                "shortfall": not res["gate_pass"],
+                "min_chars": MIN_ARTICLE_CHARS,
+                "engine": "long-form-writer",
+            }
+            if res["gate_pass"]:
+                return lfw.markdown_to_html(res["markdown"]), gate
+            log(f"[!] long-form-writer ゲート未達 ({res['chars']}字) -> article_generator で再試行")
+        except Exception as e:  # noqa: BLE001
+            log(f"[!] long-form-writer 実行例外: {e} -> article_generator で再試行")
+
+    if engine is None:
+        log("[!] article_generator フォールバックも利用不可")
+        return "", {"chars": 0, "rounds": 0, "shortfall": True,
+                    "min_chars": MIN_ARTICLE_CHARS, "engine": "none"}
+
+    raw = engine.generate_longform_article(idea, prefer="strata")
+    body, gate = engine.ensure_min_length(raw, idea, prefer="strata", min_chars=MIN_ARTICLE_CHARS)
+    gate["engine"] = gate.get("engine", "article_generator")
+    return body, gate
+
 # 受験ロードマップに基づく特集記事カリキュラム
 ARTICLE_TOPICS = [
     {
@@ -103,8 +201,8 @@ def get_next_topic() -> dict | None:
             return topic
     return None
 
-def build_hatena_html(topic: dict) -> str:
-    """はてなブログ用のリッチHTMLを生成"""
+def build_hatena_html(topic: dict, long_body: str = "") -> str:
+    """はてなブログ用のリッチHTMLを生成（long_body = 10,000字以上の本文HTML）"""
     return f"""<div style="line-height: 1.8; color: #1e293b; font-size: 16px;">
 
   <div style="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border: 1px solid #bbf7d0; border-radius: 12px; padding: 18px 22px; margin-bottom: 25px;">
@@ -117,12 +215,6 @@ def build_hatena_html(topic: dict) -> str:
     </p>
   </div>
 
-  <h2>1. 愛知県高校入試における重要ポイント</h2>
-  <p>
-    愛知県の高校受験では、公立高校の複合選抜（W出願）と私立高校の併願戦略が合否を左右します。
-    確実な内申点（45点満点）の把握と、入試本番における当日点（110点満点）のシミュレーションを早期に行うことが、第一志望合格への最大の近道です。
-  </p>
-
   <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px 20px; margin: 18px 0; border-left: 4px solid #2563eb;">
     <h3 style="margin-top:0; color: #1e40af; font-size: 16px;">💡 本記事の要点サマリー</h3>
     <ul style="margin: 0; padding-left: 20px; font-size: 14.5px; line-height: 1.8;">
@@ -132,11 +224,7 @@ def build_hatena_html(topic: dict) -> str:
     </ul>
   </div>
 
-  <h2>2. 具体的な戦略とアクションプラン</h2>
-  <p>
-    受験直前期は「何をやるか」と同じくらい「何をやらないか」を決めることが重要です。
-    弱点分野のピンポイント補強と、確実に得点できる基礎・標準問題の反復を最優先でスケジュールに組み込みましょう。
-  </p>
+  {long_body}
 
   <p style="margin-top: 30px; font-size: 14px; color: #64748b; text-align: center;">
     ※愛知県尾張地区の高校受験進学ナビ（全校詳細データ・内申点ランキング）は本サイトにて公開中です。
@@ -144,8 +232,8 @@ def build_hatena_html(topic: dict) -> str:
 </div>
 """
 
-def build_site_html(topic: dict) -> str:
-    """本サイト用の完全なHTMLページを生成"""
+def build_site_html(topic: dict, long_body: str = "") -> str:
+    """本サイト用の完全なHTMLページを生成（long_body = 10,000字以上の本文HTML）"""
     return f"""<!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -203,9 +291,7 @@ def build_site_html(topic: dict) -> str:
 
       <div style="line-height: 1.8; color: #334155;">
         <h3>📌 特集解説</h3>
-        <p>
-          本記事では、愛知県内の公立・私立高校受験を控える中学生および保護者の方へ向け、最新の入試制度に即した実践的なアドバイスをお届けします。
-        </p>
+        {long_body}
         <div style="background: #f8fafc; border-left: 4px solid #2563eb; padding: 14px 18px; margin: 18px 0; border-radius: 8px;">
           <p style="margin: 0; font-size: 0.92rem; color: #1e40af;">
             💡 各高校の詳しい内申点目安・進学実績・制服・アクセス情報は <a href="index.html" style="color: #2563eb; font-weight: 700;">トップページの内申点一覧</a> よりご確認いただけます。
@@ -251,8 +337,24 @@ def run_pipeline():
 
     log(f"選定トピック: [{topic['id']}] {topic['title']}")
 
+    # 0. 長文本文（純テキスト 10,000字以上）を生成。未達なら投稿もデプロイも行わない。
+    engine = load_longform_engine()
+    if engine is None and load_longform_writer() is None:
+        log("[!] 長文エンジン(long_form_writer / article_generator)を読み込めないため、今回は公開を中止します（短記事は投稿しない）")
+        return
+    target_chars = getattr(engine, "TARGET_ARTICLE_CHARS", MIN_ARTICLE_CHARS)
+    log(f"長文生成開始: 要求 {MIN_ARTICLE_CHARS} 字以上（目標 {target_chars} 字）")
+    long_body, gate = build_longform_body(topic, engine)
+    log(f"長文生成結果: 純テキスト {gate['chars']} 字 / 要求 {gate['min_chars']} 字 (増補 {gate['rounds']} ラウンド, engine={gate.get('engine','article_generator')})")
+    if gate["shortfall"]:
+        log(f"[!] 長文ゲート未達 ({gate['chars']} 字 < {gate['min_chars']} 字) -> はてな投稿・git push を中止。次回は同一トピックで再試行します。")
+        draft = SCRIPTS_DIR / f"draft_{topic['file_name']}"
+        draft.write_text(long_body, encoding="utf-8")
+        log(f"[✓] 未達ドラフト保存: {draft}")
+        return
+
     # 1. はてなブログ用HTML生成
-    hatena_html = build_hatena_html(topic)
+    hatena_html = build_hatena_html(topic, long_body)
     hatena_path = ARTICLES_DIR / topic["file_name"]
     hatena_path.write_text(hatena_html, encoding="utf-8")
     log(f"[✓] Hatena HTML 保存: {hatena_path.name}")
@@ -271,7 +373,7 @@ def run_pipeline():
             log(f"[!] はてなブログ投稿例外: {e}")
 
     # 3. 本サイト用HTML作成
-    site_html = build_site_html(topic)
+    site_html = build_site_html(topic, long_body)
     site_path = BASE_DIR / topic["site_file"]
     site_path.write_text(site_html, encoding="utf-8")
     log(f"[✓] サイトHTML 保存: {site_path.name}")
