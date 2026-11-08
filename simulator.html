@@ -1034,6 +1034,7 @@
       var d = parseFloat(p.get("d"));
       if (!isNaN(n) && n >= 0 && n <= 45) { state.naishinTotal = n; }
       if (!isNaN(d) && d >= 0 && d <= 110) { state.dayTotal = d; }
+      state.schoolParam = p.get("school") || "";
     }
 
     function applyLoadedState() {
@@ -1065,7 +1066,20 @@
           buildCalcSelectors();
           applyLoadedState();
           syncFromGrid();
-          if (!$("calc-school").value && D.schools.length) {
+
+          // ?school=<id> のディープリンク（学校ページのCTAから）
+          var target = state.schoolParam ? findSchool(state.schoolParam) : null;
+          if (target) {
+            $("calc-school").value = target.id;
+            onSchoolChange();
+            var tabBtn = document.querySelector('.tab[data-tab="type"]');
+            if (tabBtn) tabBtn.click();
+            var sub = $("result-sub");
+            if (sub) {
+              sub.textContent = target.name + "（" + target.dep + "）の方式 " + ROMA[target.type] +
+                "型で計算中。内申と当日点を変えると即時に再計算します。";
+            }
+          } else if (!$("calc-school").value && D.schools.length) {
             $("calc-school").value = D.schools[0].id;
             onSchoolChange();
           }
