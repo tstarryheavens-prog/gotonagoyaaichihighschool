@@ -79,6 +79,12 @@
   <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Noto+Sans+JP:wght@400;500;700;800&family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="logo.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="尾張・名古屋地区 高校進学ナビ｜内申点完全ランキング＆W出願シミュレーター">
+  <meta property="og:description" content="公立・私立高校を内申点目安から直感比較。愛知の複雑なW出願ルールをシャチフク先輩がやさしくナビゲートします。">
+  <meta property="og:image" content="characters/shachifuku-ogp.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="characters/shachifuku-ogp.jpg">
   <link rel="stylesheet" href="common.css">
 
   <style>
@@ -1506,10 +1512,10 @@
   <header>
     <div class="header-content">
       <div class="mascot-hero-wrap">
-        <img src="logo.png" alt="尾張・名古屋高校進学ナビ公式マスコット シャチホコフクロウ（シャチフク先輩）" class="mascot-avatar">
+        <img src="characters/shachifuku_face.png" alt="尾張・名古屋高校進学ナビ公式マスコット シャチホコフクロウ（シャチフク先輩）" class="mascot-avatar shachi-live">
         <div class="mascot-bubble">
           <div class="mascot-bubble-title">🦉 シャチフク先輩の合格ナビゲート</div>
-          <div class="mascot-bubble-text">君の内申点はいくつ？ 目安の高校とW出願パターンを0秒でチェックできるよ！</div>
+          <div class="mascot-bubble-text">はじめまして、シャチフクです！内申点とW出願の組み合わせ、ぼくが一緒に整理するよ。まずは君の内申点を0秒チェックしてみてね。</div>
         </div>
       </div>
 
@@ -1539,6 +1545,32 @@
         </p>
       </div>
     </div>
+
+    <!-- ========================================================
+         ①-2 シャチフク先輩プロフィール（はじめましてカード）
+    ======================================================== -->
+    <section class="shachi-profile" aria-labelledby="shachi-profile-title">
+      <img src="characters/shachifuku-banner.jpg" class="shachi-profile-banner"
+           alt="尾張・名古屋 高校進学ナビ 公式バナー。名古屋城と桜を背景に、卒業証書を持ったシャチフク先輩が「尾張・名古屋 高校進学ナビ」と案内しています"
+           width="1280" height="714" loading="lazy" decoding="async">
+      <div class="shachi-profile-body">
+        <img src="characters/shachifuku_face.png" alt="シャチフク先輩" class="shachi-profile-avatar" width="88" height="88" loading="lazy" decoding="async">
+        <div>
+          <div class="shachi-profile-name" id="shachi-profile-title">
+            シャチフク先輩
+            <span class="shachi-profile-role">金のシャチホコ × フクロウ</span>
+          </div>
+          <p class="shachi-profile-text">
+            はじめまして！このサイトの案内役、<strong>シャチフク</strong>です。名古屋城のしゃちほこみたいに、君が空へ飛び出すための背中を押したくて生まれました。尾張・名古屋の高校入試は、内申点・W出願・A/Bグループ・私立併願・学費と、覚えることが多くて不安になるよね。むずかしいルールも、ぼくが順番に噛みくだいて説明するから大丈夫。<strong>「まず何から手をつければいい？」</strong>という人は、まず内申点の0秒チェックから始めてみてね。
+          </p>
+          <div class="shachi-profile-links">
+            <a href="#naishin-check" class="shachi-link-primary">🎯 内申点を0秒チェック</a>
+            <a href="#shachi-qa" class="shachi-link-soft">❓ よくある不安Q＆A</a>
+            <a href="community.html" class="shachi-link-soft">💬 シャチフクに質問する</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- 上部クイックアクセス・ナビピル（すっきりした1行導線） -->
     <div style="display: flex; gap: 8px; flex-wrap: wrap; margin: 10px 0 16px; align-items: center;">
@@ -1575,7 +1607,7 @@
     <!-- ========================================================
          ② 内申点連動・併願診断ナビ（W出願＆私立併願マップ）
     ======================================================== -->
-    <section class="diagnosis-panel">
+    <section class="diagnosis-panel" id="naishin-check">
       <div class="diagnosis-header">
         <div class="diagnosis-header-left">
           <span class="diagnosis-icon">🎯</span>
@@ -1939,6 +1971,54 @@
         </div>
       </div>
     </div>
+
+    <!-- ========================================================
+         シャチフク先輩にきく（よくある不安Q＆A）
+    ======================================================== -->
+    <section class="shachi-qa" id="shachi-qa" aria-labelledby="shachi-qa-title">
+      <div class="shachi-qa-head">
+        <img src="characters/shachifuku_face.png" alt="シャチフク先輩" width="62" height="62" loading="lazy" decoding="async">
+        <div>
+          <div class="shachi-qa-title" id="shachi-qa-title">シャチフク先輩にきく<br>中学生・保護者のよくある不安Q＆A</div>
+          <div class="shachi-qa-sub">タップすると答えが開くよ。気になる質問からどうぞ。</div>
+        </div>
+      </div>
+
+      <details>
+        <summary>内申点が足りない気がする…まだ間に合う？</summary>
+        <p>内申点は主に中3の2学期まででほぼ固まるよ。だから「3学期から頑張る」では遅いんだ。逆にいまが動きどき。<a href="#naishin-check">内申点帯の0秒チェック</a>で現在地を確認して、<a href="final-exam-naishin-guide.html">2学期期末・内申攻略ガイド</a>で実技4教科と提出物の詰め方を押さえてみてね。</p>
+      </details>
+
+      <details>
+        <summary>「W出願」ってそもそも何？ 何がそんなに難しいの？</summary>
+        <p>愛知の公立は、尾張第1群・第2群の「群」とAグループ・Bグループの制約を満たす組み合わせでしか出願できないんだ。第1志望に落ちたときの第2志望が無効になると大変だから、<a href="composite-selection-guide.html">複合選抜・W出願ガイド</a>で判定の考え方を先に確認しておこう。</p>
+      </details>
+
+      <details>
+        <summary>私立は何校受ければいい？ 日程が重なったら？</summary>
+        <p>愛知の私立一般入試は2月上旬の平日3日間に集中するから、日程の重なりを避けて組むのがコツ。スライド合格も含めて「挑戦校・相応校・安全校」を組み合わせる型は<a href="private-exam-guide.html">私立3日間併願パターン</a>にまとめてあるよ。</p>
+      </details>
+
+      <details>
+        <summary>学費はどのくらい？ 無償化って本当に使えるの？</summary>
+        <p>世帯年収によって実質負担は大きく変わるんだ。制度の対象や補助額は年度で変わるから、思い込みで決めずに<a href="tuition-guide.html">学費・補助金ガイド</a>で世帯年収別に試算してみてね。</p>
+      </details>
+
+      <details>
+        <summary>私立の特待生・奨学金は狙えるものなの？</summary>
+        <p>狙えるよ。ただし基準は学校ごとにバラバラで、内申・当日点・面接のどこを見るかが違うんだ。<a href="tokutai-scholarship-guide.html">私立特待・奨学金まとめ</a>で公立併願とセットで確認しておくと、選択肢が一気に広がるよ。</p>
+      </details>
+
+      <details>
+        <summary>部活と勉強の両立、実際どうしてる？</summary>
+        <p>先輩たちの本音を見るのがいちばん早いよ。校則・スマホ・私服の自由度は学校ごとに全然違うから、<a href="sns-real-voices.html">先輩の本音口コミ</a>と<a href="techniques.html">勉強テクニック集</a>をセットで読んでみてね。それでも迷ったら<a href="community.html">相談チャネル</a>でシャチフクに聞いてね。</p>
+      </details>
+
+      <details>
+        <summary>結局、今から何をすればいい？</summary>
+        <p>順番はシンプル。①内申点の現在地を知る →②志望校の目安を決める →③W出願と私立併願の組み合わせを組む →④出願までの流れを締切から逆算する。<a href="schedule.html">進学スケジュール</a>を見ながら、今日は①だけ終わらせれば十分だよ。</p>
+      </details>
+    </section>
 
     <!-- フッター -->
     <!-- AI_COMPANY_EMDASH_FEED_START -->

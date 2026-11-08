@@ -619,3 +619,253 @@ footer {
   margin: 16px auto;
   overflow: hidden;
 }
+
+/* ========================================================
+   シャチフク先輩 キャラクターレイヤー（全ページ共通）
+   ねらい：マスコットを「小さなロゴ」から「話しかけられる先輩」へ
+   ======================================================== */
+
+/* 1) ヒーローのマスコット：顔アップ画像＋やわらかいリング＋ゆるい呼吸 */
+img.mascot-avatar {
+  width: 104px;
+  height: 104px;
+  border-radius: 50%;
+  border: 4px solid #FFFFFF;
+  background: linear-gradient(160deg, #FFF7E6 0%, #FFEFD2 100%);
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.38), 0 10px 22px rgba(230, 126, 34, 0.26);
+  object-fit: cover;
+  object-position: 50% 42%;
+  animation: shachi-breathe 5s ease-in-out infinite;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+img.mascot-avatar:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.5), 0 14px 26px rgba(230, 126, 34, 0.32);
+}
+@keyframes shachi-breathe {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+@media (max-width: 640px) {
+  img.mascot-avatar {
+    width: 84px;
+    height: 84px;
+    border-width: 3px;
+  }
+  .mascot-hero-wrap {
+    gap: 12px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  img.mascot-avatar { animation: none; }
+}
+
+/* 1-b) tuition-guide等の角丸バナー型マスコットも同じ顔アップに統一 */
+img.mascot-hero-img {
+  width: 96px;
+  height: 96px;
+  padding: 0;
+  border-radius: 50%;
+  border: 3px solid #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.35), 0 8px 18px rgba(230, 126, 34, 0.22);
+  object-fit: cover;
+  object-position: 50% 42%;
+  background: #FFF9EE;
+}
+@media (max-width: 640px) {
+  img.mascot-hero-img { width: 80px; height: 80px; }
+}
+
+/* アンカー移動時に固定ナビへ潜らないように */
+#naishin-check,
+#shachi-qa {
+  scroll-margin-top: 86px;
+}
+
+/* 2) シャチフク先輩プロフィールカード（はじめまして） */
+.shachi-profile {
+  margin: 20px 0 22px;
+  background: linear-gradient(180deg, #FFFDF9 0%, #FFF9EE 100%);
+  border: 2px solid var(--accent-border);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(217, 119, 6, 0.08);
+}
+.shachi-profile-banner {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-bottom: 2px solid #FDE68A;
+}
+.shachi-profile-body {
+  display: flex;
+  gap: 16px;
+  padding: 16px 18px 18px;
+  align-items: flex-start;
+}
+.shachi-profile-avatar {
+  width: 88px;
+  height: 88px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 3px solid #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.35), 0 6px 16px rgba(230, 126, 34, 0.22);
+  object-fit: cover;
+  object-position: 50% 42%;
+  background: #FFF9EE;
+}
+.shachi-profile-name {
+  font-size: 1.08rem;
+  font-weight: 900;
+  color: #78350F;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  letter-spacing: -0.01em;
+}
+.shachi-profile-role {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #B45309;
+  background: #FEF3C7;
+  border: 1px solid #FDE68A;
+  border-radius: 9999px;
+  padding: 2px 10px;
+  letter-spacing: 0.02em;
+}
+.shachi-profile-text {
+  font-size: 0.87rem;
+  color: #57534E;
+  line-height: 1.7;
+  margin-top: 6px;
+}
+.shachi-profile-text strong { color: #B45309; }
+.shachi-profile-links {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+.shachi-profile-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.shachi-profile-links a:hover { transform: translateY(-2px); }
+.shachi-link-primary {
+  background: linear-gradient(135deg, #F59E0B 0%, #E67E22 100%);
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 12px rgba(230, 126, 34, 0.3);
+}
+.shachi-link-soft {
+  background: #FFFFFF;
+  color: #B45309 !important;
+  border: 1.5px solid var(--accent-border);
+}
+@media (max-width: 640px) {
+  .shachi-profile-body {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 14px;
+  }
+  .shachi-profile-name { justify-content: center; }
+  .shachi-profile-links { justify-content: center; }
+}
+
+/* 3) 「シャチフク先輩にきく」Q＆A */
+.shachi-qa {
+  margin: 26px 0;
+  background: #FFFDF9;
+  border: 2px solid var(--accent-border);
+  border-radius: 20px;
+  padding: 16px 18px 8px;
+  box-shadow: 0 6px 18px rgba(217, 119, 6, 0.07);
+}
+.shachi-qa-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+.shachi-qa-head img {
+  width: 62px;
+  height: 62px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 3px solid #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.32), 0 5px 14px rgba(230, 126, 34, 0.2);
+  object-fit: cover;
+  object-position: 50% 42%;
+  background: #FFF9EE;
+}
+.shachi-qa-title {
+  font-size: 1.05rem;
+  font-weight: 900;
+  color: #78350F;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+.shachi-qa-sub {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #A16207;
+  margin-top: 2px;
+}
+.shachi-qa details {
+  border-top: 1px dashed #FDE68A;
+  padding: 11px 0 10px;
+}
+.shachi-qa details:first-of-type { border-top: 1px dashed #FDE68A; }
+.shachi-qa summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: #334155;
+  line-height: 1.55;
+  transition: color 0.2s ease;
+}
+.shachi-qa summary::-webkit-details-marker { display: none; }
+.shachi-qa summary::before {
+  content: "💬";
+  flex-shrink: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+.shachi-qa summary::after {
+  content: "＋";
+  margin-left: auto;
+  flex-shrink: 0;
+  font-weight: 900;
+  color: var(--accent);
+}
+.shachi-qa details[open] summary { color: var(--accent); }
+.shachi-qa details[open] summary::after { content: "－"; }
+.shachi-qa details p {
+  margin: 8px 0 2px 28px;
+  font-size: 0.86rem;
+  color: #475569;
+  line-height: 1.7;
+}
+.shachi-qa details p a {
+  color: #B45309;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+@media (max-width: 640px) {
+  .shachi-qa { padding: 14px 14px 6px; }
+  .shachi-qa-head img { width: 52px; height: 52px; }
+  .shachi-qa details p { margin-left: 0; }
+}
