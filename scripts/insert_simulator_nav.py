@@ -72,13 +72,30 @@ def process(path: str, schools: dict) -> str:
     # 1) ナビへのリンク挿入
     nav_link = f'<a href="{prefix}simulator.html">{LINK_TEXT}</a>'
     if nav_link not in html:
-        anchor = re.compile(
-            r'(<a href="%sindex\.html"[^>]*>📊 内申点ランキングTOP</a>)' % re.escape(prefix)
-        )
-        new, n = anchor.subn(lambda m: m.group(1) + "\n      " + nav_link, html, count=1)
-        if n:
-            html = new
-            changed = True
+        if "NAV_ROWS v1" in html:
+            # 複数段ナビ（scripts/restructure_nav.py）構造: 主要チップ列の先頭直後に入れる
+            if f'href="{prefix}simulator.html"' not in html:
+                chip = (
+                    f'<a href="{prefix}simulator.html" class="nav-chip nav-primary">'
+                    '<span class="nav-lg">🎯 内申×当日 合否シミュレーター</span>'
+                    '<span class="nav-sm">🎯 合否シミュレーター</span></a>'
+                )
+                m = re.search(
+                    r'(<div class="nav-shell">\s*\n\s*)'
+                    r'(<a [^>]*href="%sindex\.html"[^>]*>[\s\S]*?</a>)' % re.escape(prefix),
+                    html,
+                )
+                if m:
+                    html = html[: m.end()] + "\n      " + chip + html[m.end():]
+                    changed = True
+        else:
+            anchor = re.compile(
+                r'(<a href="%sindex\.html"[^>]*>📊 内申点ランキングTOP</a>)' % re.escape(prefix)
+            )
+            new, n = anchor.subn(lambda m: m.group(1) + "\n      " + nav_link, html, count=1)
+            if n:
+                html = new
+                changed = True
 
     # 2) CTA（学校ページ＋ナビを持たない独立ページ）
     is_school = depth == 1 and os.path.basename(os.path.dirname(path)) == "schools"
