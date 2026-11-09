@@ -39,6 +39,8 @@ def files() -> list[str]:
 def rewrite(text: str, base: str) -> str:
     for host in KNOWN_HOSTS:
         text = re.sub(host, base, text)
+    # 旧スクリプトの二重スラッシュ（base//path）を正規化
+    text = re.sub(re.escape(base) + r"/{2,}", base + "/", text)
     # 内部リンクの .html を clean URL に（外部URLとパス無しは除外）
     b = re.escape(base)
 

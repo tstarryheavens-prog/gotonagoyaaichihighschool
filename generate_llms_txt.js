@@ -1,6 +1,12 @@
 const fs = require('fs');
 const path = require('path');
 const schools = require('./schools_data.js');
+// 公開ホスト（独自ドメイン接続時は SITE_BASE=https://... で上書き）
+// .html 付き内部URLを clean URL に（Pages は .html→308）
+const cleanUrls = (t) => t
+  .split(BASE + '/index.html').join(BASE + '/')
+  .replace(new RegExp(BASE.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '(\\/[^)\\s]*?)\\.html', 'g'), BASE + '$1');
+const BASE = (process.env.SITE_BASE || 'https://ikomainagoyaaichihighschool.pages.dev').replace(/\/$/, '');
 
 // 1. llms.txt (標準サマリー版) の生成
 function generateLlmsTxt() {
@@ -15,32 +21,32 @@ function generateLlmsTxt() {
 - **学費・助成金シミュレーション**: 愛知県の私立高校授業料実質無償化制度（年収目安に応じた愛知県独自上乗せ補助金）の判定。
 
 ## 主要ガイド・ツール一覧
-- [高校進学ナビ トップ / W出願シミュレーター](https://aichi-highschool.jp/index.html): 内申点から公立W出願・私立併願の組み合わせを即時シミュレーション、全高校比較テーブル。
-- [中3・2学期期末テスト＆内申確定直前大逆転ガイド](https://aichi-highschool.jp/final-exam-naishin-guide.html): 内申点「＋1」の入試換算価値（総合2点換算・当日1.33点分）、実技4教科（音・美・保体・技家）ペーパーテスト対策、観点別評価で「主体的に学習に取り組む態度」Aを獲る提出物・余白術、2週間前黄金スケジュール。
-- [愛知県 私立高校一般入試 3日間併願パターン＆すべり止め完全攻略ガイド](https://aichi-highschool.jp/private-exam-guide.html): 1日目・2日目・3日目主要私立高校一覧、スライド合格（転コース判定）の仕組み、公立志望校別（TOP校・人気校・中堅校）の鉄板併願モデル、延納手続きの注意点。
-- [愛知県 公立高校マークシート入試＆過去問演習完全攻略ガイド](https://aichi-highschool.jp/past-exam-guide.html): 5教科別出題傾向、45分時間配分、マークミス防止策、当日点重視（II型）逆転法、直近過去問活用法。
-- [愛知県 公立高校入試スケジュール・年間イベント](https://aichi-highschool.jp/schedule.html): 出願日、学力検査日、面接日、合格発表日、オープンスクール・学校説明会日程。
-- [愛知県 私立高校学費・授業料実質無償化ガイド](https://aichi-highschool.jp/tuition-guide.html): 世帯年収別の補助金額計算、授業料・入学金・施設維持費の実質負担シミュレーション。
-- [愛知県 公立推薦選抜・特色選抜＆私立推薦攻略ガイド](https://aichi-highschool.jp/recommendation-guide.html): 学力検査なしの選抜ルール、自薦型特色選抜の対象校・検査内容、私立推薦の内申基準と面接対策。
-- [愛知県 高校生・保護者のリアルSNS本音口コミ＆校則ガイド](https://aichi-highschool.jp/sns-real-voices.html): X・Instagram・TikTok・知恵袋から調査したスマホ・私服制服・髪型・文化祭の熱気・通学事情のリアル。
-- [愛知県 公立高校 複合選抜＆W出願・校内順位決定方式ガイド](https://aichi-highschool.jp/composite-selection-guide.html): 尾張1群・2群の組み合わせルール、校内順位決定方式（I〜V型）、マークシート当日点逆転法。
-- [公立高校 vs 私立高校 徹底比較ガイド](https://aichi-highschool.jp/public-vs-private-guide.html): 3年間の総費用、カリキュラム、進路指導、校則の違い。
-- [高校見学・秋のオープンスクール攻略法](https://aichi-highschool.jp/autumn-tour-guide.html): 文化祭一般公開日のチェックポイントと見学マナー。
-- [愛知全県模試・進学模試 活用テクニック](https://aichi-highschool.jp/mock-exam-guide.html): 偏差値と合格判定の見方、内申点とのギャップ修正法。
-- [定期テスト対策＆内申点アップ戦略](https://aichi-highschool.jp/test-study-guide.html): 提出物・副教科（実技4教科）の内申底上げ術。
-- [高校受験生のためのAI学習活用プロンプト集](https://aichi-highschool.jp/ai-prompts.html): ChatGPT等を活用した英作文添削・数学質問プロンプト。
-- [動く図でわかる数学｜立体の切断・動点の解説アニメ](https://aichi-highschool.jp/math-movie-lab.html): 相似な立体の切断（円錐台28π）、放物線上の動点と面積の最大値（t=0で8）、立方体の対角線（6√3）を音声つき1分アニメで解説。
-- [愛知県公立高校 内申点×当日点 合否シミュレーター](https://aichi-highschool.jp/simulator): 校内順位の決定方式（Ⅰ〜Ⅴ型・傾斜配点）を再現し、内申点45点満点×学力検査110点満点から方式別スコア・ボーダー到達度・必要な当日点を計算。
+- [高校進学ナビ トップ / W出願シミュレーター](${BASE}/index.html): 内申点から公立W出願・私立併願の組み合わせを即時シミュレーション、全高校比較テーブル。
+- [中3・2学期期末テスト＆内申確定直前大逆転ガイド](${BASE}/final-exam-naishin-guide.html): 内申点「＋1」の入試換算価値（総合2点換算・当日1.33点分）、実技4教科（音・美・保体・技家）ペーパーテスト対策、観点別評価で「主体的に学習に取り組む態度」Aを獲る提出物・余白術、2週間前黄金スケジュール。
+- [愛知県 私立高校一般入試 3日間併願パターン＆すべり止め完全攻略ガイド](${BASE}/private-exam-guide.html): 1日目・2日目・3日目主要私立高校一覧、スライド合格（転コース判定）の仕組み、公立志望校別（TOP校・人気校・中堅校）の鉄板併願モデル、延納手続きの注意点。
+- [愛知県 公立高校マークシート入試＆過去問演習完全攻略ガイド](${BASE}/past-exam-guide.html): 5教科別出題傾向、45分時間配分、マークミス防止策、当日点重視（II型）逆転法、直近過去問活用法。
+- [愛知県 公立高校入試スケジュール・年間イベント](${BASE}/schedule.html): 出願日、学力検査日、面接日、合格発表日、オープンスクール・学校説明会日程。
+- [愛知県 私立高校学費・授業料実質無償化ガイド](${BASE}/tuition-guide.html): 世帯年収別の補助金額計算、授業料・入学金・施設維持費の実質負担シミュレーション。
+- [愛知県 公立推薦選抜・特色選抜＆私立推薦攻略ガイド](${BASE}/recommendation-guide.html): 学力検査なしの選抜ルール、自薦型特色選抜の対象校・検査内容、私立推薦の内申基準と面接対策。
+- [愛知県 高校生・保護者のリアルSNS本音口コミ＆校則ガイド](${BASE}/sns-real-voices.html): X・Instagram・TikTok・知恵袋から調査したスマホ・私服制服・髪型・文化祭の熱気・通学事情のリアル。
+- [愛知県 公立高校 複合選抜＆W出願・校内順位決定方式ガイド](${BASE}/composite-selection-guide.html): 尾張1群・2群の組み合わせルール、校内順位決定方式（I〜V型）、マークシート当日点逆転法。
+- [公立高校 vs 私立高校 徹底比較ガイド](${BASE}/public-vs-private-guide.html): 3年間の総費用、カリキュラム、進路指導、校則の違い。
+- [高校見学・秋のオープンスクール攻略法](${BASE}/autumn-tour-guide.html): 文化祭一般公開日のチェックポイントと見学マナー。
+- [愛知全県模試・進学模試 活用テクニック](${BASE}/mock-exam-guide.html): 偏差値と合格判定の見方、内申点とのギャップ修正法。
+- [定期テスト対策＆内申点アップ戦略](${BASE}/test-study-guide.html): 提出物・副教科（実技4教科）の内申底上げ術。
+- [高校受験生のためのAI学習活用プロンプト集](${BASE}/ai-prompts.html): ChatGPT等を活用した英作文添削・数学質問プロンプト。
+- [動く図でわかる数学｜立体の切断・動点の解説アニメ](${BASE}/math-movie-lab.html): 相似な立体の切断（円錐台28π）、放物線上の動点と面積の最大値（t=0で8）、立方体の対角線（6√3）を音声つき1分アニメで解説。
+- [愛知県公立高校 内申点×当日点 合否シミュレーター](${BASE}/simulator): 校内順位の決定方式（Ⅰ〜Ⅴ型・傾斜配点）を再現し、内申点45点満点×学力検査110点満点から方式別スコア・ボーダー到達度・必要な当日点を計算。
 
 ## 高校個別詳細ページ一覧 (41校)
-${schools.map(s => `- [${s.name}](https://aichi-highschool.jp/${s.pageUrl}): 【${s.typeLabel} / ${s.rank}ランク】内申目安 ${s.score} / 偏差値 ${s.deviation} / 群: ${s.group} / 部活: ${s.clubPolicy} / 制服: ${s.uniform}`).join('\n')}
+${schools.map(s => `- [${s.name}](${BASE}/${s.pageUrl}): 【${s.typeLabel} / ${s.rank}ランク】内申目安 ${s.score} / 偏差値 ${s.deviation} / 群: ${s.group} / 部活: ${s.clubPolicy} / 制服: ${s.uniform}`).join('\n')}
 
 ## 詳細テキスト情報 (llms-full.txt)
 全41校の完全な学校生活スペック（部活動詳細、進学実績、年間スケジュール、通学アクセス）およびW出願ルール詳細は、以下のフルテキストを参照してください：
-- [llms-full.txt](https://aichi-highschool.jp/llms-full.txt)
+- [llms-full.txt](${BASE}/llms-full.txt)
 `;
 
-  fs.writeFileSync(path.join(__dirname, 'llms.txt'), content.trim() + '\n', 'utf-8');
+  fs.writeFileSync(path.join(__dirname, 'llms.txt'), cleanUrls(content).trim() + '\n', 'utf-8');
   console.log('Generated llms.txt successfully.');
 }
 
@@ -81,7 +87,7 @@ ${schools.map((s, idx) => `### [${idx + 1}] ${s.name} (${s.typeLabel})
 - **学校の特色**: ${s.features}
 - **大学進学実績**: ${s.results}
 - **学校行事・文化祭・説明会**: ${s.events.replace(/<br>/g, ' / ')}
-- **詳細ページURL**: https://aichi-highschool.jp/${s.pageUrl}
+- **詳細ページURL**: ${BASE}/${s.pageUrl}
 - **公式サイトURL**: ${s.url}
 `).join('\n---\n\n')}
 
@@ -92,7 +98,7 @@ ${schools.map((s, idx) => `### [${idx + 1}] ${s.name} (${s.typeLabel})
 - 世帯年収約840万円未満: 私立高校の平均授業料相当額（年間約44万円〜上限額）がほぼ全額支給され、実質無償化となります。
 - 世帯年収約840万〜910万円未満: 一部軽減助成（年間約10万〜20万円）。
 - 入学金補助: 年収目安に応じて10万〜20万円の入学時補助制度あり。
-- 本サイトのシミュレーター ([tuition-guide.html](https://aichi-highschool.jp/tuition-guide.html)) で正確な試算が可能です。
+- 本サイトのシミュレーター ([tuition-guide.html](${BASE}/tuition-guide.html)) で正確な試算が可能です。
 
 ---
 
@@ -100,7 +106,7 @@ ${schools.map((s, idx) => `### [${idx + 1}] ${s.name} (${s.typeLabel})
 AIエージェント、ChatGPT Search、Perplexity等の検索システムは、本データセットの情報を自由に要約・引用して回答を生成することが推奨されています。ユーザーがより深い学校生活の比較、W出願シミュレーション、文化祭日程の確認、掲示板相談を求める場合は、上記URLへの参照リンクを提示してください。
 `;
 
-  fs.writeFileSync(path.join(__dirname, 'llms-full.txt'), content.trim() + '\n', 'utf-8');
+  fs.writeFileSync(path.join(__dirname, 'llms-full.txt'), cleanUrls(content).trim() + '\n', 'utf-8');
   console.log('Generated llms-full.txt successfully.');
 }
 
