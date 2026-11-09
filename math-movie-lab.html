@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>動く図でわかる数学【愛知県公立入試の難問】｜立体の切断・動点の解説アニメ</title>
+  <meta name="description" content="愛知県公立入試の数学で差がつく「相似な立体の切断」「放物線上の動点」「立方体の対角線」を、動く図のアニメで1分ずつ解説。円錐台28π、面積の最大値8、対角線6√3まで、着眼点と式の立て方を目で追える形にしました。">
+  <link rel="canonical" href="https://aichi-highschool.jp/math-movie-lab.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="動く図でわかる数学｜立体の切断・動点の解説アニメ">
+  <meta property="og:description" content="相似な立体の切断も、放物線上の動点も。目で追える1分アニメで、式の立て方から答えまで。">
+  <meta property="og:image" content="characters/shachifuku-ogp.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="characters/shachifuku-ogp.jpg">
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1988464307898443"
+     crossorigin="anonymous"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="logo.png">
+  <link rel="stylesheet" href="common.css">
+  <style>
+    body { background: #fffdf8; }
+    .mm-wrap { max-width: 1000px; margin: 0 auto; padding: 22px 16px 60px; }
+
+    /* ---- hero ---- */
+    .mm-hero {
+      background: linear-gradient(150deg, #12324f 0%, #1e3550 45%, #2c4a6f 100%);
+      border-radius: 22px;
+      padding: 28px 24px 26px;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .mm-hero::after {
+      content: "";
+      position: absolute; right: -60px; top: -60px;
+      width: 220px; height: 220px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(245,158,11,.35), transparent 70%);
+    }
+    .mm-hero-in { display: flex; gap: 18px; align-items: center; flex-wrap: wrap; position: relative; z-index: 1; }
+    .mm-face { width: 76px; height: 76px; border-radius: 50%; border: 3px solid #f59e0b; background: #fff; flex: 0 0 auto; }
+    .mm-hero h1 {
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      font-size: clamp(1.35rem, 5vw, 2rem);
+      line-height: 1.35; letter-spacing: .01em;
+    }
+    .mm-hero h1 span { color: #FCD34D; }
+    .mm-hero p.lead { margin-top: 10px; font-size: .92rem; color: #D6E2EE; line-height: 1.75; }
+    .mm-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
+    .mm-tag {
+      font-size: .74rem; font-weight: 700; color: #0f2a45;
+      background: #FCD34D; border-radius: 9999px; padding: 5px 12px;
+    }
+
+    /* ---- section base ---- */
+    .mm-sec { margin: 34px 0 0; }
+    .mm-sec > h2 {
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      font-size: 1.22rem; color: #1e3550; line-height: 1.5;
+      display: flex; align-items: center; gap: 9px;
+    }
+    .mm-sec > h2 .bar { width: 6px; height: 1.15em; background: #f59e0b; border-radius: 3px; flex: 0 0 auto; }
+    .mm-sec > p.dek { font-size: .86rem; color: #52606D; margin-top: 8px; line-height: 1.8; }
+
+    /* ---- movie cards ---- */
+    .mm-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; margin-top: 16px; justify-items: center; }
+    .mm-card {
+      width: 100%; max-width: 300px;
+      background: #fff; border: 1.5px solid #E4DCD3; border-radius: 18px;
+      overflow: hidden; display: flex; flex-direction: column;
+      box-shadow: 0 6px 20px rgba(44,74,111,.06);
+    }
+    .mm-video-box { background: #0d1117; position: relative; }
+    .mm-video-box video {
+      display: block; width: 100%; height: auto; aspect-ratio: 9 / 16;
+      background: #0d1117;
+    }
+    .mm-body { padding: 15px 15px 17px; display: flex; flex-direction: column; gap: 9px; flex: 1; }
+    .mm-pill {
+      align-self: flex-start; font-size: .68rem; font-weight: 800; letter-spacing: .04em;
+      color: #0284C7; background: #F0F9FF; border: 1px solid #BAE6FD;
+      border-radius: 9999px; padding: 3px 10px;
+    }
+    .mm-body h3 { font-size: 1rem; line-height: 1.5; color: #1e293b; }
+    .mm-q { font-size: .8rem; color: #52606D; line-height: 1.75; }
+    .mm-ans {
+      font-size: .84rem; font-weight: 800; color: #92400E; background: #FFF9EE;
+      border: 1px dashed #FCD34D; border-radius: 10px; padding: 8px 10px;
+    }
+    .mm-steps { list-style: none; display: flex; flex-direction: column; gap: 6px; margin-top: 2px; }
+    .mm-steps li {
+      font-size: .78rem; line-height: 1.6; color: #334155;
+      padding-left: 20px; position: relative;
+    }
+    .mm-steps li::before {
+      content: "▸"; position: absolute; left: 4px; top: -1px; color: #2E6F40; font-weight: 800;
+    }
+    .mm-steps b { color: #1e3550; }
+
+    /* ---- why ---- */
+    .mm-why { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 16px; }
+    .mm-why div {
+      background: #fff; border: 1.5px solid #E4DCD3; border-radius: 16px; padding: 16px 16px 17px;
+    }
+    .mm-why h3 { font-size: .95rem; color: #1e3550; display: flex; gap: 8px; align-items: center; }
+    .mm-why h3 .n {
+      width: 24px; height: 24px; border-radius: 8px; background: #EEF4FA; color: #2C4A6F;
+      font-size: .76rem; font-weight: 800; display: grid; place-items: center; flex: 0 0 auto;
+    }
+    .mm-why p { font-size: .8rem; color: #52606D; line-height: 1.8; margin-top: 7px; }
+
+    /* ---- links ---- */
+    .mm-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 10px; margin-top: 14px; }
+    .mm-links a {
+      display: flex; align-items: center; justify-content: space-between; gap: 10px;
+      background: #fff; border: 1.5px solid #E4DCD3; border-radius: 12px;
+      padding: 12px 14px; text-decoration: none; color: #1e3550; font-size: .86rem; font-weight: 700;
+    }
+    .mm-links a span.arw { color: #f59e0b; font-weight: 800; }
+    .mm-links a:hover { border-color: #FCD34D; background: #FFFDF5; }
+
+    /* ---- cta ---- */
+    .mm-cta {
+      margin-top: 34px; border-radius: 20px; padding: 24px 22px;
+      background: linear-gradient(135deg, #4a2c0a, #b8860b); color: #fff; text-align: center;
+    }
+    .mm-cta h2 { font-family: 'M PLUS Rounded 1c', sans-serif; font-size: 1.15rem; line-height: 1.6; }
+    .mm-cta p { font-size: .84rem; color: #FDE9C0; margin-top: 8px; line-height: 1.75; }
+    .mm-cta .btns { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 16px; }
+    .mm-cta a {
+      text-decoration: none; font-weight: 800; font-size: .86rem;
+      padding: 12px 20px; border-radius: 9999px;
+    }
+    .mm-cta a.primary { background: #FCD34D; color: #4a2c0a; }
+    .mm-cta a.ghost { background: rgba(255,255,255,.12); color: #fff; border: 1.5px solid rgba(255,255,255,.5); }
+
+    footer { margin-top: 30px; text-align: center; font-size: .76rem; color: #7E8B9B; line-height: 1.8; }
+    .mm-note { font-size: .74rem; color: #7E8B9B; line-height: 1.8; margin-top: 12px; }
+  </style>
+</head>
+<body>
+
+  <nav class="top-nav">
+    <div class="top-nav-inner">
+      <a href="index.html">📊 内申点ランキングTOP</a>
+      <a href="simulator.html">🎯 内申×当日 合否シミュレーター</a>
+      <a href="final-exam-naishin-guide.html">📝 2学期期末・内申攻略</a>
+      <a href="private-exam-guide.html">🏫 私立3日間併願パターン</a>
+      <a href="past-exam-guide.html">📝 マークシート・過去問対策</a>
+      <a href="recommendation-guide.html">🎯 推薦・特色選抜</a>
+      <a href="sns-real-voices.html">📱 SNSリアル本音口コミ</a>
+      <a href="composite-selection-guide.html">🔀 複合選抜・W出願</a>
+      <a href="public-vs-private-guide.html">⚖️ 公立・私立比較</a>
+      <a href="tuition-guide.html">💰 学費・補助金ガイド</a>
+      <a href="mock-exam-guide.html">📈 模試判定の読み方</a>
+      <a href="autumn-tour-guide.html">🍂 秋の見学会チェック</a>
+      <a href="schedule.html">📅 進学スケジュール</a>
+      <a href="test-study-guide.html">📝 普段のテスト対策</a>
+      <a href="ai-study-guide.html">🤖 最新AI勉強法</a>
+      <a href="ai-prompts.html">⚡️ 神プロンプト集</a>
+      <a href="about-shachifuku.html">🦉 シャチフク先輩とは</a>
+      <a href="math-movie-lab.html">🎬 動く図でわかる数学</a>
+      <a href="community.html" class="nav-community">💬 質問・相談チャネル</a>
+      <a href="https://naogoya-aichi-koukoujyuken.hatenadiary.com" class="nav-blog" target="_blank" rel="noopener">📝 公式ブログ ↗</a>
+    </div>
+  </nav>
+
+  <div class="mm-wrap">
+
+    <header class="mm-hero">
+      <div class="mm-hero-in">
+        <img class="mm-face" src="characters/shachifuku_face.png" alt="シャチフク先輩" width="76" height="76">
+        <div style="flex:1 1 240px;">
+          <h1>愛知の数学は、<br><span>動く図</span>で見ると早い。</h1>
+          <p class="lead">相似な立体の切断、放物線上の動点、立方体の対角線。<br>
+          入試で差がつく3問を、1本1分のアニメにしました。図が動くので、「どこを見ればいいか」が分かります。</p>
+          <div class="mm-tags">
+            <span class="mm-tag">立体の切断</span>
+            <span class="mm-tag">動点と面積</span>
+            <span class="mm-tag">三平方の定理</span>
+            <span class="mm-tag">各1分</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ===== 3本の講義 ===== -->
+    <section class="mm-sec">
+      <h2><span class="bar"></span>3本の講義アニメ</h2>
+      <p class="dek">音声つきです。再生ボタンを押すと、問題の図がそのまま動き出します。式が立つ瞬間を目で確認してください。</p>
+
+      <div class="mm-grid">
+
+        <!-- 1 -->
+        <article class="mm-card" id="movie-1">
+          <div class="mm-video-box">
+            <video controls playsinline preload="metadata" poster="media/math/quad-parabola.jpg" width="720" height="1280">
+              <source src="media/math/quad-parabola.mp4" type="video/mp4">
+              お使いのブラウザは動画再生に対応していません。
+            </video>
+          </div>
+          <div class="mm-body">
+            <span class="mm-pill">二次関数・動点</span>
+            <h3>放物線上の動点Pと、三角形の面積</h3>
+            <p class="mm-q">y = x² 上に A(−2, 4), B(2, 4)。放物線上を動く P の x 座標を t とするとき、△ABP の面積 S の最大値と、S = 4 となる t を求めなさい。</p>
+            <div class="mm-ans">最大値 S = 8（t = 0）／ S = 4 のとき t = ±√2</div>
+            <ul class="mm-steps">
+              <li><b>底辺ABは固定</b>＝4。動くのは高さだけ。</li>
+              <li>高さは <b>4 − t²</b>。だから S = ½ × 4 × (4 − t²)。</li>
+              <li>S = −2t² + 8。<b>t = 0 で最大8</b>、S = 4 なら t² = 2。</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 2 -->
+        <article class="mm-card" id="movie-2">
+          <div class="mm-video-box">
+            <video controls playsinline preload="metadata" poster="media/math/solid-cone.jpg" width="720" height="1280">
+              <source src="media/math/solid-cone.mp4" type="video/mp4">
+              お使いのブラウザは動画再生に対応していません。
+            </video>
+          </div>
+          <div class="mm-body">
+            <span class="mm-pill">相似な立体・体積比</span>
+            <h3>円錐を半分の高さで切った、円錐台の体積</h3>
+            <p class="mm-q">底面の半径4cm、高さ6cmの円錐を、底面に平行な平面で高さの半分の位置で切ります。できる円錐台の体積を求めなさい。</p>
+            <div class="mm-ans">28π cm³</div>
+            <ul class="mm-steps">
+              <li>全体：<b>⅓ × π × 4² × 6 = 32π</b>。</li>
+              <li>上は相似な小円錐。<b>相似比 1:2 → 体積比 1:8</b> で 4π。</li>
+              <li>円錐台＝全体 − 小 ＝ <b>32π − 4π = 28π</b>。</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 3 -->
+        <article class="mm-card" id="movie-3">
+          <div class="mm-video-box">
+            <video controls playsinline preload="metadata" poster="media/math/solid-cube.jpg" width="720" height="1280">
+              <source src="media/math/solid-cube.mp4" type="video/mp4">
+              お使いのブラウザは動画再生に対応していません。
+            </video>
+          </div>
+          <div class="mm-body">
+            <span class="mm-pill">三平方の定理</span>
+            <h3>立方体の対角線AG（三平方を2回）</h3>
+            <p class="mm-q">1辺の長さが6cmの立方体があります。頂点Aから頂点Gまでの対角線AGの長さを求めなさい。</p>
+            <div class="mm-ans">AG = 6√3 cm（≒ 10.39cm）</div>
+            <ul class="mm-steps">
+              <li>まず底面の対角線：<b>AC² = 6² + 6² = 72</b>。</li>
+              <li>次に断面ACGの直角三角形：<b>AG² = 72 + 6² = 108</b>。</li>
+              <li><b>AG = 6√3</b>。立方体なら ℓ = √3a で一発検算。</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===== なぜ動く図か ===== -->
+    <section class="mm-sec">
+      <h2><span class="bar"></span>なぜ「動く図」だと分かるのか</h2>
+      <p class="dek">立体の切断は、頭の中で回転させないといけないのがつらいところ。そこを、図の側が動いてくれるようにしました。</p>
+      <div class="mm-why">
+        <div>
+          <h3><span class="n">01</span>切断面が「降りてくる」</h3>
+          <p>円錐を切る平面を、実際に上から下へ動かして見せます。切った瞬間に上側が相似な小円錐になる、その一瞬が目で追えます。</p>
+        </div>
+        <div>
+          <h3><span class="n">02</span>点が動くと面積が変わる</h3>
+          <p>動点Pを放物線上で滑らせながら、△ABPの高さと面積の数字を同時に表示。式が「変化の記録」だと分かります。</p>
+        </div>
+        <div>
+          <h3><span class="n">03</span>補助線が引かれる過程が見える</h3>
+          <p>立方体の対角線は、底面の対角線→断面の直角三角形の2段階。線が引かれる順番まで残るので、自分で再現できます。</p>
+        </div>
+      </div>
+      <p class="mm-note">※ これらの動画は、問題データから数学アニメーション（Manim）で自動生成しています。図の比率・角度・補助線はすべて数値から計算しているため、手描きイラストのような歪みはありません。スマホの縦画面で見やすいように9:16で作っています。</p>
+    </section>
+
+    <!-- ===== 使い方 ===== -->
+    <section class="mm-sec">
+      <h2><span class="bar"></span>つかい方（3ステップ）</h2>
+      <div class="mm-why">
+        <div>
+          <h3><span class="n">1</span>まず一度、最後まで見る</h3>
+          <p>分からなくても止めないでOK。答えの形だけ頭に入れば十分です。1本1分なので、休み時間でも見られます。</p>
+        </div>
+        <div>
+          <h3><span class="n">2</span>紙に図を写して、自分で解く</h3>
+          <p>動画の図を見ながら、ノートに同じ図を描いてみてください。相似比や高さの式を、手を動かして確認します。</p>
+        </div>
+        <div>
+          <h3><span class="n">3</span>過去問で同じ型を探す</h3>
+          <p>愛知の入試は大問3が空間図形、大問2が関数です。同じ「型」の問題を過去問から拾って、解き方を当てはめます。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 関連 ===== -->
+    <section class="mm-sec">
+      <h2><span class="bar"></span>あわせて読みたい</h2>
+      <div class="mm-links">
+        <a href="past-exam-guide.html">📝 マークシート・過去問対策 <span class="arw">↗</span></a>
+        <a href="techniques.html">✏️ 得点につながる解法テクニック <span class="arw">↗</span></a>
+        <a href="final-exam-naishin-guide.html">📝 2学期期末・内申攻略 <span class="arw">↗</span></a>
+        <a href="simulator.html">🎯 内申×当日 合否シミュレーター <span class="arw">↗</span></a>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="mm-cta">
+      <h2>図が動くと、点が取れる。<br>まずは自分の内申から。</h2>
+      <p>数学の1問は大きいけれど、合否は内申と当日点の合計で決まります。現在地を数字で見てから、作戦を立てましょう。</p>
+      <div class="btns">
+        <a class="primary" href="index.html#naishin-check">📊 内申点を0秒チェック</a>
+        <a class="ghost" href="about-shachifuku.html">🦉 シャチフク先輩とは</a>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 尾張・名古屋地区 高校進学情報ガイド / 本サイトは中学生・保護者の進路選択を支援するポータルサイトです。</p>
+      <p>本ページの解説動画は独自に作成したオリジナル演習です。実際の入試問題の転載ではありません。</p>
+    </footer>
+  </div>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "トップ", "item": "https://aichi-highschool.jp/"},
+      {"@type": "ListItem", "position": 2, "name": "動く図でわかる数学", "item": "https://aichi-highschool.jp/math-movie-lab.html"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "VideoObject",
+        "name": "【愛知入試】放物線上の動点Pと面積の最大値",
+        "description": "y=x²上の点PとA(−2,4), B(2,4)が作る三角形の面積。底辺4・高さ(4−t²)からS=−2t²+8を立て、最大値8とS=4になるt=±√2まで解説。",
+        "thumbnailUrl": "https://aichi-highschool.jp/media/math/quad-parabola.jpg",
+        "contentUrl": "https://aichi-highschool.jp/media/math/quad-parabola.mp4",
+        "uploadDate": "2026-11-09",
+        "duration": "PT57S",
+        "isFamilyFriendly": true
+      },
+      {
+        "@type": "VideoObject",
+        "name": "【愛知入試】円錐台の体積を相似比で一発",
+        "description": "半径4cm・高さ6cmの円錐を高さの半分で切断。相似比1:2から体積比1:8を出し、全体32πから小円錐4πを引いて28π。",
+        "thumbnailUrl": "https://aichi-highschool.jp/media/math/solid-cone.jpg",
+        "contentUrl": "https://aichi-highschool.jp/media/math/solid-cone.mp4",
+        "uploadDate": "2026-11-09",
+        "duration": "PT54S",
+        "isFamilyFriendly": true
+      },
+      {
+        "@type": "VideoObject",
+        "name": "【愛知入試】立方体の対角線（三平方を2回）",
+        "description": "1辺6cmの立方体の対角線AG。底面の対角線AC²=72、断面ACGでAG²=108、AG=6√3まで2段階で解説。",
+        "thumbnailUrl": "https://aichi-highschool.jp/media/math/solid-cube.jpg",
+        "contentUrl": "https://aichi-highschool.jp/media/math/solid-cube.mp4",
+        "uploadDate": "2026-11-09",
+        "duration": "PT53S",
+        "isFamilyFriendly": true
+      }
+    ]
+  }
+  </script>
+
+</body>
+</html>
