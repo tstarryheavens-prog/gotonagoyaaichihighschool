@@ -99,7 +99,7 @@ def process(path: str, schools: dict) -> str:
 
     # 2) CTA（学校ページ＋ナビを持たない独立ページ）
     is_school = depth == 1 and os.path.basename(os.path.dirname(path)) == "schools"
-    if is_school or 'class="top-nav"' not in html:
+    if is_school or 'class="top-nav"' not in html or os.path.basename(path) == "tokutai-scholarship-guide.html":
         sid = os.path.splitext(os.path.basename(path))[0]
         # 旧CTAを毎回除去してから作り直す（型データ変更・文科省表記の修正を反映するため）
         stripped = CTA_RE.sub("", html)

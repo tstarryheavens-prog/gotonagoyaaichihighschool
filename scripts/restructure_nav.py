@@ -21,6 +21,10 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SENTINEL = "<!-- NAV_ROWS v1 -->"
 CSS_SENTINEL = "/* === NAV_ROWS v1 === */"
 BLOG = ("https://naogoya-aichi-koukoujyuken.hatenadiary.com", "📝 公式ブログ", "📝 ブログ")
+BLOG_CLASS = "nav-blog"
+
+# ナビを持たないが導線を付けたいページ（<body> 直後にナビを差し込む）
+NO_NAV_PAGES = {"tokutai-scholarship-guide.html"}
 
 # (ファイル名, デスクトップ表記, モバイル表記)
 PRIMARY = [
@@ -29,7 +33,6 @@ PRIMARY = [
     ("community.html", "💬 質問・相談チャネル", "💬 相談チャネル"),
 ]
 PRIMARY_CLASS = {"community.html": "nav-community"}
-BLOG_CLASS = "nav-blog"
 
 GROUPS: list[tuple[str, list[tuple[str, str]]]] = [
     ("内申・時期", [
@@ -193,6 +196,14 @@ def main() -> int:
         html = open(path, encoding="utf-8").read()
         m = NAV_RE.search(html)
         if not m:
+            if name in NO_NAV_PAGES and "<body" in html:
+                total += 1
+                nav = '<nav class="top-nav">\n  ' + build_nav(name, "", labels) + "</nav>\n"
+                new_html = re.sub(r'(<body[^>]*>\n)', lambda mm: mm.group(1) + "  " + nav, html, count=1)
+                if new_html != html:
+                    changed += 1
+                    if not check:
+                        open(path, "w", encoding="utf-8").write(new_html)
             continue
         total += 1
         prefix = "../" * os.path.relpath(path, ROOT).count(os.sep)
@@ -212,7 +223,8 @@ def main() -> int:
         open(css_path, "w", encoding="utf-8").write(body + "\n\n" + CSS)
 
     mark = "!" if (changed or css_needs) else "✓"
-    print(f"[{mark}] ナビ再構成: {'差分あり' if changed else '差分なし'} {changed}/{total} ページ"
+    state = "差分あり" if changed else "差分なし"
+    print(f"[{mark}] ナビ再構成: {state} {changed}/{total} ページ"
           + ("・common.css 更新" if (css_needs and not check) else "")
           + ("（--check のため未書き込み）" if check and (changed or css_needs) else ""))
     return 1 if (check and (changed or css_needs)) else 0
