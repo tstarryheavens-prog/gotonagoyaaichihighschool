@@ -62,6 +62,8 @@ SCHOOL_TYPES = {
     "midori":           {"deps": {"普通科": "III"}},        # 市立緑
     "yamada":           {"deps": {"普通科": "III"}},        # 市立山田
     "moriyama":         {"deps": {"普通科": "I"}, "interview": True},
+    # 春日井泉（総合学科・専門学科）: 商業（地域ビジネス/ITビジネス）・生活文化ともⅡ型
+    "kasugai-izumi":    {"deps": {"商業科": "II", "生活文化科": "II"}},
 }
 
 # サイト側（index.html の naishinDiagnosisData）が公表している

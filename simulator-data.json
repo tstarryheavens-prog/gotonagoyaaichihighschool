@@ -2,7 +2,7 @@
  "schema": 1,
  "data_version": "2027-07-07",
  "exam_year": "令和9年度（2027年度）",
- "generated_at": "2026-11-09T01:01:11+09:00",
+ "generated_at": "2026-11-09T22:36:33+09:00",
  "definition": {
   "hyotei": "評定得点 = 内申点(9教科×5=45点満点) × 2 → 90点満点",
   "day": "学力検査合計得点 = 5教科 × 22点 = 110点満点",
@@ -815,6 +815,39 @@
      52
     ],
     "band": 22
+   }
+  },
+  {
+   "id": "kasugai-izumi",
+   "name": "春日井泉高等学校",
+   "dep": "商業科",
+   "type": "II",
+   "type_label": "Ⅱ型",
+   "type_formula": "評定×1.5 + 当日",
+   "max": 245.0,
+   "deps": {
+    "商業科": "II",
+    "生活文化科": "II"
+   },
+   "interview": false,
+   "group": "総合学科・専門学科",
+   "location": "春日井市西山町",
+   "naishin_ref": "18〜22",
+   "deviation": "39",
+   "page": "schools/kasugai-izumi.html",
+   "border": null,
+   "ref_range": {
+    "score_min": 89.0,
+    "score_max": 111.0,
+    "naishin": [
+     18,
+     22
+    ],
+    "day": [
+     35,
+     45
+    ],
+    "band": 18
    }
   },
   {

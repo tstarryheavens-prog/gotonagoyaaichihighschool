@@ -29,6 +29,6 @@ User-agent: Google-Extended
 Allow: /
 
 # AI Discovery Manifests (llmstxt.org)
-# https://aichi-highschool.jp/llms.txt
-# https://aichi-highschool.jp/llms-full.txt
-Sitemap: https://aichi-highschool.jp/sitemap.xml
+# https://ikomainagoyaaichihighschool.pages.dev/llms.txt
+# https://ikomainagoyaaichihighschool.pages.dev/llms-full.txt
+Sitemap: https://ikomainagoyaaichihighschool.pages.dev/sitemap.xml

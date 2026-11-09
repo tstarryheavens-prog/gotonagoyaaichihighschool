@@ -33,7 +33,7 @@
 - **学校の特色**: 県内公立トップの歴史と実績。「自由と規律」を信条とし校則がほぼ皆無。美術科も併設。
 - **大学進学実績**: 東京大・京都大・名古屋大（毎年約100名）・国公立医学部に圧倒的な実績。
 - **学校行事・文化祭・説明会**: 【文化祭 (鯱光祭)】2026年9月26日(土)・27日(日) 一般公開 / 【学校説明会】2026年10月3日(土) / 2027年8月下旬
-- **詳細ページURL**: https://aichi-highschool.jp/schools/asahi.html
+- **詳細ページURL**: https://ikomainagoyaaichihighschool.pages.dev//schools/
 - **公式サイトURL**: https://asahi-h.aichi-c.ed.jp/
 
 ---
@@ -47,7 +47,7 @@
 - **学校の特色**: 全国屈指の難関私立男子校。生徒の探究心と個性を尊重する自由な校風。仏教（浄土宗）精神。
 - **大学進学実績**: 国公立大学医学部合格者数は数十年間日本一。東大・京大・名大・旧帝大へ多数。
 - **学校行事・文化祭・説明会**: 【記念祭 (文化祭)】2026年9月26日(土)・27日(日) 一般公開（予約不要） / 【高校説明会】2026年10月17日(土)・11月7日(土)
-- **詳細ページURL**: https://aichi-highschool.jp/schools/tokai.html
+- **詳細ページURL**: https://ikomainagoyaaichihighschool.pages.dev//schools/
 - **公式サイトURL**: https://www.tokai-jh.ed.jp/
 
 ---
@@ -61,7 +61,7 @@
 - **学校の特色**: 旭丘と並ぶ名門校。附属中が設置され中高一貫が始動。SSH指定で探究活動が極めて盛ん。音楽科併設。
 - **大学進学実績**: 名古屋大学合格者数は県内トップ争い常連。国公立医学部・旧帝大・早慶へ多数。
 - **学校行事・文化祭・説明会**: 【明和祭】2026年9月12日(土)・13日(日) 一般公開 / 【秋の学校見学会】2026年10月24日(土) / 2027年8月中旬
-- **詳細ページURL**: https://aichi-highschool.jp/schools/meiwa.html
+- **詳細ページURL**: https://ikomainagoyaaichihighschool.pages.dev//schools/
 - **公式サイトURL**: https://meiwa-h.aichi-c.ed.jp/
 
 ---
@@ -75,7 +75,7 @@
 - **学校の特色**: 尾張北部の共学最高峰。緑豊かな広大なキャンパス。旭丘・一宮の併願先として多くの受験生が志望。
 - **大学進学実績**: 東大・京大・名大・医学部合格実績が抜群。早慶上智・理科大にも強い。
 - **学校行事・文化祭・説明会**: 【滝学園祭】2026年9月19日(土)・20日(日) / 【高校入試説明会】2026年10月10日(土)・11月14日(土)
-- **詳細ページURL**: https://aichi-highschool.jp/schools/taki.html
+- **詳細ページURL**: https://ikomainagoyaaichihighschool.pages.dev//schools
 - **公式サイトURL**: https://www.taki-hy.ed.jp/
 
 ---
@@ -89,7 +89,7 @@
 - **学校の特色**: 尾張北部のトップ校。「ヤリ高」の愛称。文武両道の精神が徹底され、部活動や行事にも全力投球。
 - **大学進学実績**: 名古屋大学現役合格者数が全国トップクラス常連。京大・阪大など難関国公立へ多数。
 - **学校行事・文化祭・説明会**: 【ヤリ高祭 (学校祭)】2026年9月11日(金)・12日(土) / 【秋の体験入学】2026年10月17日(土) / 2027年8月下旬
-- **詳細ページURL**: https://aichi-highschool.jp/schools/ichinomiya.html
+- **詳細ページURL**: https://ikomainagoyaaichihighschool.pages.dev//schools/ichin
 - **公式サイトURL**: https://ichinomiya-h.aichi-c.ed.jp/
 
 ---
@@ -103,7 +103,7 @@
 - **学校の特色**: 桜通線「桜山駅」すぐ。明るくエネルギッシュな校風。「国際科学科」は科学・英語探究の最高峰。
 - **大学進学実績**: 名古屋大学をはじめ国公立大学へ多数進学。早慶・MARCH・関関同立にも強み。
 - **学校行事・文化祭・説明会**: 【向陽祭】2026年9月11日(金)・12日(土) 一般公開 / 【学校見学会】2026年10月10日(土) / 2027年8月下旬
-- **詳細ページURL**: https://aichi-highschool.jp/schools/koyo.html
+- **詳細ページURL**: https://ikomainagoyaaichihighschool.pages.dev//schools
 - **公式サイトURL**: https://koyo-h.aichi-c.ed.jp/
 
 ---
@@ -117,7 +117,7 @@
 - **学校の特色**: 星ヶ丘駅徒歩5分。上品で穏やかな校風が女子を中心に大人気。旭丘の第2希望先。音楽科併設。
 - **大学進学実績**: 名大・名市大・愛知県立大などの地元国公立や南山大・早慶に安定した強さ。
 - **学校行事・文化祭・説明会**: 【菊里祭】2026年9月11日(金)・12日(土) 一般公開 / 【学校見学会】2026年10月31日(土) / 2027年8月下旬
-- **詳細ページURL**: https://aichi-highschool.jp/schools/kikuzato.html
+- **詳細ページURL**: https://ikomainagoyaaichihighschool.pages.dev//schools/kik
 - **公式サイトURL**: https://kikuzato-h.aichi-c.ed.jp/
 
 ---
@@ -131,7 +131,7 @@
 - **学校の特色**: 仏教（曹洞宗）精神の文武両道校。規律と面倒見の良さ。公立トップ校の併願先として絶大な支持。
 - **大学進学実績**: 名大・名市大・名工大などの国公立大、早慶・MARCH・南山大学へ多数合格。
 - **学校行事・文化祭・説明会**: 【愛知祭 (文化祭)】2026年9月19日(土)・20日(日) / 【秋のオープンスクール】2026年10月17日(土)・11月7日(土)
-- **詳細ページURL**: https://aichi-highschool.jp/schools/aichi.html
+- **詳細ページURL**: https://ikomainagoyaaichihighschool.pages.dev//schools/
 - **公式サイトURL**: https://aichi-h.ed.jp/
 
 ---
@@ -145,7 +145,7 @@
 - **学校の特色**: 杉原千畝の母校。穏やかで自主性を重んじる校風。普通科のほか「理数科」「食物科」がある。
 - **大学進学実績**: 名古屋大学を中心とした国公立大学への現役合格実績が近年大きく躍進中。
 - **学校行事・文化祭・説明会**: 【記念祭 (文化祭)】2026年9月11日(金)・12日(土) / 【学校説明会】2026年10月24日(土) / 2027年8月下旬
-- **詳細ページURL**: https://aichi-highschool.jp/schools/zuiryo.html
+- **詳細ページURL**: https://ikomainagoyaaichihighschool.pages.dev//schools/z
 - **公式サイトURL**: https://zuiryo-h.aichi-c.ed.jp/
 
 ---
@@ -159,7 +159,7 @@
 - **学校の特色**: 一社駅から徒歩圏の私服校。自主自立。「国際教養科」を設置し英語教育や海外研修が極めて充実。
 - **大学進学実績**: 国公立大学に加え、早慶・上智・ICU・MARCHや海外大学への進学者が多い。
 - **学校行事・文化祭・説明会**: 【千種祭】2026年9月18日(金)・19日(土) / 【学校説明会】2026年10月17日(土) / 2027年8月下旬
-- **詳細ページURL**: https://aichi-highschool.jp/schools/chigusa.html
+- **詳細ページURL**: https://ikomainagoyaaichihighschool.pages.dev//schools/ch
 - **公式サイトURL**: https://chigusa-h.aichi-c.ed.jp/
 
 ---
@@ -173,7 +173,7 @@
 - **学校の特色**: 砂田橋駅直結。キリスト教主義の男子進学校。近年、大学合格実績が愛知県私立トップ級に急伸。
 - **大学進学実績**: 名大などの難関国公立、早稲田・慶應・東京理科大・同志社大への合格数が激増。
 - **学校行事・文化祭・説明会**: 【愛校祭 (文化祭)】2026年9月19日(土)・20日(日) / 【高校入試説明会】2026年10月17日(土)・11月14日(土)
-- **詳細ページURL**: https://aichi-highschool.jp/schools/meigaku.html
+- **詳細ページURL**: https://ikomainagoyaaichihighschool.pages.dev//schools/me
 - **公式サイトURL**: https://www.meigaku.ac.jp/
 
 ---
@@ -187,7 +187,7 @@
 - **学校の特色**: 一宮高校の併願先として尾張北部で高い信頼。勉強に対する熱心な指導と高い進学意欲。
 - **大学進学実績**: 名古屋大・名工大・岐阜大・三重大など東海地方の国公立大へ抜群の合格率。
 - **学校行事・文化祭・説明会**: 【西高祭】2026年9月10日(木)・11日(金) / 【体験入学】2026年10月24日(土) / 2027年8月下旬
-- **詳細ページURL**: https://aichi-highschool.jp/schools/ichinomiya-nishi.html
+- **詳細ページURL**: https://ikomainagoyaaichihighschool.pages.dev//schools/ichinomiya-
 - **公式サイトURL**: https://ichinomiyanishi-h.aichi-c.ed.jp/
 
 ---
@@ -201,7 +201,7 @@
 - **学校の特色**: 名城大学直結。理数・薬学・情報系の最新設備。名城大への内部推薦枠が極めて厚く大人気。
 - **大学進学実績**: 名城大学へ多数推薦進学。特進・理数からは国公立大学や南山大へも多数。
 - **学校行事・文化祭・説明会**: 【名城祭】2026年9月26日(土)・27日(日) / 【学校説明会】2026年10月17日(土)・11月7日(土)
-- **詳細ページURL**: https://aichi-highschool.jp/schools/meijo.html
+- **詳細ページURL**: https://ikomainagoyaaichihighschool.pages.dev//schools/
 - **公式サイトURL**: https://www.meijo-h.ed.jp/
 
 ---
@@ -215,7 +215,7 @@
 - **学校の特色**: 部活動加入率が高く文武両道。「ファッション創造科」も併設。堅実で親身な進路指導。
 - **大学進学実績**: 名大・名工大・愛知県立大などの国公立大学や南山大学・名城大学に手堅い実績。
 - **学校行事・文化祭・説明会**: 【桜台祭】2026年9月18日(金)・19日(土) / 【学校説明会】2026年10月24日(土) / 2027年8月下旬
-- **詳細ページURL**: https://aichi-highschool.jp/schools/sakuradai.html
+- **詳細ページURL**: https://ikomainagoyaaichihighschool.pages.dev//schools/saku
 - **公式サイトURL**: https://sakuradai-h.aichi-c.ed.jp/
 
 ---
@@ -229,7 +229,7 @@
 - **学校の特色**: 「国際英語科」がありグローバル教育に注力。生徒が主体で明るく活気のある学校行事。
 - **大学進学実績**: 南山大学・名城大学などの地元上位私大、国公立大学へバランスよく進学。
 - **学校行事・文化祭・説明会**: 【名東祭】2026年9月18日(金)・19日(土) / 【秋の体験入学】2026年10月17日(土) / 2027年8月下旬
-- **詳細ページURL**: https://aichi-highschool.jp/schools/meito.html
+- **詳細ページURL**: https://ikomainagoyaaichihighschool.pages.dev//schools/
 - **公式サイトURL**: https://meito-h.aichi-c.ed.jp/
 
 ---
@@ -243,7 +243,7 @@
 - **学校の特色**: 甲子園やスケートで全国区のスポーツ強豪校。中京大学への接続枠が強い。特進は国公立大志向。
 - **大学進学実績**: 中京大学への内部進学多数。特進クラスから難関国公立大学・早慶へ進学。
 - **学校行事・文化祭・説明会**: 【中京祭】2026年9月26日(土)・27日(日) / 【入試説明会】2026年10月24日(土)・11月14日(土)
-- **詳細ページURL**: https://aichi-highschool.jp/schools/chukyo.html
+- **詳細ページURL**: https://ikomainagoyaaichihighschool.pages.dev//schools/c
 - **公式サイトURL**: https://www.chukyo.ed.jp/
 
 ---
@@ -257,7 +257,7 @@
 - **学校の特色**: 知多地区のトップ伝統校。真面目で学習熱心な生徒が集まる。手厚い学習サポート。
 - **大学進学実績**: 名古屋大学・名工大・愛知県立大などの国公立大学へ高い進学率を誇る。
 - **学校行事・文化祭・説明会**: 【横高祭】2026年9月11日(金)・12日(土) / 【体験入学】2026年10月31日(土) / 2027年8月下旬
-- **詳細ページURL**: https://aichi-highschool.jp/schools/yokosuka.html
+- **詳細ページURL**: https://ikomainagoyaaichihighschool.pages.dev//schools/yok
 - **公式サイトURL**: https://yokosuka-h.aichi-c.ed.jp/
 
 ---
@@ -271,7 +271,7 @@
 - **学校の特色**: 閑静な文教エリア。温厚で真面目な校風。生徒一人ひとりを大切にする落ち着いた環境。
 - **大学進学実績**: 愛知県立大・名市大などの国公立大、南山大学、名城大学へ多数合格。
 - **学校行事・文化祭・説明会**: 【昭和祭】2026年9月18日(金)・19日(土) / 【秋の体験入学】2026年10月24日(土) / 2027年8月下旬
-- **詳細ページURL**: https://aichi-highschool.jp/schools/showa.html
+- **詳細ページURL**: https://ikomainagoyaaichihighschool.pages.dev//schools/
 - **公式サイトURL**: https://showa-h.aichi-c.ed.jp/
 
 ---
@@ -285,7 +285,7 @@
 - **学校の特色**: 烏森駅すぐ・名駅から好アクセス。ダンス部をはじめ部活動が盛んで行事の熱気は随一。
 - **大学進学実績**: 南山大・名城大・中京大・愛知大（SSALL）への進学が中心。国公立大進学も伸長。
 - **学校行事・文化祭・説明会**: 【松蔭祭】2026年9月18日(金)・19日(土) / 【学校説明会】2026年10月17日(土) / 2027年8月下旬
-- **詳細ページURL**: https://aichi-highschool.jp/schools/shoin.html
+- **詳細ページURL**: https://ikomainagoyaaichihighschool.pages.dev//schools/
 - **公式サイトURL**: https://shoin-h.aichi-c.ed.jp/
 
 ---
@@ -299,7 +299,7 @@
 - **学校の特色**: 地下鉄桜本町駅すぐ。手厚い補習と親身な進路相談で国公立大学進学をサポート。
 - **大学進学実績**: 名工大・愛知県立大・三重大などの国公立大、南山大・名城大へ安定した実績。
 - **学校行事・文化祭・説明会**: 【南高祭】2026年9月18日(金)・19日(土) / 【体験入学】2026年10月24日(土) / 2027年8月下旬
-- **詳細ページURL**: https://aichi-highschool.jp/schools/nagoya-minami.html
+- **詳細ページURL**: https://ikomainagoyaaichihighschool.pages.dev//schools/nagoya-m
 - **公式サイトURL**: https://nagoyaminami-h.aichi-c.ed.jp/
 
 ---
@@ -313,7 +313,7 @@
 - **学校の特色**: 名古屋の伝統ある名門女子校。手厚い情操教育。椙山女学園大学への内部進学枠が豊富。
 - **大学進学実績**: 椙山女学園大学（生活科学部・教育学部・看護など）へ多数推薦進学。
 - **学校行事・文化祭・説明会**: 【椙山祭】2026年9月26日(土)・27日(日) / 【秋の見学会・相談会】2026年10月24日(土)・11月14日(土)
-- **詳細ページURL**: https://aichi-highschool.jp/schools/sugiyama.html
+- **詳細ページURL**: https://ikomainagoyaaichihighschool.pages.dev//schools/sug
 - **公式サイトURL**: https://www.sugiyama-u.ac.jp/high/
 
 ---
@@ -327,7 +327,7 @@
 - **学校の特色**: 吹奏楽部や野球部、メカトロニクスで全国屈指の強豪。愛知工業大学への直結推薦枠が魅力。
 - **大学進学実績**: 愛知工業大学へ多数内部進学。特進クラスから国公立・難関理工系大学へ合格。
 - **学校行事・文化祭・説明会**: 【名電祭】2026年9月26日(土)・27日(日) / 【オープンスクール】2026年10月10日(土)・11月7日(土)
-- **詳細ページURL**: https://aichi-highschool.jp/schools/meiden.html
+- **詳細ページURL**: https://ikomainagoyaaichihighschool.pages.dev//schools/m
 - **公式サイトURL**: https://www.meiden.ed.jp/
 
 ---
@@ -341,7 +341,7 @@
 - **学校の特色**: 自然豊かな丘陵地に位置する穏やかな校風。勉強と部活動を両立しやすい環境。
 - **大学進学実績**: 南山大・中京大・名城大・愛知大など地元有名私大を中心に多数合格。
 - **学校行事・文化祭・説明会**: 【天白祭】2026年9月18日(金)・19日(土) / 【体験入学】2026年10月31日(土) / 2027年8月下旬
-- **詳細ページURL**: https://aichi-highschool.jp/schools/tempaku.html
+- **詳細ページURL**: https://ikomainagoyaaichihighschool.pages.dev//schools/te
 - **公式サイトURL**: https://tempaku-h.aichi-c.ed.jp/
 
 ---
@@ -355,7 +355,7 @@
 - **学校の特色**: 熱田神宮すぐ。サッカー部や吹奏楽部など強豪部活が目白押し。私大指定校推薦枠多数。
 - **大学進学実績**: 中京大、名城大、愛知学院大、愛知大などの地元私立大学へ多数進学。
 - **学校行事・文化祭・説明会**: 【熱高祭】2026年9月18日(金)・19日(土) / 【体験入学】2026年10月24日(土) / 2027年8月下旬
-- **詳細ページURL**: https://aichi-highschool.jp/schools/atsuta.html
+- **詳細ページURL**: https://ikomainagoyaaichihighschool.pages.dev//schools/a
 - **公式サイトURL**: https://atsuta-h.aichi-c.ed.jp/
 
 ---
@@ -369,7 +369,7 @@
 - **学校の特色**: 甲子園優勝の野球部・マーチングバンド部など部活動が極めて活発。校舎が綺麗で人気。
 - **大学進学実績**: 愛知東邦大学への内部推薦、中京大・名城大・愛知学院大・中部大などへの進学多数。
 - **学校行事・文化祭・説明会**: 【東邦祭】2026年9月26日(土)・27日(日) / 【入試説明会】2026年10月24日(土)・11月14日(土)
-- **詳細ページURL**: https://aichi-highschool.jp/schools/toho.html
+- **詳細ページURL**: https://ikomainagoyaaichihighschool.pages.dev//schools
 - **公式サイトURL**: https://www.toho-h.ed.jp/
 
 ---
@@ -383,7 +383,7 @@
 - **学校の特色**: 桜山駅・金山駅から通学便利。手厚い個別指導と進路サポート。商業科もあり資格取得に強み。
 - **大学進学実績**: 名古屋経済大学への内部進学、愛知学院大・中京大・名城大などへ進学。
 - **学校行事・文化祭・説明会**: 【高蔵祭】2026年9月26日(土)・27日(日) / 【学校説明会】2026年10月17日(土)・11月7日(土)
-- **詳細ページURL**: https://aichi-highschool.jp/schools/takakura.html
+- **詳細ページURL**: https://ikomainagoyaaichihighschool.pages.dev//schools/tak
 - **公式サイトURL**: https://www.nagoya-ku.ac.jp/takakura-h/
 
 ---
@@ -397,7 +397,7 @@
 - **学校の特色**: 赤池駅からアクセス良好。真面目で温厚な校風。ICTを活用した授業を推進。
 - **大学進学実績**: 愛知淑徳大・金城学院大・愛知学院大・名城大・中京大などに進学。
 - **学校行事・文化祭・説明会**: 【西高祭】2026年9月18日(金)・19日(土) / 【体験入学】2026年10月24日(土) / 2027年8月下旬
-- **詳細ページURL**: https://aichi-highschool.jp/schools/nisshin-nishi.html
+- **詳細ページURL**: https://ikomainagoyaaichihighschool.pages.dev//schools/nisshin-
 - **公式サイトURL**: https://nisshin-w-h.aichi-c.ed.jp/
 
 ---
@@ -411,7 +411,7 @@
 - **学校の特色**: リニモ沿線。自然に囲まれた広いグラウンド。医療看護コースを設置し進路直結指導。
 - **大学進学実績**: 愛知学院大学・中部大学・名古屋学院大学・看護系専門学校などへ多数進学。
 - **学校行事・文化祭・説明会**: 【長高祭】2026年9月18日(金)・19日(土) / 【体験入学】2026年10月31日(土) / 2027年8月下旬
-- **詳細ページURL**: https://aichi-highschool.jp/schools/nagakute.html
+- **詳細ページURL**: https://ikomainagoyaaichihighschool.pages.dev//schools/nag
 - **公式サイトURL**: https://nagakute-h.aichi-c.ed.jp/
 
 ---
@@ -425,7 +425,7 @@
 - **学校の特色**: 大同町駅すぐ。大同特殊鋼グループのバックボーン。工業・情報教育が手厚く就職・進学両立。
 - **大学進学実績**: 大同大学への内部推薦進学、大手製造業への高い就職実績。
 - **学校行事・文化祭・説明会**: 【大同祭】2026年10月3日(土)・4日(日) / 【入試体験会】2026年10月24日(土)・11月14日(土)
-- **詳細ページURL**: https://aichi-highschool.jp/schools/daido.html
+- **詳細ページURL**: https://ikomainagoyaaichihighschool.pages.dev//schools/
 - **公式サイトURL**: https://www.daido-h.ed.jp/
 
 ---
@@ -439,7 +439,7 @@
 - **学校の特色**: ナゴヤドーム前矢田駅すぐ。女子レスリングや野球などスポーツ名門。至学館大学への接続。
 - **大学進学実績**: 至学館大学、愛知学院大、名古屋学院大、東海学園大、専門学校へ多数。
 - **学校行事・文化祭・説明会**: 【至学館祭】2026年9月26日(土)・27日(日) / 【説明体験会】2026年10月17日(土)・11月7日(土)
-- **詳細ページURL**: https://aichi-highschool.jp/schools/shigakkan.html
+- **詳細ページURL**: https://ikomainagoyaaichihighschool.pages.dev//schools/shig
 - **公式サイトURL**: https://www.shigakkan-h.ed.jp/
 
 ---
@@ -453,7 +453,7 @@
 - **学校の特色**: 名鉄左京山駅徒歩5分。落ち着いた環境で、基礎からの学び直しと生活指導を徹底。
 - **大学進学実績**: 愛知学院大・東海学園大・名古屋学院大・各種専門学校・公務員など。
 - **学校行事・文化祭・説明会**: 【鳴高祭】2026年9月18日(金)・19日(土) / 【体験入学】2026年10月24日(土) / 2027年8月下旬
-- **詳細ページURL**: https://aichi-highschool.jp/schools/narumi.html
+- **詳細ページURL**: https://ikomainagoyaaichihighschool.pages.dev//schools/n
 - **公式サイトURL**: https://narumi-h.aichi-c.ed.jp/
 
 ---
@@ -467,7 +467,7 @@
 - **学校の特色**: 庄内緑地公園駅近く。部活動が盛んでアットホームな雰囲気。一人ひとりに寄り添う指導。
 - **大学進学実績**: 名古屋学院大・同朋大・愛知東邦大・専門学校・就職など幅広い進路。
 - **学校行事・文化祭・説明会**: 【山高祭】2026年9月18日(金)・19日(土) / 【体験入学】2026年10月24日(土) / 2027年8月下旬
-- **詳細ページURL**: https://aichi-highschool.jp/schools/yamada.html
+- **詳細ページURL**: https://ikomainagoyaaichihighschool.pages.dev//schools/y
 - **公式サイトURL**: https://yamada-h.aichi-c.ed.jp/
 
 ---
@@ -481,7 +481,7 @@
 - **学校の特色**: 探究型学習やICT教育（1人1台PC活用）を先進的に導入。生徒の自由な個性を伸ばす指導。
 - **大学進学実績**: 名古屋経済大学への内部推薦、愛知学院大、名古屋外国語大、専門学校多数。
 - **学校行事・文化祭・説明会**: 【市邨祭】2026年9月26日(土)・27日(日) / 【入試説明会】2026年10月24日(土)・11月14日(土)
-- **詳細ページURL**: https://aichi-highschool.jp/schools/ichimura.html
+- **詳細ページURL**: https://ikomainagoyaaichihighschool.pages.dev//schools/ich
 - **公式サイトURL**: https://ichimura.ed.jp/
 
 ---
@@ -495,7 +495,7 @@
 - **学校の特色**: 音楽科・美術科を設置する芸術系名門。多様性を認め合う温かい校風。同朋大学直結。
 - **大学進学実績**: 同朋大学・名古屋造形大学・名古屋音楽大学への内部進学、各種美大・私立大。
 - **学校行事・文化祭・説明会**: 【同朋祭】2026年9月26日(土)・27日(日) / 【体験入学】2026年10月17日(土)・11月7日(土)
-- **詳細ページURL**: https://aichi-highschool.jp/schools/doho.html
+- **詳細ページURL**: https://ikomainagoyaaichihighschool.pages.dev//schools
 - **公式サイトURL**: https://www.doho.ed.jp/
 
 ---
@@ -509,7 +509,7 @@
 - **学校の特色**: 緑豊かな環境。少人数指導や習熟度別授業を取り入れ、基礎学力の定着に注力。
 - **大学進学実績**: 東海学園大学、中部大学、愛知工科大学、専門学校進学、地元企業就職。
 - **学校行事・文化祭・説明会**: 【緑高祭】2026年9月18日(金)・19日(土) / 【体験入学】2026年10月24日(土) / 2027年8月下旬
-- **詳細ページURL**: https://aichi-highschool.jp/schools/midori.html
+- **詳細ページURL**: https://ikomainagoyaaichihighschool.pages.dev//schools/m
 - **公式サイトURL**: https://midori-h.aichi-c.ed.jp/
 
 ---
@@ -523,7 +523,7 @@
 - **学校の特色**: 甲子園出場多数の硬式野球部名門。資格取得サポートや就職支援が極めて手厚い。
 - **大学進学実績**: 鈴鹿医療科学大、愛知学院大、大手自動車・重工関連企業への就職多数。
 - **学校行事・文化祭・説明会**: 【栄祭】2026年10月3日(土)・4日(日) / 【学校説明会】2026年10月17日(土)・11月14日(土)
-- **詳細ページURL**: https://aichi-highschool.jp/schools/kyoei.html
+- **詳細ページURL**: https://ikomainagoyaaichihighschool.pages.dev//schools/
 - **公式サイトURL**: https://www.kyoei-h.ed.jp/
 
 ---
@@ -537,7 +537,7 @@
 - **学校の特色**: 真宗大谷派の教えに基づく命の教育。福祉コースでは介護職員初任者研修の資格取得が可能。
 - **大学進学実績**: 大谷大学、同朋大学、愛知文教大学、医療・福祉系専門学校、福祉施設就職。
 - **学校行事・文化祭・説明会**: 【洗心祭】2026年9月26日(土)・27日(日) / 【入試相談会】2026年10月24日(土)・11月14日(土)
-- **詳細ページURL**: https://aichi-highschool.jp/schools/nagoya-otani.html
+- **詳細ページURL**: https://ikomainagoyaaichihighschool.pages.dev//schools/nagoya-
 - **公式サイトURL**: https://www.nagoyaotani.ed.jp/
 
 ---
@@ -551,7 +551,7 @@
 - **学校の特色**: 名古屋市内の公立普通科で最も入りやすいラインの一つ。少人数での学び直し授業や丁寧な生活指導。
 - **大学進学実績**: 愛知産業大学、東海学院大学、自動車・調理・理美容系専門学校、民間企業就職。
 - **学校行事・文化祭・説明会**: 【守高祭】2026年9月18日(金)・19日(土) / 【秋の体験入学】2026年10月24日(土) / 2027年8月下旬
-- **詳細ページURL**: https://aichi-highschool.jp/schools/moriyama.html
+- **詳細ページURL**: https://ikomainagoyaaichihighschool.pages.dev//schools/mor
 - **公式サイトURL**: https://moriyama-h.aichi-c.ed.jp/
 
 ---
@@ -565,7 +565,7 @@
 - **学校の特色**: 生活文化科やITビジネスなど多彩な系列から自分の進路を選べる。実務・資格取得に特化。
 - **大学進学実績**: 各種専門学校、地元一般企業・サービス業就職、私立短期大学。
 - **学校行事・文化祭・説明会**: 【泉高祭】2026年10月3日(土) / 【秋の体験入学】2026年10月24日(土) / 2027年8月下旬
-- **詳細ページURL**: https://aichi-highschool.jp/schools/kasugai-izumi.html
+- **詳細ページURL**: https://ikomainagoyaaichihighschool.pages.dev//schools/kasugai-
 - **公式サイトURL**: https://kasugaiizumi-h.aichi-c.ed.jp/
 
 ---
@@ -579,7 +579,7 @@
 - **学校の特色**: 保育・福祉・情報ITなど専門コースが豊富。基礎から徹底的に指導し、就職や進学を全面バックアップ。
 - **大学進学実績**: 系列専門学校、愛知産業大、名古屋産業大、保育所・福祉施設・地元企業就職。
 - **学校行事・文化祭・説明会**: 【菊華祭】2026年10月17日(土)・18日(日) / 【オープンスクール】2026年10月24日(土)・11月14日(土)
-- **詳細ページURL**: https://aichi-highschool.jp/schools/kikuka.html
+- **詳細ページURL**: https://ikomainagoyaaichihighschool.pages.dev//schools/k
 - **公式サイトURL**: https://www.kikuka.ed.jp/
 
 ---
@@ -593,7 +593,7 @@
 - **学校の特色**: 不登校経験者や自分のペースで高校卒業資格を取得したい生徒を支える柔軟な教育環境。
 - **大学進学実績**: 提携大学・短大への推薦進学、各種クリエイティブ系専門学校、自立就労支援。
 - **学校行事・文化祭・説明会**: 【個別学校説明会】毎月開催（随時見学可能・要予約）
-- **詳細ページURL**: https://aichi-highschool.jp/schools/toho-tsushin.html
+- **詳細ページURL**: https://ikomainagoyaaichihighschool.pages.dev//schools/toho-ts
 - **公式サイトURL**: https://www.toho-h.ed.jp/
 
 
@@ -604,7 +604,7 @@
 - 世帯年収約840万円未満: 私立高校の平均授業料相当額（年間約44万円〜上限額）がほぼ全額支給され、実質無償化となります。
 - 世帯年収約840万〜910万円未満: 一部軽減助成（年間約10万〜20万円）。
 - 入学金補助: 年収目安に応じて10万〜20万円の入学時補助制度あり。
-- 本サイトのシミュレーター ([tuition-guide.html](https://aichi-highschool.jp/tuition-guide.html)) で正確な試算が可能です。
+- 本サイトのシミュレーター ([tuition-guide.html](https://ikomainagoyaaichihighschool.pages.dev//tuition-)) で正確な試算が可能です。
 
 ---
 

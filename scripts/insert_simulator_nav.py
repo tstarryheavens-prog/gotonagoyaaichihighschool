@@ -18,7 +18,7 @@ BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(BASE, "simulator-data.json")
 LINK_TEXT = "🎯 内申×当日 合否シミュレーター"
 CTA_SENTINEL = "<!-- SIMULATOR_CTA -->"
-CTA_RE = re.compile(re.escape(CTA_SENTINEL) + r"[\s\S]*?</a>\s*", re.S)
+CTA_RE = re.compile(r"[ \t]*" + re.escape(CTA_SENTINEL) + r"[\s\S]*?</a>[ \t]*\n?", re.S)
 ROMA = {"I": "Ⅰ", "II": "Ⅱ", "III": "Ⅲ", "IV": "Ⅳ", "V": "Ⅴ"}
 FORMULA = {
     "I": "評定＋当日", "II": "評定×1.5＋当日", "III": "評定＋当日×1.5",
@@ -84,10 +84,13 @@ def process(path: str, schools: dict) -> str:
     is_school = depth == 1 and os.path.basename(os.path.dirname(path)) == "schools"
     if is_school or 'class="top-nav"' not in html:
         sid = os.path.splitext(os.path.basename(path))[0]
-        if CTA_SENTINEL not in html:
-            m = re.search(r'(<div class="container"[^>]*>[ \t]*\n)', html)
-            if m:
-                html = html[: m.end()] + "\n    " + cta_html(prefix, sid, schools.get(sid)) + html[m.end():]
+        # 旧CTAを毎回除去してから作り直す（型データ変更・文科省表記の修正を反映するため）
+        stripped = CTA_RE.sub("", html)
+        m = re.search(r'(<div class="container"[^>]*>[ \t]*\n)', stripped)
+        if m:
+            rebuilt = stripped[: m.end()] + cta_html(prefix, sid, schools.get(sid)) + stripped[m.end():]
+            if rebuilt != html:
+                html = rebuilt
                 changed = True
 
     if changed:
