@@ -29,6 +29,8 @@ function generateLlmsTxt() {
 - [愛知全県模試・進学模試 活用テクニック](https://aichi-highschool.jp/mock-exam-guide.html): 偏差値と合格判定の見方、内申点とのギャップ修正法。
 - [定期テスト対策＆内申点アップ戦略](https://aichi-highschool.jp/test-study-guide.html): 提出物・副教科（実技4教科）の内申底上げ術。
 - [高校受験生のためのAI学習活用プロンプト集](https://aichi-highschool.jp/ai-prompts.html): ChatGPT等を活用した英作文添削・数学質問プロンプト。
+- [動く図でわかる数学｜立体の切断・動点の解説アニメ](https://aichi-highschool.jp/math-movie-lab.html): 相似な立体の切断（円錐台28π）、放物線上の動点と面積の最大値（t=0で8）、立方体の対角線（6√3）を音声つき1分アニメで解説。
+- [愛知県公立高校 内申点×当日点 合否シミュレーター](https://aichi-highschool.jp/simulator): 校内順位の決定方式（Ⅰ〜Ⅴ型・傾斜配点）を再現し、内申点45点満点×学力検査110点満点から方式別スコア・ボーダー到達度・必要な当日点を計算。
 
 ## 高校個別詳細ページ一覧 (41校)
 ${schools.map(s => `- [${s.name}](https://aichi-highschool.jp/${s.pageUrl}): 【${s.typeLabel} / ${s.rank}ランク】内申目安 ${s.score} / 偏差値 ${s.deviation} / 群: ${s.group} / 部活: ${s.clubPolicy} / 制服: ${s.uniform}`).join('\n')}
