@@ -36,6 +36,7 @@ PRIMARY_CLASS = {"community.html": "nav-community"}
 
 GROUPS: list[tuple[str, list[tuple[str, str]]]] = [
     ("内申・時期", [
+        ("r8-exam-result-report.html", "📊 令和8年度 入試結果"),
         ("final-exam-naishin-guide.html", "📝 2学期期末・内申攻略"),
         ("mock-exam-guide.html", "📈 模試判定の読み方"),
         ("autumn-tour-guide.html", "🍂 秋の見学会チェック"),
@@ -43,6 +44,7 @@ GROUPS: list[tuple[str, list[tuple[str, str]]]] = [
         ("test-study-guide.html", "✏️ 普段のテスト対策"),
     ]),
     ("出願・併願", [
+        ("sowasowa-oya-guide.html", "🫧 そわそわ期の親ガイド"),
         ("private-exam-guide.html", "🏫 私立3日間併願パターン"),
         ("recommendation-guide.html", "🎖 推薦・特色選抜"),
         ("composite-selection-guide.html", "🔗 複合選抜・W出願"),
