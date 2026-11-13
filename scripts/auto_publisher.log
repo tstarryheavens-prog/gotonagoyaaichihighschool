@@ -14,3 +14,15 @@ Successfully updated schools_data.js
 [2026-11-10 09:00:24] 選定トピック: [15] 【中3・12月】三者面談で絶対に後悔しない志望校決定術！内申確定後の公立W出願・私立併願の最終詰め
 [2026-11-10 09:00:24] 長文生成開始: 要求 10000 字以上（目標 13500 字）
 [2026-11-10 09:00:25] [*] 長文エンジン: long-form-writer (long_form_writer.py, backend=auto) を使用
+[2026-11-13 09:00:34] === 愛知高校受験ナビ 定期自動更新パイプライン開始 ===
+[2026-11-13 09:00:34] 選定トピック: [15] 【中3・12月】三者面談で絶対に後悔しない志望校決定術！内申確定後の公立W出願・私立併願の最終詰め
+[2026-11-13 09:00:35] 長文生成開始: 要求 10000 字以上（目標 13500 字）
+[2026-11-13 09:00:35] [*] 長文エンジン: long-form-writer (long_form_writer.py, backend=auto) を使用
+[2026-11-13 09:28:52] 長文生成結果: 純テキスト 53500 字 / 要求 10000 字 (増補 0 ラウンド, engine=long-form-writer)
+[2026-11-13 09:28:52] [✓] Hatena HTML 保存: 15_sansha_mendan_strategy.html
+[2026-11-13 09:28:53] [✓] はてなブログ投稿完了 (ステータス: 201)
+[2026-11-13 09:28:53] [✓] サイトHTML 保存: sansha-mendan-strategy.html
+[2026-11-13 09:28:53] [✓] Added sansha-mendan-strategy.html to generate_school_pages.js nav
+[2026-11-13 09:28:54] node generate_school_pages.js 実行中...
+[2026-11-13 09:29:02] [✓] 全校ページ再生成完了: Successfully generated 41 individual school pages in ./schools/
+Successfully updated schools_data.js

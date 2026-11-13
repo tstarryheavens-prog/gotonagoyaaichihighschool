@@ -965,6 +965,7 @@ updatedSchoolsData.forEach((school) => {
     <div class="top-nav-inner">
       <a href="../index.html">📊 内申点ランキングTOP</a>
       <a href="../tokutai-scholarship-guide.html">🎓 私立特待・奨学金</a>
+      <a href="../sansha-mendan-strategy.html">🤝 12月三者面談攻略</a>
       <a href="../final-exam-naishin-guide.html">📝 2学期期末・内申攻略</a>
       <a href="../private-exam-guide.html">🏫 私立3日間併願パターン</a>
       <a href="../past-exam-guide.html">📝 マークシート・過去問対策</a>
