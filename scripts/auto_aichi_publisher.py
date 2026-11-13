@@ -87,7 +87,7 @@ def build_longform_body(topic: dict, engine) -> tuple:
         "summary": topic["description"],
         "target_audience": "愛知県の公立・私立高校受験を控える中学生とその保護者",
         "source_name": "愛知県公立高校入試（複合選抜）の公表資料・尾張高校ナビの全校データ",
-        "source_url": "https://ai-living-lab.pages.dev/divisions/aichi-high/",
+        "source_url": "https://eosinophilicgastroenteritis-ege.pages.dev/ai-living-lab/divisions/aichi-high",
         "direct_quote": topic["description"],
         "suggested_outline": topic["categories"],
     }
