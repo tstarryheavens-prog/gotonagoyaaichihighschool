@@ -124,9 +124,30 @@ function fillEmptyAdSlots() {
   });
 }
 
+// ページ上部にGoogle自動広告(.google-auto-placed)が割り込むのを抑止（中央・下部のみ表示）
+function suppressTopAutoAds() {
+  document.querySelectorAll(".google-auto-placed").forEach((el) => {
+    const insideTopBlock = el.closest("header, nav, .top-nav, .top-hero-banner-bar, .shachi-profile, .parents-note-box, .diagnosis-panel, .controls-panel, .archive-hero");
+    const body = document.body;
+    const isNearTop = el.getBoundingClientRect().top + window.scrollY < 750;
+    if (insideTopBlock || isNearTop) {
+      el.style.setProperty("display", "none", "important");
+      el.style.setProperty("height", "0", "important");
+      el.style.setProperty("margin", "0", "important");
+      el.style.setProperty("padding", "0", "important");
+    }
+  });
+}
+
 // ページ読み込み完了時に自動実行
 if (typeof document !== "undefined") {
   document.addEventListener("DOMContentLoaded", () => {
     fillEmptyAdSlots();
+    suppressTopAutoAds();
+    if (typeof MutationObserver !== "undefined") {
+      const obs = new MutationObserver(() => suppressTopAutoAds());
+      obs.observe(document.body, { childList: true, subtree: true });
+      setTimeout(() => obs.disconnect(), 10000);
+    }
   });
 }

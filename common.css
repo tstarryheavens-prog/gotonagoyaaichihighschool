@@ -896,3 +896,45 @@ img.mascot-hero-img {
   /* 上部の AIカンパニー相互ネットワーク帯も折り返す（ラベル行が切れていた） */
   #ai-company-network-bar > div > div:first-child { flex-wrap: wrap; }
 }
+
+/* === TOP HERO BANNER === */
+.top-hero-banner-bar {
+  background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+  padding: 10px 12px 12px;
+  border-bottom: 2px solid #F59E0B;
+}
+.top-hero-banner-inner {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+.top-hero-banner-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.32);
+}
+@media (max-width: 640px) {
+  .top-hero-banner-bar { padding: 6px 8px 8px; }
+  .top-hero-banner-img { border-radius: 10px; }
+}
+
+/* === 上部Auto Ads抑止（ページ最上部にGoogle自動広告を割り込ませない） === */
+.top-hero-banner-bar .google-auto-placed,
+.top-hero-banner-bar ins.adsbygoogle,
+header .google-auto-placed,
+header ins.adsbygoogle,
+nav .google-auto-placed,
+nav ins.adsbygoogle,
+.top-nav .google-auto-placed,
+.shachi-profile .google-auto-placed,
+.parents-note-box .google-auto-placed,
+.diagnosis-panel .google-auto-placed,
+.controls-panel .google-auto-placed {
+  display: none !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
